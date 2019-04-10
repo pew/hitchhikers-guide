@@ -23,3 +23,11 @@ remove something/someone from your ignore list. get the number first with `/igno
 ```
 /unignore 1
 ```
+
+# change time zone
+
+if your server is running UTC and you want irssi in your local time zone:
+
+```
+/script exec $ENV{'TZ'}='Europe/Berlin'
+```
