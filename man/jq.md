@@ -39,3 +39,11 @@ bw list items --search zoho|jq '.[].login.username, .[].login.password'
 ```
 jq -r '.[].login.username, .[].login.password'
 ```
+
+# merge multiple json files
+
+for example: fitbit export, separated by day but same format otherwise. I wanted one file out of 4 years of data:
+
+```
+jq -s . heart_rate*.json > ../heart_rate.json
+```
