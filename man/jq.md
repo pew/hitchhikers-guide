@@ -47,3 +47,9 @@ for example: fitbit export, separated by day but same format otherwise. I wanted
 ```
 jq -s . heart_rate*.json > ../heart_rate.json
 ```
+
+or just use **flatten** like this:
+
+```
+jq -c --slurp 'flatten' steps-*.json > ../steps.json
+```
