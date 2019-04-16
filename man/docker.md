@@ -41,3 +41,18 @@ or like this:
 ```
 
 changes in the `daemon.json` only apply to new containers, not existing.
+
+# docker cleanup
+
+get rid of exited containers:
+
+```
+docker rm $(docker ps -aq -f status=exited)
+```
+
+get rid of unused images:
+
+```
+docker rmi $(docker images -a|grep none|awk {'print $3'})
+```
+
