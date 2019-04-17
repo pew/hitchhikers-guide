@@ -7,8 +7,10 @@ there's a lot of stuff you can do!
 this is quite new in openssh, use `-J` to connect to your target host through (multiple) jump host(s):
 
 ```
-ssh -J user@first-hop user@final-destination
-ssh -J user@first-hop,user@second-hop user@final-destination
+ssh -J user@first-hop user@final-destination # one hop
+ssh -J user@first-hop,user@second-hop user@final-destination # two hops to get to 3rd server
+ssh -J user@first-hope,user@second-hop:22022 user@final-destination -p2222 # two hops, second hop with custom port, third one as well (check for the : and -p difference... wtf ssh what am I doing wrong?)
+ssh -J user@first-hope,user@second-hop:22022 user@final-destination -p2222 -L8384:localhost:8384 # same as above just with port forwarding from the last hop!
 ```
 
 # socks proxy
