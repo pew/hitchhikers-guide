@@ -56,3 +56,25 @@ ssh -A -t user@middleman ssh -A -t user@target
 [ENTER]
 ~C
 ```
+
+# git-shell
+
+## limit shell (git-shell) to certain users
+
+use-case: you have one user on a linux system and multiple applications / users ssh'ing in. I want to limit the public ssh key of my phone's git client to only be able to use `git-shell` and not be able to login with bash or zsh.
+
+1. put git-shell in `/etc/shells` - [as described here](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)
+
+```
+cat /etc/shells   # see if `git-shell` is already in there.  If not...
+which git-shell   # make sure git-shell is installed on your system.
+sudo -e /etc/shells  # and add the path to git-shell from last command
+```
+
+2. limit the public ssh key in `authorized_keys` to only run git-shell
+
+```
+command="git shell -c \"$SSH_ORIGINAL_COMMAND\"" ssh-ed25519 AAAAC3NzaC1lZDI1NTE
+```
+
+this one key can only use git-shell commands now, like `git clone` but not execute bash or something like that.
