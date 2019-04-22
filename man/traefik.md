@@ -59,12 +59,37 @@ replacement = "https://$1"
 - "traefik.frontend.rule=Host:example.com,example2.com"
 ```
 
+## http basic auth and path rules
+
+suppose you want to protect `/post` and `/edit` endpoints but everything else should work without username/password:
+
+```
+- "traefik.docker.network=web"
+- "traefik.enable=true"
+- "traefik.basic.protocol=http"
+- "traefik.basic.frontend.rule=Host:domain.tld,www.domain.tld"
+- "traefik.auth.frontend.rule=Host:domain.tld;PathPrefix:/edit,/post"
+- "traefik.auth.frontend.auth.basic=jonas:$$2a$$10$asdf"
+- "traefik.frontend.redirect.regex=^https://www.(.*)"
+- "traefik.frontend.redirect.replacement=https://$$1"
+- "traefik.frontend.redirect.permanent=true"
+- "traefik.basic.port=8000"
+```
+
+this part is the important one:
+
+```
+- "traefik.auth.frontend.rule=Host:domain.tld;PathPrefix:/edit,/post"
+```
+
+also, the priority evaluation is important, [read about in-depth here](https://docs.traefik.io/basics/#frontends) - I couldn't write it in a way someone can understand it.
+
+[this post also helped me quite a lot](https://stackoverflow.com/q/50253357/10272994)
+
+TODO: htpasswd generator
+
 # todo
 
 * [ ] SSLLabs A+ or something like that
 
 apparently this is out of the box, not verified yet.
-
-* [ ] http basic auth for some routes or everything
-
-[here's a possible solution](https://stackoverflow.com/q/50253357/10272994) (the rule priority seems to play an important role in here, check your current sample and explain)
