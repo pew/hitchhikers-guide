@@ -5,7 +5,7 @@ cool/hipster reverse proxy and/or load balancer.
 * [website](https://traefik.io)
 * [documentation](https://docs.traefik.io)
 
-I'll write some things in here which helped me in some edge cases I couldn't really find in the documentation but were in fact available. 
+I'll write some things in here which helped me in some edge cases I couldn't really find in the documentation but were in fact available.
 
 ## docker labels hints
 
@@ -86,10 +86,10 @@ also, the priority evaluation is important, [read about in-depth here](https://d
 
 [this post also helped me quite a lot](https://stackoverflow.com/q/50253357/10272994)
 
-TODO: htpasswd generator
+**generate username and password hash**:
 
-# todo
+```
+echo $(htpasswd -nbB username "password!1234") | sed -e s/\\$/\\$\\$/g
+```
 
-* [ ] SSLLabs A+ or something like that
-
-apparently this is out of the box, not verified yet.
+the `sed` part will also directly escape the output suited for a docker label
