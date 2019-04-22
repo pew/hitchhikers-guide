@@ -1,5 +1,12 @@
 # traefik
 
+cool/hipster reverse proxy and/or load balancer.
+
+* [website](https://traefik.io)
+* [documentation](https://docs.traefik.io)
+
+I'll write some things in here which helped me in some edge cases I couldn't really find in the documentation but were in fact available. 
+
 ## docker labels hints
 
 `$` characters in `docker-compose.yml` files have to be escaped by another `$` = meaning: `$$`
@@ -60,4 +67,4 @@ apparently this is out of the box, not verified yet.
 
 * [ ] http basic auth for some routes or everything
 
-[here's a possible solution](https://stackoverflow.com/q/50253357/10272994)
+[here's a possible solution](https://stackoverflow.com/q/50253357/10272994) (the rule priority seems to play an important role in here, check your current sample and explain)
