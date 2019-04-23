@@ -93,3 +93,9 @@ echo $(htpasswd -nbB username "password!1234") | sed -e s/\\$/\\$\\$/g
 ```
 
 the `sed` part will also directly escape the output suited for a docker label
+
+## priorities
+
+this is very important to understand and it's probably best to always check the [documentation about this here](https://docs.traefik.io/basics/#priorities) - search for *priorities* if they ever change the link. basically routes will be sorted by length in descending order (see http auth example above).
+
+> By default, routes will be sorted (in descending order) using rules length (to avoid path overlap): - `PathPrefix:/foo;Host:foo.com` (length == 28) will be matched before `PathPrefixStrip:/foobar` (length == 23) will be matched before `PathPrefix:/foo,/bar` (length == 20).
