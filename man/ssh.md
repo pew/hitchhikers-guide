@@ -57,6 +57,19 @@ ssh -A -t user@middleman ssh -A -t user@target
 ~C
 ```
 
+forward a port then, for example:
+
+```
+-L8080:localhost:8080
+```
+
+profit:
+
+```
+ssh> -L9090:localhost:9090
+Forwarding port.
+```
+
 # git-shell
 
 ## limit shell (git-shell) to certain users
