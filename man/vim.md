@@ -14,19 +14,19 @@ vim file.md
 :e other-filename.md
 ```
 
-# useful plugins
+## useful plugins
 
-## nerdtree
+### nerdtree
 
 * [cool vim tree explorer plugin](https://github.com/scrooloose/nerdtree)
 
-### switch to nerdtree window
+#### switch to nerdtree window
 
 ```
 ctrl + ww
 ```
 
-### reload tree
+#### reload tree
 
 ```
 r
@@ -38,13 +38,13 @@ or reload the whole folder structure:
 R
 ```
 
-## vimwiki
+### vimwiki
 
 a plain text wiki for vim including a diary function, kinda cool.
 
 * [vimwiki docs](https://github.com/vimwiki/vimwiki)
 
-### key bindings
+#### key bindings
 
 I need to learn and remember them! `<Leader>` is `\`
 

@@ -2,7 +2,7 @@
 
 some commands I always forget
 
-# delete branch locally and remotely
+## delete branch locally and remotely
 
 ```
 git push --delete <remote_name> <branch_name>
@@ -16,17 +16,17 @@ git push --delete origin short_url
 git branch -d short_url
 ```
 
-# git submodule
+## git submodule
 
 too confusing.
 
-## add git submodule
+### add git submodule
 
 ```
 git submodule add https://github.com/vimwiki/vimwiki.git
 ```
 
-## init git submodules
+### init git submodules
 
 ```
 git submodule init
