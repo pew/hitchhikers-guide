@@ -15,3 +15,21 @@ example:
 git push --delete origin short_url
 git branch -d short_url
 ```
+
+# git submodule
+
+too confusing.
+
+## add git submodule
+
+```
+git submodule add https://github.com/vimwiki/vimwiki.git
+```
+
+## init git submodules
+
+```
+git submodule init
+git submodule update
+```
+
