@@ -2,7 +2,13 @@
 
 * [jq is like sed for JSON data](https://stedolan.github.io/jq/)
 
-# pretty print json
+## you might not need `jq`
+
+```
+curl -sS https://abc.json | python -m json.tool
+```
+
+## pretty print json
 
 ```
 your-json | jq
@@ -14,13 +20,13 @@ or:
 jq . file.json
 ```
 
-# get the first element
+## get the first element
 
 ```
 jq .[0] file.json
 ```
 
-# get multiple items
+## get multiple items
 
 just comma separate what you want
 
@@ -28,7 +34,7 @@ just comma separate what you want
 bw list items --search zoho|jq '.[].login.username, .[].login.password'
 ```
 
-# get raw output
+## get raw output
 
 ... instead of JSON strings for example
 
@@ -40,7 +46,7 @@ bw list items --search zoho|jq '.[].login.username, .[].login.password'
 jq -r '.[].login.username, .[].login.password'
 ```
 
-# merge multiple json files
+## merge multiple json files
 
 for example: fitbit export, separated by day but same format otherwise. I wanted one file out of 4 years of data:
 
