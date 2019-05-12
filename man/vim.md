@@ -65,3 +65,12 @@ I need to learn and remember them! `<Leader>` is `\`
 * `<Leader>w<Leader>w` - create new diary file with current date
 * `<Leader>wi` - go to diary index
 * `<Leader>w<Leader>i` - update diary index
+
+### vim-markdown
+
+* [vim-markdown docs](https://github.com/plasticboy/vim-markdown) - until I've learned it by myself
+
+### vimoutliner
+
+* [vimoutliner docs here](https://github.com/vimoutliner/vimoutliner) - until i've learned it
+* [vimoutliner cheat sheet](https://github.com/vimoutliner/vimoutliner/blob/master/doc/votl_cheatsheet.txt) - they're really tricking you in reading the README to find the cheat sheet!
