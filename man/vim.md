@@ -14,6 +14,22 @@ vim file.md
 :e other-filename.md
 ```
 
+## paste from external clipboard
+
+```
+Ctrl + Shift + V
+```
+
+[thank you](https://www.256kilobytes.com/content/show/10503/5-tasks-you-didnt-know-you-could-do-with-vim).
+
+## vertical highlighting
+
+```
+ctrl + v
+```
+
+[thank you](https://www.256kilobytes.com/content/show/10503/5-tasks-you-didnt-know-you-could-do-with-vim).
+
 ## useful plugins
 
 ### nerdtree
