@@ -2,16 +2,13 @@
 
 tmux!
 
-# scrolling terminal.app macos
+## scroll in tmux
 
-how to scroll within tmux on macos using terminal.app
+1. `ctrl + b` + `[`
+2. arrow keys or `shift` + `page up/down`
+3. `control` + `c` (or `q`) when done
 
-1. `ctrl + b`
-1. `[`
-1. arrow keys or `shift` + `page up/down`
-1. `control` + `c when done
-
-# panes
+## panes
 
 open another pane:
 
