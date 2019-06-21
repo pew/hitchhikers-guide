@@ -20,9 +20,9 @@ cryptsetup luksFormat <device> # e.G. /dev/sda1
 cryptsetup luksOpen <device> <coolname> # e.G. /dev/sda1 fortknox
 ```
 
-## format device
+### format device
 
-**do this only one time during setup, afterwards jump right into [#mount](mounting the device)**
+**do this only one time during setup, afterwards jump right to [mounting the device](#mount-device)**
 
 ```
 mkfs.ext4 /dev/mapper/<coolname> # e.G. /dev/mapper/fortknox
