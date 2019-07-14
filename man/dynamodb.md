@@ -12,7 +12,7 @@ for the lazy people, it's quite important to add the `-sharedDB` parameter, othe
 
 ```
 docker run -it --rm -p8000:8000 amazon/dynamodb-local -jar DynamoDBLocal.jar -inMemory -sharedDb
-````
+```
 
 **create tables**:
 
