@@ -116,7 +116,7 @@ GatewayPorts yes
 2. use the `bind_address` feature in ssh to open up the port on the remote machine. we're just going to use `autossh` here. so log in to your *source* machine and execute `autossh` like this:
 
 ```
-autossh -M 0 -q -N -o "ConnectTimeout 10" -o "ServerAliveCountMax 3" -o "ServerAliveInterval 60" -o "Port=22022"  -o "ExitOnForwardFailure=yes" -R0.0.0.0:2224:localhost:22 tunnel@target-server.com
+autossh -M 0 -q -f -N -o "ConnectTimeout 10" -o "ServerAliveCountMax 3" -o "ServerAliveInterval 60" -o "Port=22022"  -o "ExitOnForwardFailure=yes" -R0.0.0.0:2224:localhost:22 tunnel@target-server.com
 ```
 
 see the `-R0.0.0.0` part? that's the important one and together with `GatewayPorts` enabled in `sshd_config` ssh will also allow you to do that.
