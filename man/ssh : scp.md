@@ -103,3 +103,28 @@ ssh -o ProxyCommand='ssh myfirsthop nc -w 10 %h %p' mydestination
 scp -o ProxyCommand='ssh middleman nc -w 10 %h %p' admin@target:"~/test/*" .
 rsync -avxiP -e "ssh -o ProxyCommand='ssh middleman nc -w 10 %h %p'" admin@target:~/test/ .
 ```
+
+## poor man's ngrok or make-my-dev-machine-available-from-outside
+
+1. enable `GatewayPorts` in your sshd config:
+
+```
+$ grep GatewayPorts /etc/ssh/sshd_config
+GatewayPorts yes
+```
+
+2. use the `bind_address` feature in ssh to open up the port on the remote machine. we're just going to use `autossh` here. so log in to your *source* machine and execute `autossh` like this:
+
+```
+autossh -M 0 -q -N -o "ConnectTimeout 10" -o "ServerAliveCountMax 3" -o "ServerAliveInterval 60" -o "Port=22022"  -o "ExitOnForwardFailure=yes" -R0.0.0.0:2224:localhost:22 tunnel@target-server.com
+```
+
+see the `-R0.0.0.0` part? that's the important one and together with `GatewayPorts` enabled in `sshd_config` ssh will also allow you to do that.
+
+3. maybe you need to open up port `2224` (my example) in your firewall on the target-server as well and then you can just connect to your target server using port 2224 like this:
+
+```
+ssh -p2224 user@target
+```
+
+enjoy!
