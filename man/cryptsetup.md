@@ -33,3 +33,20 @@ mkfs.ext4 /dev/mapper/<coolname> # e.G. /dev/mapper/fortknox
 ```
 mount /dev/mapper/<coolname> /mnt
 ```
+
+## resize luks encrypted disk
+
+```
+cryptsetup luksOpen /dev/sda fortknox
+cryptsetup resize /dev/mapper/fortknox
+resize2fs /dev/mapper/fortknox
+mount /dev/mapper/fortknox /mnt
+```
+
+## backup /restore luks header
+
+```
+cryptsetup luksHeaderBackup /dev/sda --header-backup-file luks_backup_fortknox
+cryptsetup luksHeaderRestore /dev/sda --header-backup-file luks_backup_fortknox
+```
+
