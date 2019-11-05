@@ -15,6 +15,22 @@ ssh -J user@first-hope,user@second-hop:22022 user@final-destination -p2222 # two
 ssh -J user@first-hope,user@second-hop:22022 user@final-destination -p2222 -L8384:localhost:8384 # same as above just with port forwarding from the last hop!
 ```
 
+use a jumphost in `~/.ssh/config`
+
+example: I want to run `ssh nibbler` on my local machine and connect through `bender` to it. *nibbler* is using autossh to connect to *bender* (I hope this makes sense, future Jonas):
+
+```
+Host bender
+    User local-user
+    Hostname bender.hostname.com
+
+Host nibbler
+    User root
+    Hostname localhost
+    Port 2222
+    ProxyJump bender
+```
+
 ### socks proxy
 
 create a socks proxy, route traffic using the proxy encrypted through your destination host:
