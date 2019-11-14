@@ -42,6 +42,24 @@ ctrl + v
 ctrl + ww
 ```
 
+#### toggle nerdtree window
+
+open, close, open, close. bed up, bed down, bed up, bed down
+
+that's the default:
+
+```
+:NERDTreeToggle
+```
+
+add something like this to your `~/.vimrc`` file
+
+```
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+```
+
+with this line you can toggle nerdtree with `\f` given that `\` is your *leader* key.
+
 #### reload tree
 
 ```
