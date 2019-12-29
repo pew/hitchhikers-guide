@@ -110,6 +110,14 @@ command="git shell -c \"$SSH_ORIGINAL_COMMAND\"" ssh-ed25519 AAAAC3NzaC1lZDI1NTE
 
 this one key can only use git-shell commands now, like `git clone` but not execute bash or something like that.
 
+## ssh-keygen
+
+**convert ssh key from openssh format to RFC4716:**
+
+```
+ssh-keygen -e -f ~/.ssh/id_rsa.pub | grep -v "Comment:"
+```
+
 ## scp
 
 ### scp through extra hosts (middleman)
