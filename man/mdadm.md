@@ -34,6 +34,8 @@ mdadm --detail --scan --verbose | sudo tee -a /etc/mdadm/mdadm.conf
 
 Run `update-initramfs -u` after updating this file.
 
+**also, back up the `mdadm.conf` file to restore it onto a new system**
+
 ## replace disk
 
 **remove disk:**
