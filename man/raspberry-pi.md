@@ -16,3 +16,9 @@ change to performance, this won't reset during a reboot of the system. if you wa
 ```
 echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
+
+## cpu temperature
+
+```
+vcgencmd measure_temp
+```
