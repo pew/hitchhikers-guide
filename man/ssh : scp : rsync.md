@@ -1,4 +1,4 @@
-# ssh / scp
+# ssh / scp / rsync
 
 there's a lot of stuff you can do!
 
@@ -118,14 +118,22 @@ this one key can only use git-shell commands now, like `git clone` but not execu
 ssh-keygen -e -f ~/.ssh/id_rsa.pub | grep -v "Comment:"
 ```
 
-## scp
+## scp / rsync
 
-### scp through extra hosts (middleman)
+### scp /rsync through extra hosts (middleman)
 
 ```
 ssh -o ProxyCommand='ssh myfirsthop nc -w 10 %h %p' mydestination
 scp -o ProxyCommand='ssh middleman nc -w 10 %h %p' admin@target:"~/test/*" .
 rsync -avxiP -e "ssh -o ProxyCommand='ssh middleman nc -w 10 %h %p'" admin@target:~/test/ .
+```
+
+you can also use `ssh -J` to rsync through a third server:
+
+we'll connect to the *middleman* with the `-J` flag and custom port `1337` and connect to your `dest` using port `2222`
+
+```
+rsync -avxiP -n --delete -e 'ssh -J user@middleman:1337 -p2222' /mnt/ user@dest:/mnt/
 ```
 
 ## poor man's ngrok or make-my-dev-machine-available-from-outside
