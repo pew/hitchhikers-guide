@@ -2,6 +2,14 @@
 
 I'll never get used to it. Let's get started and learn..
 
+## convert tabs to spaces
+
+that's correct.
+
+```
+:set tabstop=4 shiftwidth=4 expandtab
+```
+
 ## create new file
 
 ```
