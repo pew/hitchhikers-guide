@@ -8,6 +8,12 @@
 mdadm --create /dev/md0 --level=1 --raid=devices=2 /dev/sda /dev/sdb
 ```
 
+if you get an error like *mdadm: invalid number of raid devices: devices=2* run the command like so (with `-l` for level and `-n` for devices):
+
+```
+mdadm --verbose --create /dev/md0 -l 1 -n 2 /dev/sdc /dev/sdb
+```
+
 **create a file system:**
 
 ```
