@@ -1,8 +1,21 @@
-# aws (aws-cli)
+# aws cli v2
 
 some aws cli commands I'll probably forget about since I'm only using them once in a while
 
-## aws ssm
+## fix pager view / output / annoyances
+
+what the fork...? see [this pull request](https://github.com/aws/aws-cli/pull/4702#issue-344978525), do one of these things:
+
+* add `cli_pager = cat` to `~/.aws/config`
+* set the env var `AWS_PAGER=""`
+
+---
+
+## aws (aws-cli) v1
+
+might work with v2, might not. don't know.
+
+### aws ssm
 
 get something out of ssm:
 
