@@ -15,3 +15,11 @@ youtube-dl -o "%(autonumber)s-%(title)s.%(ext)s" <URL-HERE>
 ```
 youtube-dl -f mp4
 ```
+
+## download embedded videos
+
+e.G. vimeo videos embedded as an iframe, send a referer with the request:
+
+```
+youtube-dl "https://player.vimeo.com/video/1234" --referer "https://example.com/where-you-found-that-page/"
+```
