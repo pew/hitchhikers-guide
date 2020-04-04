@@ -13,3 +13,4 @@ nodejs package manager
 
 * `yarn upgrade-interactive` # upgrade local packages interactively
 * `yarn global upgrade-interactive` # update global packages interactively
+* `yarn upgrade --latest` # well, sometimes you actually need this. why not, right...?
