@@ -2,6 +2,34 @@
 
 hi.
 
+## high disk usage (log files)
+
+meh...
+
+check current disk usage of systemd:
+
+```
+journalctl --disk-usage
+```
+
+clean up some old logs:
+
+```
+journalctl --vacuum-size=100M
+```
+
+make this stuff permanent, edit `/etc/systemd/journald.conf`
+
+```
+SystemMaxUse=50M
+```
+
+and restart things
+
+```
+systemctl restart systemd-journald.service
+```
+
 ## DNS
 
 all things DNS
