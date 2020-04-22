@@ -13,4 +13,4 @@ it works in combination with `pyenv`, but .check the [FAQ](https://pipenv.readth
 
 ## pip
 
-* [/man/pip](check out pip, package management for python)
+* [check out pip, package management for python](/man/pip)
