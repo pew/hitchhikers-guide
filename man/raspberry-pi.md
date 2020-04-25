@@ -22,3 +22,19 @@ echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governo
 ```
 vcgencmd measure_temp
 ```
+
+## read-only sd card
+
+when running updates, don't forget to make the filesystems read write:
+
+```
+sudo mount -o remount,rw /
+sudo mount -o remount,rw /boot
+```
+
+and afterwards, read only again:
+
+```
+sudo mount -o remount,ro /
+sudo mount -o remount,ro /boot
+```
