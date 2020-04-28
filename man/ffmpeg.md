@@ -28,3 +28,10 @@ ffmpeg -i filename.mp3 -a:b 64k out.mp3
 ffmpeg -i filename.mp3 -q:a 9 out.mp3
 ```
 
+## cut video
+
+just take the first 28 seconds, beginning at 0:
+
+```
+ffmpeg -ss 00:00:00.0 -to 00:00:28.0 -i input.mp4 outpu4.mp4
+```
