@@ -1,6 +1,6 @@
 # raspberry pi
 
-[[raspbian.md]]
+[see also raspbian](raspbian)
 
 ## disable wifi / bluetooth
 
