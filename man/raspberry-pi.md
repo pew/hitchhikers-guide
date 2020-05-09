@@ -1,5 +1,7 @@
 # raspberry pi
 
+[[raspbian.md]]
+
 ## disable wifi / bluetooth
 
 add the following to `/boot/config.txt`
