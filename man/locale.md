@@ -2,10 +2,10 @@
 
 ## update locales (debian, ubuntu etc.)
 
-```
-sudo update-locale "LANG=en_US.UTF-8"
-sudo locale-gen --purge "en_US.UTF-8"
-sudo dpkg-reconfigure --frontend noninteractive locales
-```
+2020.. nvmd
 
-[thx](https://askubuntu.com/a/1027038)
+```
+LANG=en_US-UTF-8 sudo sed -i -e "s/# $LANG.*/$LANG.UTF-8 UTF-8/" /etc/locale.gen
+LANG=en_US-UTF-8 sudo dpkg-reconfigure --frontend=noninteractive locales
+LANG=en_US-UTF-8 sudo update-locale LANG=$LANG
+```
