@@ -38,6 +38,20 @@ ctrl + v
 
 [thank you](https://www.256kilobytes.com/content/show/10503/5-tasks-you-didnt-know-you-could-do-with-vim).
 
+## search
+
+**search and replace within the whole document:**
+
+```
+%s/search-term/replace-term/g
+```
+
+**search and replace interactively term by term:**
+
+```
+%s/search-term/replace-term/gc
+```
+
 ## useful plugins
 
 ### nerdtree
