@@ -1,4 +1,4 @@
-# python - pip
+# pip
 
 ## updates and upgrades
 
@@ -17,6 +17,14 @@ upgrade pip in this case:
 ```
 pip install -U pip
 ```
+
+upgrade all outdated packages:
+
+```shell
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+```
+
+[thx](https://stackoverflow.com/a/3452888)
 
 ### upgrade packages from file
 
