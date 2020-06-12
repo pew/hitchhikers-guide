@@ -16,6 +16,18 @@ git push --delete origin short_url
 git branch -d short_url
 ```
 
+## push all branches
+
+```
+git push --all <remote>
+```
+
+for example:
+
+```
+git push --all origin
+```
+
 ## git submodules
 
 too confusing.
