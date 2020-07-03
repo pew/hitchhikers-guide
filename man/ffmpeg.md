@@ -35,3 +35,19 @@ just take the first 28 seconds, beginning at 0:
 ```
 ffmpeg -ss 00:00:00.0 -to 00:00:28.0 -i input.mp4 outpu4.mp4
 ```
+
+## merge / concat mp3 files
+
+concatenate multiple audio files into one big one.
+
+```shell
+ffmpeg -i "concat:file1.mp3|file2.mp3" -acodec copy output.mp3
+```
+
+if you want to do this for a bunch of files in a folder
+
+```shell
+echo -n "ffmpeg -i \"concat:"; for i in *.mp3;do printf "%s${i}|";done;echo -n "\" -acodec copy output.mp3"
+```
+
+this will just spit out the ffmpeg command, for double checking, you know.
