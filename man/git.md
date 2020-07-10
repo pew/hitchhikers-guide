@@ -64,3 +64,9 @@ git push --all --force
 ```
 
 [source](https://stackoverflow.com/a/24526351)
+
+## create tar archive from repo
+
+```shell
+git archive --format=tar HEAD -o filename.tar
+```
