@@ -14,6 +14,8 @@ use `convert` to create a png out of a svg file
 convert -background none -size 400x380 input.svg output.png
 ```
 
+you can omit the `-size` as well
+
 the background color can be specified like so:
 
 ```shell
