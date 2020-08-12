@@ -23,3 +23,23 @@ the background color can be specified like so:
 -color "#ddddff"
 -color "rgb(255,255,255)"
 ```
+
+## png to svg
+
+```
+convert input.png output.svg
+```
+
+if you get an error like:
+
+```
+convert: delegate failed `'potrace' --svg --output
+```
+
+install `potrace`:
+
+```
+brew install potrace
+```
+
+and you should be good to go
