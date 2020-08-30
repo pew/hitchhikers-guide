@@ -1,5 +1,7 @@
 # iptables
 
+see also [ufw](/man/ufw)
+
 ## redirect port to other ip:port
 
 redirect port 88 form server A to server B (192.168.1.128) port 88, also add the SNAT rule to get the traffic back to the source (server A, with IP 192.168.1.193)
