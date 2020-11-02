@@ -14,7 +14,7 @@ lvreduce -L 150G /dev/vg0/root
 
 ## extend disk / partition / volume
 
-resize to 100% of the remaining space
+**resize to 100% of the remaining space:**
 
 ```shell
 lvextend -l +100%FREE /dev/vg0/home
