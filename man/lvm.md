@@ -2,11 +2,18 @@
 
 ## reduce size of root disk/partition
 
-to resize the root partition:
+**lesson learned:** don't do this when using `XFS` as a filesystem
+
+**resize root volume:**
 
 1. boot into resuce / recovery mode
+2. activate / get all volumes:
 
-**this will resize the root volume to 150GB:**
+```shell
+vgchange -ay
+```
+
+resize volume **to 150GB:**
 
 ```shell
 lvreduce -L 150G /dev/vg0/root
