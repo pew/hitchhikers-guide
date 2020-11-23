@@ -48,3 +48,13 @@ when using the desktop version of raspbian / raspberry pi os but the system has 
 ```
 sudo rm /etc/xdg/autostart/piwiz.desktop
 ```
+
+## disable mouse cursor on touch screens
+
+* open `/etc/lightdm/lightdm.conf`
+* find `xserver-command` in the `[Seat` section of the file, edit like so:
+
+```
+xserver-command=X -nocursor
+```
+
