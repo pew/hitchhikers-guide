@@ -40,3 +40,11 @@ and afterwards, read only again:
 sudo mount -o remount,ro /
 sudo mount -o remount,ro /boot
 ```
+
+## disable onboarding screen for configuration
+
+when using the desktop version of raspbian / raspberry pi os but the system has already been configured
+
+```
+sudo rm /etc/xdg/autostart/piwiz.desktop
+```
