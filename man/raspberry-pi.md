@@ -58,3 +58,35 @@ sudo rm /etc/xdg/autostart/piwiz.desktop
 xserver-command=X -nocursor
 ```
 
+## autostart application on boot
+
+this is just another perfect example why linux on a desktop environment is just not ready yet and will never be ready.
+
+create a script to start your application, I put mine in `/usr/local/bin/start_app.sh` with these contents:
+
+```shell
+#!/bin/bash
+cd /home/pi/Desktop
+sleep 10
+lxterminal --working-directory='/home/pi/Desktop' --command='python3 application.py' -t 'pos'
+sleep 10
+exit
+```
+
+the *command* part might be the important one for you, for me also the `working-directory` thing was important. make this script executable: `chmod +x /usr/local/bin/start_app.sh`
+
+edit the file `/etc/xdg/lxsession/LXDE-pi/autostart` as root:
+
+```shell
+sudo vi /etc/xdg/lxsession/LXDE-pi/autostart
+```
+
+and add this line:
+
+```
+@lxterminal -e /usr/local/bin/start_app.sh
+```
+
+since it's linux, things might work or might not.
+
+[credit](https://raspberrypi.stackexchange.com/a/112365) for all this mess
