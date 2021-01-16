@@ -70,3 +70,11 @@ verify:
 ```
 sudo systemd-resolve --statistics
 ```
+
+## change hostname
+
+```shell
+sudo hostnamectl set-hostname my-awesome-host
+```
+
+depending on your setup you might still need to update your `/etc/hosts` file as well
