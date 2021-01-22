@@ -7,6 +7,38 @@ cool/hipster reverse proxy and/or load balancer.
 
 I'll write some things in here which helped me in some edge cases I couldn't really find in the documentation but were in fact available.
 
+## middlewares
+
+I don't like traefik, I don't know why I have to deal with it all the time, I don't know why it is so popular, but hey. That's just my opinion.
+
+the thing you need to learn is: middlewares. then you've got it.
+
+**basic auth example:**
+
+this is a label excerpt from a `docker-compose.yaml` file
+
+```
+  wordpress-www:
+    image: wordpress:latest
+    restart: unless-stopped
+    links:
+      - my-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+
+      - "traefik.http.middlewares.redirect-https.redirectScheme.scheme=https"
+      - "traefik.http.middlewares.redirect-https.redirectScheme.permanent=true"
+
+      - "traefik.http.routers.wordpress-www.tls.certresolver=dnsssl"
+      - "traefik.http.routers.wordpress-www.tls=true"
+
+      - "traefik.http.middlewares.wordpress-auth.basicauth.users=test2:$$apr1$$d9hr9HBB$$4HxwgUir3HP4EsggP/QNo0"
+      - "traefik.http.routers.wordpress-www.middlewares=wordpress-auth"
+```
+
+for some reason it works if you take the service name (wordpress-www), create the middleware (2nd last line) and use it again in the last. I have no idea, this is probably totally wrong but it works.
+
 ## docker labels hints
 
 `$` characters in `docker-compose.yml` files have to be escaped by another `$` = meaning: `$$`
