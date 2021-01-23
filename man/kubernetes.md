@@ -2,7 +2,22 @@
 
 this is going to be a big one.
 
-# reisze aws-ebs
+## rancher, canal, flannel listen on network interface
+
+I use wireguard to tunnel traffic between kubernetes nodes. When setting up a new *rancher* cluster, you can put in all your information in a GUI, set canal as the default network driver. afterwards **edit the YAML** part and go look for `network`. in there you can change the networking interface for the driver
+
+```yaml
+network: 
+  canal_network_provider: 
+    iface: "wg0"
+  options: 
+    flannel_backend_type: "vxlan"
+  plugin: "canal"
+```
+
+the `iface` part is important
+
+## reisze aws-ebs
 
 * [some sources, most of it was mine](https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/) | [even more here](https://akomljen.com/easy-way-to-resize-kubernetes-persistent-volumes/)
 
