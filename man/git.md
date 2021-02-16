@@ -87,3 +87,13 @@ git push --all --force
 ```shell
 git archive --format=tar HEAD -o filename.tar
 ```
+
+## delete files part of .gitignore
+
+if you added some extensions, files and/or folders to your `.gitignore` file later on and want to clean up the whole repo, there's a lot of stuff on stack overflow, but this one does what I wanted (check my gitignore file, match all the things in there, delete everything that matches):
+
+```
+git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached
+```
+
+[thank you](https://stackoverflow.com/a/23839198)
