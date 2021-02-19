@@ -2,6 +2,20 @@
 
 some commands I always forget
 
+## mtls / client certificate authentication
+
+to use mutual tls client certificate authentication with git, update your `~/.gitconfig` file and add a block with the hostname in there and set the path to the certificate
+
+```
+[http "https://your.securet.git.host.com"]
+sslCert = "/Users/username/.cert.pem"
+sslKey = "/Users/username/.key.pem"
+sslVerify = true
+sslCertPasswordProtected = false
+```
+
+[thanks](https://stackoverflow.com/questions/28878549/how-to-configure-git-https-client-certificate-authentication-in-eclipse-using-eg)
+
 ## delete branch locally and remotely
 
 ```
