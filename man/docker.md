@@ -56,3 +56,20 @@ get rid of unused images:
 docker rmi $(docker images -a|grep none|awk {'print $3'})
 ```
 
+## enable ipv6 in docker container
+
+I just want my nginx or traefik container to be available from the outside, man. Since I couldn't find anything meaningful out there on the interwebs I assume something is dangerously wrong with my config, but it *works*.
+
+`docker-compose.yaml` example (from mailcow):
+
+```yaml
+networks:
+  proxynet:
+    name: awesomenet
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: fd4d:6169:6c63:6f77::/64
+```
