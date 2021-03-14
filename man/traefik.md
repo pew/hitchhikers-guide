@@ -9,9 +9,39 @@ I'll write some things in here which helped me in some edge cases I couldn't rea
 
 ## middlewares
 
-I don't like traefik, I don't know why I have to deal with it all the time, I don't know why it is so popular, but hey. That's just my opinion.
+if you define a middleware it needs to be applied to a router. that's it. they mention it somewhere in the docs but never ever on another page with proper examples.
 
-the thing you need to learn is: middlewares. then you've got it.
+**`docker-compose.yaml` example**
+
+```yaml
+version: "3.7"
+
+services:
+  frontend:
+    image: some-image-here
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.middlewares.redirect-https.redirectScheme.scheme=https"
+      - "traefik.http.middlewares.redirect-https.redirectScheme.permanent=true"
+
+      - "traefik.http.middlewares.no-www.redirectregex.regex=^https://www.(.*)"
+      - "traefik.http.middlewares.no-www.redirectregex.replacement=https://$$1"
+      
+      - "traefik.http.routers.frontend.rule=Host(`ilayk.com`) || Host(`www.ilayk.com`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+
+      - "traefik.http.middlewares.frontend-header.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.frontend-header.headers.frameDeny=true"
+      - "traefik.http.middlewares.frontend-header.headers.contentTypeNosniff=true"
+      
+      - "traefik.http.middlewares.compress.compress=true"
+
+      - "traefik.http.routers.frontend.middlewares=redirect-https,no-www,compress,frontend-header"
+```
+
+the *middlewares* are defined and then applied to the router in the last line.
 
 **basic auth example:**
 
