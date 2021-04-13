@@ -2,6 +2,24 @@
 
 I'll never get used to it. Let's get started and learn..
 
+## save with sudo
+
+I need it every day, I just can't remember it. needs to be on the top. when you get this (opening and editing a file as a regular user but the file is owned by someone else): `'readonly' option is set (add ! to override)`, do this:
+
+```
+:w !sudo tee %
+```
+
+## indent multiple lines by `n` spaces
+
+`n` is 2 in this example
+
+```
+set shiftwidth=2
+```
+
+select multiple lines with `v` (visual mode) and do `>`
+
 ## convert tabs to spaces
 
 that's correct.
