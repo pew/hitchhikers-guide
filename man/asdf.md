@@ -4,6 +4,16 @@ version manager for all the things programming and things like that. python, nod
 
 It's confusing for some reason, but it's probably still better to *learn* one thing instead of rbenv, nvm, pyenv, whattheenv.
 
+## troubleshooting
+
+... well, this is annoying. if you install something globally with nodejs for example and the binary can't be found, try this:
+
+```
+asdf reshim nodejs
+```
+
+buh.
+
 ## list plugins
 
 ```
