@@ -20,6 +20,16 @@ set shiftwidth=2
 
 select multiple lines with `v` (visual mode) and do `>`
 
+or, **a better way** imho:
+
+1. select the lines you want with `V`, hit `:` and do `le4` where 4 is the number of spaces
+
+```
+Vjj:le4
+```
+
+(`V` for visual mode, `jj` for selecting two lines (you can also use your arrow keys), `:le4` to indent by 4 spaces)
+
 ## convert tabs to spaces
 
 that's correct.
