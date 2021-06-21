@@ -43,3 +43,11 @@ brew install potrace
 ```
 
 and you should be good to go
+
+## image to c array
+
+useful if you're going crazy with some cool e-paper/e-ink displays and an esp32.
+
+```
+magick img.bmp img.h
+```
