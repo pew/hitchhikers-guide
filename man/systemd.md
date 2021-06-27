@@ -78,3 +78,11 @@ sudo hostnamectl set-hostname my-awesome-host
 ```
 
 depending on your setup you might still need to update your `/etc/hosts` file as well
+
+## list timers (better cronjobs!)
+
+todo.. write something somewhere about the use of systemd-timers instead of cronjobs.
+
+```
+systemctl list-timers
+```
