@@ -11,3 +11,11 @@ the `libexec` part here is for macOS, you need gnu grep to do `-P`
 ```
 
 this will match everything after `repos/`, the `K` is important here. the `.*` says that it should match everything afterwards.
+
+## remove blank / empty lines
+
+```
+/^[\s]*$\n/
+```
+
+to use it in editors like bbedit, use `^[\s]*$\n`
