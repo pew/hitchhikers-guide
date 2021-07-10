@@ -2,7 +2,7 @@
 
 - [A simple, fast and user-friendly alternative to 'find'](https://github.com/sharkdp/fd)
 
-cool alternative to [find](/man/find.md), ignores things like `.git` and `node_modules` etc.
+cool alternative to [find](/man/find), ignores things like `.git` and `node_modules` etc.
 
 ## find exact match
 
