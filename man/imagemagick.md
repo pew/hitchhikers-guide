@@ -51,3 +51,11 @@ useful if you're going crazy with some cool e-paper/e-ink displays and an esp32.
 ```
 magick img.bmp img.h
 ```
+
+## merge multiple images / screenshots
+
+you can play around with the `-tile` option to position them next to each other ... like tiles you know.
+
+```
+montage -mode concatenate -tile 1x image-*.png out.jpg
+```
