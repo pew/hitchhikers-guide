@@ -2,6 +2,15 @@
 
 some commands I always forget
 
+## revert / restore single file
+
+why wasn't this on the top, what the... let's say you want to restore a file from a previous commit. get the hash with `git log` and do:
+
+```
+git checkout 34973274ccef6ab4dfaaf86599792fa9c3fe4689 filename.md
+```
+
+
 ## mtls / client certificate authentication
 
 to use mutual tls client certificate authentication with git, update your `~/.gitconfig` file and add a block with the hostname in there and set the path to the certificate
