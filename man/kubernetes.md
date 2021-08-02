@@ -1,6 +1,6 @@
 # kubernetes / k8s
 
-this is going to be a big one.
+this is going to be a big one. see also [kubectl](/man/kubectl/)
 
 ## rancher, canal, flannel listen on network interface
 
