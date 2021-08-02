@@ -10,3 +10,17 @@ setopt share_history          # share command history data
 ```
 
 restart your shell(s) and everything's awesome again.
+
+## ignore history with beginning space
+
+say you want to prevent adding a command into the zsh history because it contains an API key, you can do this by putting a space in front of the command, like so (note the leading space):
+
+```
+ super_secret-api_key
+```
+
+to enable this with zsh, either add the following to your `~/.zshrc` file or execute it manually beforehand:
+
+```
+setopt HIST_IGNORE_SPACE
+```
