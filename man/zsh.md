@@ -24,3 +24,15 @@ to enable this with zsh, either add the following to your `~/.zshrc` file or exe
 ```
 setopt HIST_IGNORE_SPACE
 ```
+
+## (oh-my-zsh) fix *no match found*
+
+add this to your `~/.zshrc`:
+
+```
+unsetopt nomatch
+```
+
+## don't add backslashes
+
+[some more about that here](https://ilayk.com/2021/07/23/fix-oh-my-zsh-&-iterm-copy-paste-backslashes)
