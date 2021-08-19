@@ -120,3 +120,23 @@ git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached
 ```
 
 [thank you](https://stackoverflow.com/a/23839198)
+
+## change e-mail address for commits
+
+install `git-filter-repo` with pip:
+
+```
+pip install git-filter-repo
+```
+
+assume you want to change the e-mail address for all commits from *old@example.com* to *new@example.com* for whatever reason:
+
+```
+git-filter-repo --replace-refs delete-no-add --partial --email-callback 'return email.replace(b"old@example.com", b"new@example.com")'
+```
+
+if it's also a repository stored on a remote server you need to force push with `git push --force`
+
+to change the name, you can also use `--name-callback 'return name.replace(b"OldName", b"NewName")'` and/or combine the two of them and do more.
+
+[source](https://stackoverflow.com/a/60364176/10272994)
