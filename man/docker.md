@@ -2,7 +2,7 @@
 
 yo.
 
-# exec as other user (e.G. root)
+## exec as other user (e.G. root)
 
 with `docker exec` (where `ac0` is the container id):
 
@@ -16,7 +16,7 @@ or with `docker-compose` (znc is the container name):
 docker-compose exec -u root znc sh
 ```
 
-# docker logs
+## docker logs
 
 the default `json` log can become pretty large if you're running a container for weeks. there are multiple options for [logging](https://docs.docker.com/config/containers/logging/), to simply use syslog globally for all containers:
 
@@ -42,7 +42,7 @@ or like this:
 
 changes in the `daemon.json` only apply to new containers, not existing.
 
-# docker cleanup
+## docker cleanup
 
 get rid of exited containers:
 
@@ -56,7 +56,11 @@ get rid of unused images:
 docker rmi $(docker images -a|grep none|awk {'print $3'})
 ```
 
-## enable ipv6 in docker container
+## ipv6
+
+this will never end
+
+### enable ipv6 in docker container
 
 I just want my nginx or traefik container to be available from the outside, man. Since I couldn't find anything meaningful out there on the interwebs I assume something is dangerously wrong with my config, but it *works*.
 
@@ -72,4 +76,17 @@ networks:
       driver: default
       config:
         - subnet: fd4d:6169:6c63:6f77::/64
+```
+
+### more docker ipv6 stuff
+
+this is for your `/etc/docker/daemon.json` file. it might not exist.
+
+```
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "fd00:dead:beef:c0::/80",
+  "experimental": true,
+  "ip6tables": true
+}
 ```
