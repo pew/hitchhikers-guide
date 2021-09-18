@@ -140,3 +140,32 @@ if it's also a repository stored on a remote server you need to force push with 
 to change the name, you can also use `--name-callback 'return name.replace(b"OldName", b"NewName")'` and/or combine the two of them and do more.
 
 [source](https://stackoverflow.com/a/60364176/10272994)
+
+## multiple profiles
+
+… different usernames and e-mail addresses for different folders.
+
+create a new folder or use an existing one and create a file for your git config, such as `.gitconfig-personal` in `~/private`: `~/private/.gitconfig-personal`
+
+```
+[user]
+  name = Your Name
+  email = your@personal.email
+```
+
+now update your global `.gitconfig` file, usually stored in your home folder, so `~/.gitconfig`
+
+```
+[user]
+  name = Your Name
+  email = your@work.email
+```
+
+now add the following to this file:
+
+```
+[includeIf "gitdir:~/private/"]
+  path = ~/private/.gitconfig-personal
+```
+
+ideally, all repositories within `~/private/` now use the personal gitconfig and everything else the global config.
