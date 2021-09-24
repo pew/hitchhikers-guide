@@ -30,6 +30,13 @@ Vjj:le4
 
 (`V` for visual mode, `jj` for selecting two lines (you can also use your arrow keys), `:le4` to indent by 4 spaces)
 
+## prepend text / multiple cursors
+
+1. press `control + v` to go into visual **block** mode
+2. select your lines, either with the arrow keys or `j` / `k`
+3. press `shift + i` start whatever you want to prepend, like `#` to comment something out
+4. press `ESC`
+
 ## convert tabs to spaces
 
 that's correct.
