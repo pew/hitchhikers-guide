@@ -18,3 +18,10 @@ this will read the last 100 log entries and also keep following the log for new 
 kubectl logs -f --tail=100 <pod-name>
 ```
 
+## download kubectl for arm architecture, like an raspberry pi
+
+I don't know why they make it so hard, but here you go:
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm/kubectl"
+```
