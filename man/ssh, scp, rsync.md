@@ -4,6 +4,22 @@ there's a lot of stuff you can do!
 
 ## ssh
 
+### motd (message of the day) for user
+
+create this file with whatever you want to execute when logging in as the user:
+
+```
+"$HOME/.ssh/rc"
+```
+
+the file `rc` will be *executed* during login, this means if you want to print something out you need to `echo` the contents, like this:
+
+```
+echo "What's up?"
+```
+
+[source](https://serverfault.com/a/653405)
+
 ### jumphost
 
 this is quite new in openssh, use `-J` to connect to your target host through (multiple) jump host(s):
