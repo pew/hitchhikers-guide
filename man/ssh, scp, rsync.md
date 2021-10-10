@@ -15,10 +15,13 @@ create this file with whatever you want to execute when logging in as the user:
 the file `rc` will be *executed* during login, this means if you want to print something out you need to `echo` the contents, like this:
 
 ```
+if [ ! -t 1 ]; then
+    exit
+fi
 echo "What's up?"
 ```
 
-[source](https://serverfault.com/a/653405)
+[source](https://serverfault.com/a/653405) and [source](https://serverfault.com/a/311463).
 
 ### jumphost
 
