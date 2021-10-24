@@ -25,6 +25,17 @@ to enable this with zsh, either add the following to your `~/.zshrc` file or exe
 setopt HIST_IGNORE_SPACE
 ```
 
+## temporarily disable history
+
+open a new shell, disable the `HISTFILE`, do things, exit
+
+```
+$SHELL
+unset HISTFILE
+echo do your stuff now
+exit
+```
+
 ## (oh-my-zsh) fix *no match found*
 
 add this to your `~/.zshrc`:
