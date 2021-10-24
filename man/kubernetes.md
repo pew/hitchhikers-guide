@@ -86,3 +86,19 @@ afterwards you can delete the pod to re-create it (if you've got a replicaset ho
 ```
 kubectl delete pod gitlab-redis-7b9d4587f8-v8jgw
 ```
+
+## suspend all cronjobs
+
+to disable / suspend all cronjobs, do this:
+
+```
+kubectl get cronjobs | grep False | cut -d' ' -f 1 | xargs kubectl patch cronjobs -p '{"spec" : {"suspend" : true }}'
+```
+
+re-enable like this:
+
+```
+kubectl get cronjobs | grep False | cut -d' ' -f 1 | xargs kubectl patch cronjobs -p '{"spec" : {"suspend" : false }}'
+```
+
+[source](https://stackoverflow.com/a/55090194/10272994)
