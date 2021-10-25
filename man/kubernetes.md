@@ -98,7 +98,7 @@ kubectl get cronjobs | grep False | cut -d' ' -f 1 | xargs kubectl patch cronjob
 re-enable like this:
 
 ```
-kubectl get cronjobs | grep False | cut -d' ' -f 1 | xargs kubectl patch cronjobs -p '{"spec" : {"suspend" : false }}'
+kubectl get cronjobs | grep True | cut -d' ' -f 1 | xargs kubectl patch cronjobs -p '{"spec" : {"suspend" : false }}'
 ```
 
 [source](https://stackoverflow.com/a/55090194/10272994)
