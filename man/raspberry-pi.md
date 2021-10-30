@@ -13,11 +13,22 @@ dtoverlay=disable-bt
 
 ## cpu governor
 
-change to performance, this won't reset during a reboot of the system. if you want this permanently set to `performance` or something else, you might want to edit `/etc/rc.local`
+change the cpu clock speed of the pi with the cpu governor. There's more and better explanation about this on [kernel.org available](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt).
+
+**check available governors:**
+
+```
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+conservative ondemand userspace powersave performance schedutil
+```
+
+change to `performance`, this won't reset during a reboot of the system. if you want this permanently set to `performance` or something else, you might want to edit `/etc/rc.local`
 
 ```
 echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
+
+to reduce power consumption, use `powersave` instead of performance.
 
 ## cpu temperature
 
