@@ -68,6 +68,13 @@ ssh tunnel@server -NTf -D 127.0.0.1:8080
 
 if you put it in the background you might want to consider autossh (see `autossh.md`).
 
+### port forwarding in background
+
+with `-fNT` you can do port forwarding and drop the ssh command into the background.
+
+```
+ssh user@server -fNT -8080:localhost:8080
+```
 
 ### add / remove passphrase from key
 
