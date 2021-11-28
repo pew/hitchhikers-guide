@@ -162,6 +162,14 @@ we'll connect to the *middleman* with the `-J` flag and custom port `1337` and c
 rsync -avxiP -n --delete -e 'ssh -J user@middleman:1337 -p2222' /mnt/ user@dest:/mnt/
 ```
 
+### rsync exclude muliple folders / directories
+
+… m( - exclude `node_modules` and `dist` folder from rsync
+
+```shell
+rsync -avxiP --delete --exclude={node_modules,dist} remote:remote-folder/ ~/awesome/local-folder
+```
+
 ## poor man's ngrok or make-my-dev-machine-available-from-outside
 
 1. enable `GatewayPorts` in your sshd config:
