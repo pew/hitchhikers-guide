@@ -10,7 +10,6 @@ why wasn't this on the top, what the... let's say you want to restore a file fro
 git checkout 34973274ccef6ab4dfaaf86599792fa9c3fe4689 filename.md
 ```
 
-
 ## mtls / client certificate authentication
 
 to use mutual tls client certificate authentication with git, update your `~/.gitconfig` file and add a block with the hostname in there and set the path to the certificate
@@ -193,4 +192,24 @@ set is as a default for your **local git config**:
 
 ```
 git config --global init.defaultBranch main
+```
+
+## find deleted contents / file in history
+
+so you deleted this one file you never thought about needing again. well, here you a couple of months later needing that file and you remember a string in there. let's find it. **but wait**, since we're going to use `git grep`, you can also pass or remove `-i` to ignore or not ignore case distinctions of strings.
+
+```shell
+git grep -i <regexp> $(git rev-list --all)
+```
+
+if you get a result and want to restore the file, the output provides you a commit hash and the file path. To restore it, do this:
+
+```shell
+git checkout 7e942ad6eabe34289cbc791e0655f79d3c439fe8:src/folder/your-file.yaml
+```
+
+if you know even more about the missing file, you can also search a sub folder for it:
+
+```shell
+git grep -i <regexp> $(git rev-list --all -- lib/util) -- lib/util
 ```
