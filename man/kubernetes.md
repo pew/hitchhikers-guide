@@ -103,6 +103,12 @@ kubectl get cronjobs | grep True | cut -d' ' -f 1 | xargs kubectl patch cronjobs
 
 [source](https://stackoverflow.com/a/55090194/10272994)
 
+## run one-off cronjob immediately
+
+```
+kubectl create job --from=cronjob/your-configured-cron your-cron-manual
+```
+
 ## stop kubernetes deployment
 
 set the replicas to 0, it'll delete the pods and the deployment will stay intact.
