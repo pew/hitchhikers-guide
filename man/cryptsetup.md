@@ -50,3 +50,10 @@ cryptsetup luksHeaderBackup /dev/sda --header-backup-file luks_backup_fortknox
 cryptsetup luksHeaderRestore /dev/sda --header-backup-file luks_backup_fortknox
 ```
 
+## wipe luks header
+
+you might want to do a header backup beforehand, wipe it and test a restore.
+
+```
+wipefs -a /dev/sda
+```
