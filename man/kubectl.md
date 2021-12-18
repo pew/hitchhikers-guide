@@ -25,3 +25,24 @@ I don't know why they make it so hard, but here you go:
 ```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm/kubectl"
 ```
+
+## run cronjob manually
+
+get list of cron jobs:
+
+```
+kubectl get cronjob
+# gickup   0 4 * * * [...]
+```
+
+run a manual job:
+
+```
+kubectl create job --from=cronjob/gickup gickup-run-manual
+```
+
+you might want to delete the job afterwards:
+
+```
+kubectl delete job gickup-run-manual
+```
