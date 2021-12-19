@@ -213,3 +213,17 @@ if you know even more about the missing file, you can also search a sub folder f
 ```shell
 git grep -i <regexp> $(git rev-list --all -- lib/util) -- lib/util
 ```
+
+## git credentials
+
+to store git credentials for remotes on disk, run this:
+
+```
+git config credential.helper store
+```
+
+if you're on macOS, you can use the keychain helper as well to store them more securely:
+
+```
+git config credential.helper osxkeychain
+```
