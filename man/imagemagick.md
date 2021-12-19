@@ -59,3 +59,9 @@ you can play around with the `-tile` option to position them next to each other 
 ```
 montage -mode concatenate -tile 1x image-*.png out.jpg
 ```
+
+or like this:
+
+```
+convert +append input1.png input2.png output.png
+```
