@@ -24,3 +24,19 @@ echo "text with spaces & special characters" | bash -c 'printf "%q" "$(cat)"'; e
 will output this: `text\ with\ spaces\ \&\ special\ characters`, now you can go ahead and use it in a script or something like that.
 
 found this somewhere in [here](https://news.ycombinator.com/item?id=24659282)
+
+## disable history temporarily
+
+because you don't want credentials in your history, you know.
+
+turn history off:
+
+```
+set +o history
+```
+
+turn it back on again:
+
+```
+set -o history
+```
