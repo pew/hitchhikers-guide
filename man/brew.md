@@ -43,3 +43,9 @@ brew cleanup -s
 ```
 
 > Scrub the cache, including downloads for even the latest versions. Note downloads for any installed formulae or casks will still not be deleted. If you want to delete those too: `rm -rf "$(brew --cache)"`
+
+## reinstall all packages
+
+```
+brew list | xargs brew reinstall
+```
