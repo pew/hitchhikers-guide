@@ -46,3 +46,11 @@ you might want to delete the job afterwards:
 ```
 kubectl delete job gickup-run-manual
 ```
+
+## run one-off pod
+
+example, run the `minio/mc` container and override the command to end up in a shell instead of the default `mc` entrypoint
+
+```
+kubectl run -i --tty mc --image=minio/mc --command /bin/sh
+```
