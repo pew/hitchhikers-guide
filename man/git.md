@@ -227,3 +227,11 @@ if you're on macOS, you can use the keychain helper as well to store them more s
 ```
 git config --global credential.helper osxkeychain
 ```
+
+## disable pager
+
+just want a list of things?
+
+```
+git --no-pager branch -a
+```
