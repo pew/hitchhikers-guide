@@ -15,10 +15,10 @@ LANG=en_US.UTF-8 sudo update-locale LANG=$LANG
 … it'll probably not work in some other edge cases. this is one of the million reasons why linux will never be on the desktop
 
 ```
-sudo locale-gen --purge en_US.UTF-8
 echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' | sudo tee /etc/default/locale
 sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sudo dpkg-reconfigure --frontend=noninteractive locales
+# sudo locale-gen --purge en_US.UTF-8
 sudo update-locale LANG=en_US.UTF-8
 ```
 
