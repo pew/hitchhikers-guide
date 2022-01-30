@@ -1,4 +1,4 @@
-# cloudflare workers - get query string
+#  get query string
 
 it's *just basic JS* stuff, yet I need it in this place.
 

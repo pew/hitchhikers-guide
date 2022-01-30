@@ -1,4 +1,4 @@
-# cloudflare workers - file upload
+# file upload
 
 …upload some binary files, or some cute cat and dog images and photos.
 
