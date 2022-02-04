@@ -165,3 +165,9 @@ I need to learn and remember them! `<Leader>` is `\`
 
 * [vimoutliner docs here](https://github.com/vimoutliner/vimoutliner) - until i've learned it
 * [vimoutliner cheat sheet](https://github.com/vimoutliner/vimoutliner/blob/master/doc/votl_cheatsheet.txt) - they're really tricking you in reading the README to find the cheat sheet!
+
+## convert newline to unix
+
+```
+:%s/\r//g
+```
