@@ -51,3 +51,9 @@ echo -n "ffmpeg -i \"concat:"; for i in *.mp3;do printf "%s${i}|";done;echo -n "
 ```
 
 this will just spit out the ffmpeg command, for double checking, you know.
+
+## extract audio from video
+
+```
+ffmpeg -i input-video.mov -q:a 0 -map a output-audio.mp3
+```
