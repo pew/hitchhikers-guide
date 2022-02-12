@@ -20,7 +20,7 @@ helm repo update
 ## search in repos
 
 ```
-helm repo search grafana
+helm search repo nginx
 ```
 
 ## show installed charts
