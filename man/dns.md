@@ -29,3 +29,15 @@ dog --tls @one.one.one.one ilayk.com
 ```
 dig +tls @one.one.one.one ilayk.com
 ```
+
+## dns query over http api (doh)
+
+```
+curl -s --http2 -H 'accept: application/dns-json' https://1.1.1.1/dns-query?name=ilayk.com
+```
+
+just get the answer bit, with `jq`
+
+```
+curl -s --http2 -H 'accept: application/dns-json' https://1.1.1.1/dns-query?name=ilayk.com | jq .Answer
+```
