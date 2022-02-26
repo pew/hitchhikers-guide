@@ -86,3 +86,9 @@ todo.. write something somewhere about the use of systemd-timers instead of cron
 ```
 systemctl list-timers
 ```
+
+## tail / follow logs
+
+```
+journalctl -f -u your-name.service
+```
