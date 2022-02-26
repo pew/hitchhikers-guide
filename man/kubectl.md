@@ -54,3 +54,17 @@ example, run the `minio/mc` container and override the command to end up in a sh
 ```
 kubectl run -i --tty mc --image=minio/mc --command /bin/sh
 ```
+
+## port forwarding
+
+you may want to omit `--address=0.0.0.0`
+
+```
+kubectl port-forward pod-name-here --address=0.0.0.0 8384:8384
+```
+
+**get a random local port:**
+
+```
+kubectl port-forward pod-name-here --address=0.0.0.0 :8384
+```
