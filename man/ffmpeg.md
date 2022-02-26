@@ -57,3 +57,11 @@ this will just spit out the ffmpeg command, for double checking, you know.
 ```
 ffmpeg -i input-video.mov -q:a 0 -map a output-audio.mp3
 ```
+
+## compress video
+
+to 1.5mbps
+
+```
+ffmpeg -i IMG_4329.mov -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k meshtastic.mp4
+```
