@@ -20,3 +20,11 @@ I just want the line containing the `yt-dlp` hash, not the `.zip`, `.tar.gz` etc
 ```
 sed -i '/yt-dlp$/!d' filename.txt
 ```
+
+## remove after match
+
+example: `foo:1234`, I want to get rid of `:1234`
+
+```
+echo foo:1234 | sed 's/\:.*//'
+```
