@@ -42,3 +42,9 @@ I want to add a comma `,` to the end of every line
 ```shell
 sed 's/$/,/'
 ```
+
+## remove spaces
+
+```shell
+sed 's/ //'
+```
