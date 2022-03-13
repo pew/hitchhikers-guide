@@ -17,7 +17,7 @@ ae08e0b56fea59a8bfdadacd92eddc9bdfdc1473199178cb4e31bacfd991864a  yt-dlp.tar.gz
 I just want the line containing the `yt-dlp` hash, not the `.zip`, `.tar.gz` etc.
 
 
-```
+```shell
 sed -i '/yt-dlp$/!d' filename.txt
 ```
 
@@ -25,12 +25,20 @@ sed -i '/yt-dlp$/!d' filename.txt
 
 example: `foo:1234`, I want to get rid of `:1234`
 
-```
+```shell
 echo foo:1234 | sed 's/\:.*//'
 ```
 
 ## remove empty lines
 
-```
+```shell
 sed '/^$/d'
+```
+
+## append to end of line
+
+I want to add a comma `,` to the end of every line
+
+```shell
+sed 's/$/,/'
 ```
