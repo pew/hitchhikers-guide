@@ -28,3 +28,9 @@ example: `foo:1234`, I want to get rid of `:1234`
 ```
 echo foo:1234 | sed 's/\:.*//'
 ```
+
+## remove empty lines
+
+```
+sed '/^$/d'
+```
