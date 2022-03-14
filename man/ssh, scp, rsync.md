@@ -196,3 +196,11 @@ ssh -p2224 user@target
 ```
 
 enjoy!
+
+## do not offer public keys to server
+
+for reasons.
+
+```shell
+ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no user@server
+```
