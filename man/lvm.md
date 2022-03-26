@@ -26,3 +26,13 @@ lvreduce -L 150G /dev/vg0/root
 ```shell
 lvextend -l +100%FREE /dev/vg0/home
 ```
+
+## resize encrypted volume luks
+
+see also [cryptsetup](/man/cryptsetup/)
+
+```shell
+growpart /dev/sda 3 # lsblk (disk partition number)
+cryptsetup resize dm_crypt-0 # 
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv # lvdisplay
+```
