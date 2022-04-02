@@ -43,6 +43,15 @@ resize2fs /dev/mapper/fortknox
 mount /dev/mapper/fortknox /mnt
 ```
 
+if it's the root disk:
+
+```shell
+apt-get install cloud-guest-utils
+growpart /dev/sda 2
+cryptsetup resize luks-UUID-foo-bar
+resize2fs /dev/mapper/luks-luks-UUID-foo-bar
+```
+
 ## backup /restore luks header
 
 ```
