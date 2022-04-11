@@ -1,3 +1,10 @@
+---
+tags: 
+date created: Monday, April 11th 2022, 6:15:09 am
+date modified: Monday, April 11th 2022, 6:17:46 am
+title: ethtool - wake on lan
+---
+
 # ethtool - wake on lan
 
 ## enable wake on lan
