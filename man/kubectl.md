@@ -55,6 +55,14 @@ example, run the `minio/mc` container and override the command to end up in a sh
 kubectl run -i --tty mc --image=minio/mc --command /bin/sh
 ```
 
+## run pod with registry secrets
+
+update / replace `registry-secret-name` and specify your image after `--image`
+
+```shell
+kubectl run -i --tty my-container --image=ghcr.io/example/private-image:latest --command /bin/sh --overrides='{ "spec": { "imagePullSecrets": [{"name": "registry-secret-name"}] } }'
+```
+
 ## port forwarding
 
 you may want to omit `--address=0.0.0.0`
