@@ -18,9 +18,9 @@ I need it every day, I just can't remember it. needs to be on the top. when you 
 set shiftwidth=2
 ```
 
-select multiple lines with `v` (visual mode) and do `>`
+select multiple lines with `v` (visual mode) and do `>` or `<` to go the other way
 
-or, **a better way** imho:
+another way:
 
 1. select the lines you want with `V`, hit `:` and do `le4` where 4 is the number of spaces
 
