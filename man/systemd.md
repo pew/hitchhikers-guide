@@ -1,3 +1,10 @@
+---
+tags: 
+date created: Monday, April 22nd 2019, 6:51:17 pm
+date modified: Tuesday, April 19th 2022, 2:33:46 pm
+title: systemd
+---
+
 # systemd
 
 hi.
@@ -79,12 +86,20 @@ sudo hostnamectl set-hostname my-awesome-host
 
 depending on your setup you might still need to update your `/etc/hosts` file as well
 
-## list timers (better cronjobs!)
+## timers (better cronjobs!)
 
 todo.. write something somewhere about the use of systemd-timers instead of cronjobs.
 
+### list timers
+
 ```
 systemctl list-timers
+```
+
+### disable timer
+
+```shell
+systemctl disable name.timer
 ```
 
 ## tail / follow logs
