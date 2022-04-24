@@ -1,4 +1,11 @@
-# ip 
+---
+tags: 
+date created: Wednesday, September 2nd 2020, 6:06:26 pm
+date modified: Sunday, April 24th 2022, 4:30:32 am
+title: ip
+---
+
+# ip
 
 let's get used to `ip` instead of `ifconfig`. d'oh
 
@@ -44,4 +51,26 @@ next, see inline comments
 ip -6 route del default # delete default gateway
 ip -6 addr add 2001:abcd:abcd::2 dev eth0 # add your new source address
 ip -6 route add default via fe80::1 src 2001:abcd:abcd::2 dev eth0 # set your new default gateway with a specific source address 
+```
+
+# get IPv6 default route
+
+replace `enp0s3` with your network interface
+
+```shell
+rdisc6 -1 enp0s3|grep from
+```
+
+you can use the output in a netplan config then, like so. For example if you want to configure IPv6 with Oracle Cloud:
+
+```yaml
+network:
+    ethernets:
+        enp0s3:
+            dhcp4: true
+            addresses:
+              - 2603:1234:1234:beef::/128
+            gateway6: fe80::200:17ff:fe63:44c5
+            set-name: enp0s3
+    version: 2
 ```
