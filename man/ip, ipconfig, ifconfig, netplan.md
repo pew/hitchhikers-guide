@@ -5,7 +5,7 @@ date modified: Sunday, April 24th 2022, 4:30:32 am
 title: ip
 ---
 
-# ip
+# ip, ipconfig, ifconfig, netplan
 
 let's get used to `ip` instead of `ifconfig`. d'oh
 
@@ -53,7 +53,7 @@ ip -6 addr add 2001:abcd:abcd::2 dev eth0 # add your new source address
 ip -6 route add default via fe80::1 src 2001:abcd:abcd::2 dev eth0 # set your new default gateway with a specific source address 
 ```
 
-# get IPv6 default route
+## get IPv6 default route
 
 replace `enp0s3` with your network interface
 
