@@ -58,6 +58,14 @@ edit `/etc/systemd/resolved.conf` and change the `DNS` line. for example:
 DNS=1.1.1.1 8.8.8.8
 ```
 
+if you want to use DNS over TLS:
+
+```
+[Resolve]
+DNS=1.1.1.1#1dot1dot1dot1.cloudflare-dns.com
+DNSOverTLS=Yes
+```
+
 restart service:
 
 ```
