@@ -76,5 +76,5 @@ how to upload this with curl then, the important bit is the `Transfer-Encoding: 
 
 ```shell
 curl -H "Transfer-Encoding: chunked" -H "content-type: video/mp4" --data-binary @example.mp4 https://example.com/r2/upload
-curl-H "Transfer-Encoding: chunked" -H "content-type: video/mp4" -T example.mp4 https://example.comv/r2/upload
+curl -H "Transfer-Encoding: chunked" -H "content-type: video/mp4" -T example.mp4 https://example.comv/r2/upload
 ```
