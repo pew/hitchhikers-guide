@@ -36,5 +36,5 @@ youtube-dl "https://player.vimeo.com/video/1234" --referer "https://example.com/
 ... and remove ads
 
 ```shell
-yt-dlp --sponsorblock-remove all -x --audio-format mp3
+yt-dlp --sponsorblock-remove all -x --audio-format mp3 https://example.com/
 ```
