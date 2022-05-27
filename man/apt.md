@@ -2,12 +2,43 @@
 
 the tool to manage debian / ubuntu packages, I always forget some commands, so let put them here.
 
-## version provided by repository
+## version provided by repository / repository used by package
 
 especially important for debian since all packages are always outdated by 10 years:
 
 ```
 apt-cache policy irssi
+```
+
+this is also useful if you do a major version upgrade and the new package is provided by the OS instead of a 3rd party:
+
+ubuntu **20.04** for `podman`:
+
+```shell
+apt-cache policy podman
+```
+
+```
+podman:
+  Installed: 100:3.4.2-2
+  Candidate: 100:3.4.2-4
+  Version table:
+     100:3.4.2-4 500
+        500 http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04  Packages
+ *** 100:3.4.2-2 100
+        100 /var/lib/dpkg/status
+```
+
+ubuntu **22.04** for `podman`:
+
+```
+podman:
+  Installed: 3.4.4+ds1-1ubuntu1
+  Candidate: 3.4.4+ds1-1ubuntu1
+  Version table:
+ *** 3.4.4+ds1-1ubuntu1 500
+        500 http://es.clouds.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+        100 /var/lib/dpkg/status
 ```
 
 ## find package for filename / executable
