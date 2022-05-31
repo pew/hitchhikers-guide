@@ -1,3 +1,10 @@
+---
+tags: 
+date created: Wednesday, January 23rd 2019, 7:59:04 pm
+date modified: Tuesday, May 31st 2022, 7:19:51 am
+title: kubernetes / k8s
+---
+
 # kubernetes / k8s
 
 this is going to be a big one. see also [kubectl](/man/kubectl/)
@@ -107,6 +114,14 @@ kubectl get cronjobs | grep True | cut -d' ' -f 1 | xargs kubectl patch cronjobs
 
 ```
 kubectl create job --from=cronjob/your-configured-cron your-cron-manual
+```
+
+## re-deploy kubernetes pods / deployment
+
+say, you have a deployment running and set it to *Always* pull an image, but to trigger this you need to redeploy it. let's also say, you're lazy and don't have a fully featured ci/cd pipeline for your raspberry pi kubernetes cluster at home. so let's just do this to re-deploy your stuff and force a re-download of the image
+
+```shell
+kubectl rollout restart deploy <deployment-name>
 ```
 
 ## stop kubernetes deployment
