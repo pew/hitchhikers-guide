@@ -1,3 +1,10 @@
+---
+tags: 
+date created: Saturday, September 22nd 2018, 9:07:02 pm
+date modified: Sunday, May 26th 2019, 6:08:06 am
+title: tmux
+---
+
 # tmux
 
 tmux!
