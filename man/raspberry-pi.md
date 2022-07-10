@@ -17,14 +17,21 @@ change the cpu clock speed of the pi with the cpu governor. There's more and bet
 
 **check available governors:**
 
-```
+```shell
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
-conservative ondemand userspace powersave performance schedutil
+```
+
+the output will look like this: `conservative ondemand userspace powersave performance schedutil`
+
+**check current governor**:
+
+```shell
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 
 change to `performance`, this won't reset during a reboot of the system. if you want this permanently set to `performance` or something else, you might want to edit `/etc/rc.local`
 
-```
+```shell
 echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 
@@ -32,7 +39,7 @@ to reduce power consumption, use `powersave` instead of performance.
 
 ## cpu temperature
 
-```
+```shell
 vcgencmd measure_temp
 ```
 
@@ -40,14 +47,14 @@ vcgencmd measure_temp
 
 when running updates, don't forget to make the filesystems read write:
 
-```
+```shell
 sudo mount -o remount,rw /
 sudo mount -o remount,rw /boot
 ```
 
 and afterwards, read only again:
 
-```
+```shell
 sudo mount -o remount,ro /
 sudo mount -o remount,ro /boot
 ```
@@ -56,7 +63,7 @@ sudo mount -o remount,ro /boot
 
 when using the desktop version of raspbian / raspberry pi os but the system has already been configured
 
-```
+```shell
 sudo rm /etc/xdg/autostart/piwiz.desktop
 ```
 
@@ -65,7 +72,7 @@ sudo rm /etc/xdg/autostart/piwiz.desktop
 * open `/etc/lightdm/lightdm.conf`
 * find `xserver-command` in the `[Seat` section of the file, edit like so:
 
-```
+```shell
 xserver-command=X -nocursor
 ```
 
@@ -75,7 +82,7 @@ this is just another perfect example why linux on a desktop environment is just 
 
 create a script to start your application, I put mine in `/usr/local/bin/start_app.sh` with these contents:
 
-```shell
+```bash
 #!/bin/bash
 cd /home/pi/Desktop
 sleep 10
