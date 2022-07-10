@@ -1,6 +1,37 @@
+---
+tags: 
+title: raspbian / raspberry pi os
+date created: Saturday, May 9th 2020, 11:47:02 am
+date modified: Sunday, July 10th 2022, 9:23:44 am
+---
+
 # raspbian / raspberry pi os
 
 debian for the raspberry pi, they renamed this to **raspberry pi os**
+
+## create user for ssh on headless pi
+
+the raspberry pi OS doesn't ship with the `pi` user anymore ([see here for more information and how to create a user](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)), they have outlined several ways how to create a user. so here's my own copy paste reference for the future when I need a user on a headless pi:
+
+**generate an encrypted password**:
+
+the openssl version which ships by default with macOS doesn't support generating sha512 passwords, so I'm using the homebrew version:
+
+```shell
+/opt/homebrew/opt/openssl/bin/openssl passwd -6
+```
+
+copy your generated password, and create a new file on the sd card:
+
+```shell
+vi /Volumes/boot/userconf.txt
+```
+
+the contents should look like `username:password`, for example:
+
+```
+jonas:$6$WI1IQhq59s3IayNg$h/CZGHz/hlH4ksVgW8mI5kWyZ1vURk3KCFcLajACuIfsUiITYW1zapqC8ov4AHBatpHdpM/uJ5IfSob0y2nBY.
+```
 
 ## enable ssh on boot / headless login
 
