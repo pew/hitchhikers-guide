@@ -131,3 +131,19 @@ set the replicas to 0, it'll delete the pods and the deployment will stay intact
 ```
 kubectl scale --replicas=0 deployment <deployment-name>
 ```
+
+## get logs from all pods part of deployment
+
+…use labels:
+
+```shell
+kubectl logs -f -l app=name
+```
+
+## default hostname
+
+this is for my future self, if you want to access services between deployments/pods:
+
+```shell
+<service-name>.default.svc.cluster.local
+```
