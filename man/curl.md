@@ -1,5 +1,13 @@
 # curl
 
+## force GET request
+
+If you just want the headers and use `-I`, curl will do a `HEAD` request, so you can force to do a `GET` request:
+
+```shell
+curl -X GET -I https://example.com/
+```
+
 ## --next
 
 run requests after another with a single curl command:
