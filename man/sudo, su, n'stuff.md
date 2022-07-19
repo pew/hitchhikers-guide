@@ -33,3 +33,19 @@ Defaults !fqdn
 ```
 
 [thank you](https://superuser.com/a/1538711)
+
+## allow user to run commands as root without password
+
+well, let's give jonas all access without entering a password. 🤷‍♂️
+
+```shell
+visudo # run this to open the editor, add the following line
+jonas	ALL=(ALL:ALL) NOPASSWD: ALL
+```
+
+## `sudoers` file ordering
+
+if your `NOPASSWD` option from above doesn't work, the ordering matters:
+
+> When multiple entries match for a user, they are applied in order. Where there are multiple matches, the last match is used (which is not necessarily the most specific match).
+> 
