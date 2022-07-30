@@ -15,3 +15,9 @@ do it like this, `tr -d '\n'` is the key:
 ```
 head -c 32 /dev/urandom|base64|tr -d '\n'|pbcopy
 ```
+
+## replace newline with comma
+
+```shell
+tr '\n' ','
+```
