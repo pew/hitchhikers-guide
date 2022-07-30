@@ -1,3 +1,10 @@
+---
+tags: 
+title: mdadm / software raid
+date created: Sunday, December 29th 2019, 7:56:13 am
+date modified: Saturday, July 30th 2022, 3:00:46 pm
+---
+
 # mdadm / software raid
 
 ## create raid
@@ -105,3 +112,7 @@ mdadm /dev/md0 -a /dev/sda
 ```
 grep -oP 'finish\=\d+\.\d+' /proc/mdstat | cut -d'=' -f2
 ```
+
+## debugging things
+
+if you messed things up, you can try and restore things with `testdisk`
