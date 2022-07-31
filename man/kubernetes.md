@@ -1,7 +1,9 @@
 ---
 tags: 
+  - k8s
+  - kubernetes
 date created: Wednesday, January 23rd 2019, 7:59:04 pm
-date modified: Tuesday, May 31st 2022, 7:19:51 am
+date modified: Sunday, July 31st 2022, 9:27:38 am
 title: kubernetes / k8s
 ---
 
@@ -145,5 +147,5 @@ kubectl logs -f -l app=name
 this is for my future self, if you want to access services between deployments/pods:
 
 ```shell
-<service-name>.default.svc.cluster.local
+<service-name>.<namespace>.svc.cluster.local
 ```
