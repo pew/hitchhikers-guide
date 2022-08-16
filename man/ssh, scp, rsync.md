@@ -4,6 +4,13 @@ there's a lot of stuff you can do!
 
 ## ssh
 
+### add ssh-key to ssh-agent
+
+```shell
+eval `ssh-agent -s`
+ssh-add
+```
+
 ### motd (message of the day) for user
 
 create this file with whatever you want to execute when logging in as the user:
