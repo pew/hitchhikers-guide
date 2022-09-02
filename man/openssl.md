@@ -14,6 +14,12 @@ date modified: Monday, August 29th 2022, 5:57:56 am
 openssl s_client -connect example.com:443
 ```
 
+## view certificate ... locally
+
+```shell
+openssl x509 -in cert.pem -text
+```
+
 ## extract certificates
 
 **without SNI:**
