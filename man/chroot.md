@@ -1,3 +1,9 @@
+---
+tags: 
+date created: Tuesday, July 2nd 2019, 5:55:48 pm
+date modified: Saturday, September 3rd 2022, 5:19:49 pm
+---
+
 # chroot
 
 ## run commands, edit files, install or remove packages
@@ -10,8 +16,12 @@ well, you need some kind of system to mount the other hard drive, most cloud / s
 
 ```
 mount /dev/sda1 /mnt
-rm /mnt/etc/resolv.conf  # I had to do this once
-cp /etc/resolv.conf /etc/
+```
+
+with **btrfs**, do this:
+
+```
+mount -o subvol=@ /dev/md0 /mnt
 ```
 
 ### bind mount filesystems
@@ -20,7 +30,6 @@ cp /etc/resolv.conf /etc/
 mount --bind /dev /mnt/dev
 mount --bind /proc /mnt/proc
 mount --bind /sys /mnt/sys
-mount --bind /dev/pts /mnt/dev/pts
 mount --bind /run /mnt/run
 ```
 
