@@ -113,6 +113,21 @@ mdadm /dev/md0 -a /dev/sda
 grep -oP 'finish\=\d+\.\d+' /proc/mdstat | cut -d'=' -f2
 ```
 
+## increase mdadm rebuild / resync speed
+
+you can check the current speed limits with:
+
+```shell
+sysctl dev.raid.speed_limit_min
+sysctl dev.raid.speed_limit_max
+```
+
+and, now just increase that number to make it faster (it's displayed in kb)
+
+```
+sysctl -w dev.raid.speed_limit_min=500000
+```
+
 ## debugging things
 
 if you messed things up, you can try and restore things with `testdisk`
