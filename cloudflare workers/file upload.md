@@ -1,5 +1,8 @@
 ---
-tags: 
+tags:
+  - cloudflare
+  - cloudflare workers
+  - kv
 date created: Friday, January 28th 2022, 6:03:12 am
 date modified: Saturday, May 7th 2022, 6:57:03 am
 title: file upload
