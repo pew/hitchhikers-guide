@@ -1,10 +1,11 @@
 ---
-tags: 
+date created: Tuesday, September 20th 2022, 8:02:34 pm
+date modified: Wednesday, September 21st 2022, 6:52:26 am
+tags:
   - cloudflare
   - cloudflare workers
   - r2
-date created: Tuesday, September 20th 2022, 8:02:34 pm
-date modified: Wednesday, September 21st 2022, 6:46:26 am
+  - file handling
 ---
 
 # r2 file upload
