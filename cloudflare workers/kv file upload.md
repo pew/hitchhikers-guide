@@ -8,7 +8,7 @@ date modified: Saturday, May 7th 2022, 6:57:03 am
 title: file upload
 ---
 
-# file upload
+# kv file upload
 
 …upload some binary files, or some cute cat and dog images and photos.
 

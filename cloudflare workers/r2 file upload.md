@@ -4,10 +4,10 @@ tags:
   - cloudflare workers
   - r2
 date created: Tuesday, September 20th 2022, 8:02:34 pm
-date modified: Wednesday, September 21st 2022, 6:37:09 am
+date modified: Wednesday, September 21st 2022, 6:46:26 am
 ---
 
-# workers r2 upload
+# r2 file upload
 
 … put a file into r2 through a Worker:
 
