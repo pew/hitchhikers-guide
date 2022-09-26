@@ -1,7 +1,10 @@
 ---
-tags: 
 date created: Monday, May 9th 2022, 4:05:27 am
-date modified: Monday, May 9th 2022, 4:06:10 am
+date modified: Wednesday, September 21st 2022, 6:54:01 am
+tags: 
+  - helm
+  - k8s
+  - kubernetes
 title: helm chart update
 ---
 
