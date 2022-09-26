@@ -1,7 +1,7 @@
 ---
 date created: Saturday, March 23rd 2019, 2:02:05 pm
-date modified: Monday, September 26th 2022, 6:39:16 am
-tags: 
+date modified: Monday, September 26th 2022, 6:40:35 am
+tags:
   - awk
 ---
 
@@ -9,7 +9,7 @@ tags:
 
 yeah, command line utils!
 
-# prepend before each line
+## prepend before each line
 
 input:
 
