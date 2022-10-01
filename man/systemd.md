@@ -1,7 +1,8 @@
 ---
-tags: 
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Tuesday, April 19th 2022, 2:33:46 pm
+date modified: Saturday, October 1st 2022, 6:44:39 pm
+tags:
+  - systemd
 title: systemd
 ---
 
@@ -27,8 +28,16 @@ journalctl --vacuum-size=100M
 
 make this stuff permanent, edit `/etc/systemd/journald.conf`
 
+**control how much disk space the journal may use up at most**:
+
 ```
-SystemMaxUse=50M
+SystemMaxUse=1G
+```
+
+**control how large individual journal files may grow at most**:
+
+```
+SystemMaxFileSize=100M
 ```
 
 and restart things
