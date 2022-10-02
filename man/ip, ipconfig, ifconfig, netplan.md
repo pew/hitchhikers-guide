@@ -1,7 +1,12 @@
 ---
-tags: 
 date created: Wednesday, September 2nd 2020, 6:06:26 pm
-date modified: Sunday, April 24th 2022, 4:30:32 am
+date modified: Sunday, October 2nd 2022, 6:46:05 am
+tags:
+  - ip
+  - ipv6
+  - ifconfig
+  - ipv4
+  - routing
 title: ip
 ---
 
@@ -73,4 +78,10 @@ network:
             gateway6: fe80::200:17ff:fe63:44c5
             set-name: enp0s3
     version: 2
+```
+
+## set IPv6 source address
+
+```shell
+ip -6 route add default via fe80::fc00:3ff:fed2:ba70 src 11fb:3f20:c466:5c32:0938:d2f5:ea52:aa3c dev enp1s0 metric 1
 ```
