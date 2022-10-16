@@ -1,3 +1,15 @@
+---
+date created: Wednesday, August 17th 2022, 4:42:16 am
+date modified: Sunday, October 16th 2022, 6:14:13 am
+tags:
+  - ssh
+  - git
+  - rsync
+  - scp
+  - proxy
+  - socks
+---
+
 # ssh / scp / rsync
 
 there's a lot of stuff you can do!
@@ -206,4 +218,10 @@ for reasons.
 
 ```shell
 ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no user@server
+```
+
+## send only specified key to server
+
+```shell
+ssh -o "IdentitiesOnly=yes" -i ~/.ssh/abc_private_key user@server
 ```
