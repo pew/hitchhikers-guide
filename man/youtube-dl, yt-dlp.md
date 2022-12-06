@@ -1,5 +1,8 @@
 ---
-tags: 
+tags:
+  - yt-dlp
+  - ytdlp
+  - youtube-dl
 date created: Tuesday, April 9th 2019, 4:37:46 pm
 date modified: Wednesday, May 18th 2022, 5:52:08 am
 title: 'youtube-dl, yt-dlp'
@@ -13,14 +16,20 @@ title: 'youtube-dl, yt-dlp'
 
 like 01, 02, 03 and so on.
 
-```
+```shell
 youtube-dl -o "%(autonumber)s-%(title)s.%(ext)s" <URL-HERE>
 ```
 
 ## download mp4 format
 
-```
+```shell
 youtube-dl -f mp4
+```
+
+## download best video format with mp4 extension
+
+```shell
+yt-dlp -f "best[ext=mp4]" LpDqomAHSlQ
 ```
 
 ## download embedded videos
