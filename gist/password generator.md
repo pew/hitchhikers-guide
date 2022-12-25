@@ -1,6 +1,6 @@
 ---
 date created: Saturday, September 17th 2022, 6:56:10 am
-date modified: Sunday, November 20th 2022, 10:56:35 am
+date modified: Sunday, December 25th 2022, 10:15:00 am
 tags:
   - password
   - secrets
@@ -20,4 +20,4 @@ random:
 python -c 'import secrets;print(secrets.token_hex(32))'
 ```
 
-[it's-like-awesome-you-know!]([url](https://docs.python.org/3/library/secrets.html))
+[it's-like-awesome-you-know](https://docs.python.org/3/library/secrets.html)
