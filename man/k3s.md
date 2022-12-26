@@ -1,6 +1,6 @@
 ---
 date created: Sunday, September 12th 2021, 11:38:26 am
-date modified: Monday, December 26th 2022, 8:54:05 am
+date modified: Monday, December 26th 2022, 9:01:14 am
 tags:
   - k3s
   - k8s
@@ -46,8 +46,10 @@ docker save localhost/shaarli | sudo k3s ctr images import -
 
 you can also run `docker save -o filename localhost/your-local-image` to save the image as a file, move it around and import it then via `k3s ctr images import filename`
 
-**how to use it in a kubernetes yaml file**, just take the name of your image:
+**how to use it in a kubernetes yaml file:**
 
 ```yaml
-- image: shaarli:latest
+containers:
+- image: localhost/shaarli:latest
+  imagePullPolicy: Never
 ```
