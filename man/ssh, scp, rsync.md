@@ -1,10 +1,11 @@
 ---
 date created: Wednesday, August 17th 2022, 4:42:16 am
-date modified: Sunday, October 16th 2022, 6:14:13 am
+date modified: Tuesday, December 27th 2022, 6:28:15 am
 tags:
   - ssh
   - git
   - rsync
+  - rrsync
   - scp
   - proxy
   - socks
@@ -79,7 +80,7 @@ ssh tunnel@server -NT -D 127.0.0.1:8080
 
 now configure your browser/client to use `localhost` with port `8080` using a *socks5* proxy.
 
-to drop the whole thing into the background:
+**to drop the whole thing into the background:**
 
 ```
 ssh tunnel@server -NTf -D 127.0.0.1:8080
@@ -87,13 +88,15 @@ ssh tunnel@server -NTf -D 127.0.0.1:8080
 
 if you put it in the background you might want to consider autossh (see `autossh.md`).
 
-### port forwarding in background
+#### limit ssh connection to creating a tunnel
 
-with `-fNT` you can do port forwarding and drop the ssh command into the background.
+put this in your server's `~/.ssh/authorized_keys` file:
 
 ```
-ssh user@server -fNT -8080:localhost:8080
+command="",restrict,port-forwarding" ssh-ed25519 AAAA...
 ```
+
+then, create a tunnel like shown above.
 
 ### add / remove passphrase from key
 
@@ -131,6 +134,14 @@ profit:
 ```
 ssh> -L9090:localhost:9090
 Forwarding port.
+```
+
+### restrict agent, x11, port forwarding in ssh for clients
+
+there's a handy way to restrict all of the above and more with a single option: `restrict`, use it like so in your `~/.ssh/authorized_keys` file
+
+```
+command="",restrict ssh-ed25519 AAAA...
 ```
 
 ## git-shell
@@ -183,6 +194,24 @@ rsync -avxiP -n --delete -e 'ssh -J user@middleman:1337 -p2222' /mnt/ user@dest:
 
 ```shell
 rsync -avxiP --delete --exclude={node_modules,dist} remote:remote-folder/ ~/awesome/local-folder
+```
+
+### limit rsync to only allow downloading / pulling data
+
+for this, you need to use `rrsync`, it's a script usually part of the `rsync` package and can be found in `/usr/share/doc/rsync/scripts` on ubuntu/debian, [but also directly on the web](https://ftp.samba.org/pub/unpacked/rsync/support/rrsync).
+
+**unpack it, put it into your local bin directory, or somewhere else:**
+
+```shell
+gunzip --stdout /usr/share/doc/rsync/scripts/rrsync.gz $HOME/bin/rrsync
+```
+
+restrict rsync for specific ssh keys to only allow pulling from `~/downloads`, this downloads folder will also be the new entry point for the clients to rsync. so if they pull from `~/`, it'll be the downloads folder.
+
+**put this in your `~/.ssh/authorized_keys` file:**
+
+```shell
+command="$HOME/bin/rrsync -ro ~/downloads/",restrict ssh-ed25519 AAAA...
 ```
 
 ## poor man's ngrok or make-my-dev-machine-available-from-outside
