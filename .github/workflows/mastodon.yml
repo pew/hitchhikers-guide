@@ -1,0 +1,48 @@
+name: post to mastodon
+on:
+  push:
+    branches: [ "master" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'TIL:')"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: get added/changed files
+        shell: bash
+        run: |
+          echo $GITHUB_SHA
+          echo 'LINKS_OUT<<EOF' >> $GITHUB_ENV
+          git --no-pager diff --name-only ${GITHUB_SHA}^ -- | sed 's/\.[^.]*$//' >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+          echo ${{ env.LINKS_OUT }}
+
+      - name: generate links, post to mastodon
+        shell: python
+        run: |
+          import os
+          import sys
+          import urllib.parse
+          import requests
+
+          links = """\
+          ${{ env.LINKS_OUT }}
+          """
+          
+          out = ""
+          out += "${{ github.event.head_commit.message }}\n"
+          for line in links.splitlines():
+              line = str(urllib.parse.quote(line.strip()))
+              out += f"https://man.ilayk.com/{line}/"
+              out += "\n"
+
+          url = "https://botsin.space/api/v1/statuses"
+          headers = {"Authorization": "Bearer ${{ secrets.mastodon }}"}
+          response = requests.post(url, headers=headers, data=dict(status=f"{out}", visibility="public"))
+          print(response.text)
