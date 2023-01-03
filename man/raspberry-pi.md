@@ -1,3 +1,13 @@
+---
+date created: Monday, December 23rd 2019, 10:56:44 am
+date modified: Tuesday, January 3rd 2023, 10:41:12 am
+tags:
+  - raspberrypi
+  - rpi
+  - 'raspberry pi'
+  - 'raspberry pi os'
+---
+
 # raspberry pi
 
 [see also raspbian](/man/raspbian : raspberry pi os)
@@ -70,6 +80,7 @@ sudo rm /etc/xdg/autostart/piwiz.desktop
 ## disable mouse cursor on touch screens
 
 * open `/etc/lightdm/lightdm.conf`
+
 * find `xserver-command` in the `[Seat` section of the file, edit like so:
 
 ```shell

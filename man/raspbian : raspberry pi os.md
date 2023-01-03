@@ -1,13 +1,15 @@
 ---
-tags: 
-title: raspbian / raspberry pi os
 date created: Saturday, May 9th 2020, 11:47:02 am
-date modified: Sunday, July 10th 2022, 9:23:44 am
+date modified: Tuesday, January 3rd 2023, 10:40:28 am
+tags:
+  - raspberrypi
+  - rpi
+  - 'raspberry pi'
+  - 'raspberry pi os'
+title: raspbian / raspberry pi os
 ---
 
 # raspbian / raspberry pi os
-
-debian for the raspberry pi, they renamed this to **raspberry pi os**
 
 ## create user for ssh on headless pi
 
