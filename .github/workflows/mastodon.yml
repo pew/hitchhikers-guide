@@ -34,9 +34,11 @@ jobs:
           links = """\
           ${{ env.LINKS_OUT }}
           """
-          
+
           out = ""
-          out += "${{ github.event.head_commit.message }}\n"
+          out += """${{ github.event.head_commit.message }}
+          """
+          out += "\n"
           for line in links.splitlines():
               line = str(urllib.parse.quote(line.strip()))
               out += f"https://man.ilayk.com/{line}/"
