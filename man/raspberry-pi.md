@@ -89,7 +89,7 @@ xserver-command=X -nocursor
 
 ## autostart application on boot
 
-this is just another perfect example why linux on a desktop environment is just not ready yet and will never be ready.
+this is just another perfect example why linux on a desktop environment is just not ready yet and will never be ready. ^fd392a
 
 create a script to start your application, I put mine in `/usr/local/bin/start_app.sh` with these contents:
 
