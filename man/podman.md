@@ -1,6 +1,6 @@
 ---
 date created: Monday, May 30th 2022, 7:07:37 am
-date modified: Saturday, January 7th 2023, 7:09:10 am
+date modified: Wednesday, January 18th 2023, 4:36:10 am
 tags:
   - docker
   - podman
@@ -48,6 +48,19 @@ I was used to get all running and exited containers with docker's `docker ps -a`
 
 ```
 podman ps --all --storage
+```
+
+### update container
+
+pull the new image, stop and delete the old container, re-run the command how you initially started the container to get it back up.
+
+```shell
+podman inspect my-container --format "{{.Image}} {{.ImageName}}"
+podman pull username/container:latest
+podman stop my-container
+podman rm my-container
+podman run -dt --restart=unless-stopped --pod lab --name my-container username/container:latest
+podman inspect my-container --format "{{.Image}} {{.ImageName}}"
 ```
 
 ### cleanup old / unused containers and images
