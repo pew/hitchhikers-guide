@@ -1,32 +1,35 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Saturday, October 1st 2022, 6:44:39 pm
+date modified: Sunday, January 22nd 2023, 10:05:35 am
 tags:
   - systemd
+  - systemctl
 title: systemd
 ---
 
 # systemd
 
-hi.
+🤷‍♂️
 
-## high disk usage (log files)
+## logs / systemd journals
 
-meh...
+### log disk usage
 
-check current disk usage of systemd:
+check current disk usage of systemd journals:
 
-```
+```shell
 journalctl --disk-usage
 ```
 
 clean up some old logs:
 
-```
+```shell
 journalctl --vacuum-size=100M
 ```
 
-make this stuff permanent, edit `/etc/systemd/journald.conf`
+### configure journal / log usage
+
+it might be a good idea to limit the disk usage of your systemd journals. To do this, edit the file: `/etc/systemd/journald.conf`
 
 **control how much disk space the journal may use up at most**:
 
@@ -42,7 +45,8 @@ SystemMaxFileSize=100M
 
 and restart things
 
-```
+```shell
+systemctl daemon-reload # for good measure
 systemctl restart systemd-journald.service
 ```
 
@@ -117,6 +121,22 @@ systemctl list-timers
 
 ```shell
 systemctl disable name.timer
+```
+
+## working with services
+
+### list active services
+
+the service might be *active*, but exited already since it was just initializing or checking something
+
+```shell
+systemctl list-units --type=service --state=active
+```
+
+### list running services
+
+```shell
+systemctl list-units --type=service --state=running
 ```
 
 ## tail / follow logs
