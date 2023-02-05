@@ -1,3 +1,10 @@
+---
+date created: Tuesday, May 7th 2019, 6:33:01 pm
+date modified: Sunday, February 5th 2023, 10:59:42 am
+tags:
+  - git
+---
+
 # git
 
 some commands I always forget
@@ -50,6 +57,16 @@ for example:
 git push --all origin
 ```
 
+## separate .git directory
+
+syncthing solutions such as dropbox / icloud drive often don't play well with all the files and frequent changes in a `.git` directory, with `--separate-git-dir` the `.git` directory can be stored outside of these systems
+
+```shell
+git init --separate-git-dir=/path/to/dot-git-directory .
+```
+
+[stackoverflow link](https://stackoverflow.com/a/40561395/10272994)
+
 ## git submodules
 
 too confusing.
@@ -87,7 +104,6 @@ yes, this is from [here](https://stackoverflow.com/a/36593218)
 ## delete file / folder from history
 
 well, things happen from time to time. I just wanted to get rid of a folder and move it to git *lfs*
-
 
 ```
 git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch .assets" -- --all
