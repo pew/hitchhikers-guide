@@ -1,3 +1,11 @@
+---
+date created: Friday, July 3rd 2020, 7:52:48 pm
+date modified: Tuesday, February 21st 2023, 5:03:56 am
+tags:
+  - ffmpeg
+  - ffprobe
+---
+
 # ffmpeg
 
 ## get file metadata
@@ -56,6 +64,18 @@ this will just spit out the ffmpeg command, for double checking, you know.
 
 ```
 ffmpeg -i input-video.mov -q:a 0 -map a output-audio.mp3
+```
+
+## video information
+
+```code
+ffprobe -show_streams -select_streams v -i input-video.mp4
+```
+
+just get the  bitrate (in kbps):
+
+```code
+ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of default=noprint_wrappers=1:nokey=1 your-video.mp4
 ```
 
 ## compress video
