@@ -1,6 +1,6 @@
 ---
 date created: Monday, March 20th 2023, 6:06:26 am
-date modified: Monday, March 20th 2023, 6:08:08 am
+date modified: Monday, March 20th 2023, 6:11:35 am
 tags:
   - qemu
   - qm
@@ -24,12 +24,26 @@ qm start 100
 qm stop 100
 ```
 
+## display config
+
+```shell
+qm config <id>
+```
+
 ## modify memory, cpu
 
 set memory in megabytes
 
 ```shell
 qm set <vmid> -cores <num_cores> -memory <memory_size>
+```
+
+## resize disk
+
+you might want to run `qm config <id>` to find the name of the disk controller (`scsi0` in this example)
+
+```shell
+qm resize <vmid> scsi0 +500G
 ```
 
 ## create a clone
