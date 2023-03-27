@@ -2,6 +2,8 @@
 date created: Wednesday, May 18th 2022, 5:11:25 am
 date modified: Wednesday, September 21st 2022, 6:52:29 am
 tags: 
+  - wrangler
+  - cloudflare
 ---
 
 # wrangler
@@ -25,4 +27,18 @@ you can run it like so then (with the `-e` flag):
 
 ```
 wrangler dev -e dev
+```
+
+## logs
+
+for Workers:
+
+```shell
+wrangler tail
+```
+
+for Cloudflare Pages:
+
+```shell
+wrangler pages deployment tail
 ```
