@@ -1,5 +1,5 @@
 ---
-tags: 
+tags:
   - openssl
   - certificate
 date created: Monday, June 29th 2020, 6:10:02 am
@@ -38,4 +38,10 @@ openssl s_client -servername example.com -connect example.com:443 2>/dev/null </
 
 ```shell
 openssl s_client -connect example.com:443|openssl x509 -fingerprint -noout
+```
+
+## remove password / passphrase from certificate
+
+```shell
+openssl rsa -in name.key -out name.key
 ```
