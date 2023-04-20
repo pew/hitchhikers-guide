@@ -45,3 +45,11 @@ openssl s_client -connect example.com:443|openssl x509 -fingerprint -noout
 ```shell
 openssl rsa -in name.key -out name.key
 ```
+
+## display subject / common name
+
+```shell
+openssl x509 -noout -subject -in name.crt
+```
+
+subject= /CN=foo.example.com
