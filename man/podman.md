@@ -1,6 +1,6 @@
 ---
 date created: Monday, May 30th 2022, 7:07:37 am
-date modified: Wednesday, January 18th 2023, 4:36:10 am
+date modified: Friday, April 21st 2023, 6:19:24 am
 tags:
   - docker
   - podman
@@ -84,4 +84,22 @@ get rid of images:
 
 ```shell
 podman rmi $(podman images -a|grep none|awk {'print $3'})
+```
+
+## generate systemd / kubernetes definitions
+
+```shell
+podman generate --help
+```
+
+**generate a kubernetes yaml** file from an existing container/pod:
+
+```shell
+podman generate kube my-pod
+```
+
+**run kubernetes definition** using podman:
+
+```shell
+podman play kube my-pod.yaml
 ```
