@@ -1,6 +1,6 @@
 ---
 date created: Monday, May 30th 2022, 7:07:37 am
-date modified: Friday, April 21st 2023, 6:19:24 am
+date modified: Sunday, April 23rd 2023, 6:40:26 am
 tags:
   - docker
   - podman
@@ -63,9 +63,9 @@ podman run -dt --restart=unless-stopped --pod lab --name my-container username/c
 podman inspect my-container --format "{{.Image}} {{.ImageName}}"
 ```
 
-### cleanup old / unused containers and images
+## cleanup old / unused containers and images
 
-apparently that's what I do.
+apparently that's what I do. Coming from Docker, the whole *buildah* containers thing are quite confusing
 
 just do it like this:
 
@@ -73,17 +73,23 @@ just do it like this:
 podman system prune
 ```
 
+get rid of images:
+
+```shell
+podman rmi $(podman images -a|grep none|awk {'print $3'})
+```
+
+unmount all images:
+
+```shell
+podman unmount --all
+```
+
 for more detailed things, and also the build images/containers do this:
 
 ```shell
 podman rm $(podman ps --all -q) # regular containers
 podman rm $(podman ps --all --storage -q) # buildah containers
-```
-
-get rid of images:
-
-```shell
-podman rmi $(podman images -a|grep none|awk {'print $3'})
 ```
 
 ## generate systemd / kubernetes definitions
