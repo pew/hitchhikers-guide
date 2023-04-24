@@ -24,6 +24,7 @@ lvreduce -L 150G /dev/vg0/root
 **resize to 100% of the remaining space:**
 
 ```shell
+pvresize /dev/sda1
 lvextend -l +100%FREE -r -v /dev/vg0/home
 ```
 
