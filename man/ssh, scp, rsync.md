@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, August 17th 2022, 4:42:16 am
-date modified: Tuesday, December 27th 2022, 6:28:15 am
+date modified: Monday, May 1st 2023, 5:05:59 pm
 tags:
   - ssh
   - git
@@ -175,6 +175,20 @@ ssh-keygen -e -f ~/.ssh/id_rsa.pub | grep -v "Comment:"
 ```
 
 ## scp / rsync
+
+### scp between two servers
+
+copy files between two servers, use the system executing the command as the connection in between.
+
+```shell
+scp -3 user@server1:/path/hello.txt user@server2:/path/hello.txt
+```
+
+### scp -3 between two systems with different ports
+
+```shell
+scp -3 scp://user@example1:22022//etc/config.xml scp://user@example2:22//etc/
+```
 
 ### scp /rsync through extra hosts (middleman)
 
