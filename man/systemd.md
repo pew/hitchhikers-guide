@@ -139,7 +139,15 @@ systemctl list-units --type=service --state=active
 systemctl list-units --type=service --state=running
 ```
 
-## tail / follow logs
+## logs / debugging
+
+**read logs**:
+
+```shell
+journalctl -u your-name.service
+```
+
+**tail log**:
 
 ```
 journalctl -f -u your-name.service
