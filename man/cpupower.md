@@ -1,3 +1,11 @@
+---
+date created: Saturday, January 1st 2022, 2:50:36 pm
+date modified: Sunday, May 7th 2023, 11:37:05 am
+tags:
+  - cpupower
+  - cpufrequtils
+---
+
 # cpupower
 
 get information about current cpu usage/frequency and so on.
