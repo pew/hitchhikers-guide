@@ -51,6 +51,8 @@ Run `update-initramfs -u` after updating this file.
 
 ## replace disk
 
+[check how to backup and copy your partition table](sfdisk,%20sgdisk.md)
+
 **remove disk:**
 
 ```
