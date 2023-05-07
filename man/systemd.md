@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Sunday, January 22nd 2023, 10:05:35 am
+date modified: Sunday, May 7th 2023, 9:24:33 am
 tags:
   - systemd
   - systemctl
@@ -10,6 +10,20 @@ title: systemd
 # systemd
 
 🤷‍♂️
+
+## analyze slow boot times
+
+list how long it took for systemd units to initialize:
+
+```shell
+systemd-analyze blame
+```
+
+output example:
+
+```
+2min 158ms systemd-networkd-wait-online.service
+```
 
 ## logs / systemd journals
 
