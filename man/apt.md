@@ -58,6 +58,12 @@ apt-file search ping
 apt-file search /bin/ping
 ```
 
+you can also use **dpkg**:
+
+```shell
+dpkg -S /usr/bin/bsd-mailx
+```
+
 ## pin version
 
 sometimes you want or need to *pin* a package to a specific version since it'll break everything. looking at you, docker. this happened twice already.
