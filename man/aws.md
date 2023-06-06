@@ -1,15 +1,21 @@
-# aws cli v2
+## aws cli v2
 
 some aws cli commands I'll probably forget about since I'm only using them once in a while
 
-## fix pager view / output / annoyances
+### fix pager view / output / annoyances
 
 what the fork...? see [this pull request](https://github.com/aws/aws-cli/pull/4702#issue-344978525), do one of these things:
 
 * add `cli_pager = cat` to `~/.aws/config` AND maybe even in `~/.aws/credentials` if you're using multiple profiles. somehow it doesn't work in the config file for me
 * set the env var `AWS_PAGER=""`
 
----
+### recursively copy files starting with a prefix
+
+download only files starting with `2023`
+
+```shell
+aws s3 cp s3://your-bucket-name/ ~/Downloads/ --recursive --exclude "*" --include "2023*"
+```
 
 ## aws (aws-cli) v1
 
