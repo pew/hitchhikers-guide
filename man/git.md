@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Sunday, February 5th 2023, 10:59:42 am
+date modified: Friday, June 9th 2023, 11:35:30 am
 tags:
   - git
 ---
@@ -8,6 +8,24 @@ tags:
 # git
 
 some commands I always forget
+
+## find deleted file
+
+in order to restore something, you might want to know when it was deleted…:
+
+```shell
+git --no-pager log -1 -- path/to/file.txt
+```
+
+to just get the hash:
+
+```shell
+git --no-pager log --pretty=%H -1 -- path/to/file.txt
+```
+
+you might also want to look into *[--diff-filter](https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACDMRTUXB82308203)* for more options like only deleted, modified files etc.
+
+the `-1` limits the output to the last/most current commit
 
 ## revert / restore single file
 
