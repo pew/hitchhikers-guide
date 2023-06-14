@@ -12,4 +12,10 @@ detox -s iso8859_1 -r -v -n /tmp/new_files
 
 this will go recursively through all directories and sanitize the filenames using the `iso8859_1` sequence, you can also opt for `utf_8` and read more about that [over here](https://linux.die.net/man/5/detoxrc)
 
-remove the `-n` parto actually rename the files, otherwise it's a dry-run. which is always recommended first!
+remove the `-n` par to actually rename the files, otherwise it's a dry-run. which is always recommended first!
+
+## convert to lowercase
+
+```shell
+detox -s lower *
+```
