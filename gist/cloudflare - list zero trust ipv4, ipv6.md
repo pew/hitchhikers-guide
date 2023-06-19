@@ -6,19 +6,14 @@ tags:
 
 # cloudflare - list zero trust ipv4 & ipv6 assignments
 
-**requirements:**
-
-```shell
-pip install requests
-```
-
-**code:**
-
 ```python
-import json
-import requests
+# add your account id below
+# add a (zero trust read only) api token below
 
-account_id = "abcfoo"
+import urllib.request
+import json
+
+account_id = "foo"
 api_key = "f00bar"
 
 headers = {
@@ -28,13 +23,29 @@ headers = {
 
 
 def get_devices():
-    devices = requests.get(
-        "https://api.cloudflare.com/client/v4/accounts/{}/devices".format(account_id),
-        headers=headers,
-    )
-    data = devices.json()
+    list_complete = False
+    cursor = ""
+    devices = []
 
-    return data["result"]
+    while list_complete == False:
+        req = urllib.request.Request(
+            "https://api.cloudflare.com/client/v4/accounts/{}/devices".format(
+                account_id
+            )
+            + ("" if cursor is None else "?cursor={}".format(cursor)),
+            headers=headers,
+        )
+
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+
+        cursor = data["result_info"]["cursor"]
+
+        if cursor == data["result_info"]["cursor"]:
+            list_complete = True
+        devices.append(data["result"])
+
+    return [item for sublist in devices for item in sublist]
 
 
 def get_ip_addresses(devices):
@@ -43,13 +54,21 @@ def get_ip_addresses(devices):
         device_id = device["id"]
         device_name = device["name"]
 
-        device_info = requests.get(
+        req = urllib.request.Request(
             "https://api.cloudflare.com/client/v4/accounts/{}/devices/{}/ip".format(
                 account_id, device_id
             ),
             headers=headers,
         )
-        output = device_info.json()
+
+        try:
+            with urllib.request.urlopen(req) as response:
+                output = json.loads(response.read().decode())
+        except urllib.error.HTTPError as e:
+            print(
+                "HTTPError: {}, {} accessing ID {}".format(e.code, e.reason, device_id)
+            )
+
         device_ipv4 = output["result"]["result"]["ipv4"]
         device_ipv6 = output["result"]["result"]["ipv6"]
 
