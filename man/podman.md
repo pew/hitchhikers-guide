@@ -109,3 +109,9 @@ podman generate kube my-pod
 ```shell
 podman play kube my-pod.yaml
 ```
+
+if, let's say, after a reboot you get something along the lines *pod already exists*, you can replace the deployment:
+
+```shell
+podman play kube my-pod.yaml --replace
+```
