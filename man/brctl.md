@@ -1,6 +1,15 @@
+---
+date created: Thursday, November 19th 2020, 5:03:03 am
+date modified: Sunday, July 23rd 2023, 10:19:17 am
+tags:
+  - icloud
+  - brctl
+  - bird
+---
+
 # brctl
 
-or... how to work with icloud drive hiccups. to just go ahead, run
+or... how to work with iCloud drive hiccups. to just go ahead, run
 
 ```shell
 brctl
@@ -8,7 +17,7 @@ brctl
 
 and check the available commands
 
-## monitor icloud drive sync status
+## monitor iCloud drive sync status
 
 `com.apple.CloudDocs` refers to iCloud Drive
 
@@ -24,7 +33,16 @@ the thing is, I have no idea how to fix the issues reported in there. it'll tell
 
 otherwise, this might work:
 
+```shell
+cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/ && find . -type f -print0 | xargs -0 brctl download
 ```
-cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/
-fd . | while read file; do brctl download "$file";done
+
+## restart iCloud process
+
+```shell
+killall bird
 ```
+
+## debug iCloud with Cirrus
+
+- [Cirrus is a free utility to help with iCloud issues](https://eclecticlight.co/cirrus-bailiff/). iCloud Drive, CloudDocs, all iCloud related things. It also let's you download and evict files from iCloud instead of using the command line like described above.
