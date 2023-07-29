@@ -1,9 +1,10 @@
 ---
 date created: Sunday, July 23rd 2023, 10:34:52 am
-date modified: Sunday, July 23rd 2023, 10:36:35 am
+date modified: Saturday, July 29th 2023, 10:39:38 am
 tags:
   - dpkg
   - apt
+  - linux
 ---
 
 # dpkg
@@ -14,4 +15,10 @@ this will give you something like `arm64`  and might be better than using `uname
 
 ```shell
 dpkg --print-architecture
+```
+
+## get information about a package
+
+```shell
+dpkg --info cloudflared.deb
 ```
