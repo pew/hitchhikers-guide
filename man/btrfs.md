@@ -1,8 +1,10 @@
 ---
 date created: Saturday, March 26th 2022, 7:07:01 am
-date modified: Saturday, February 25th 2023, 11:20:46 am
+date modified: Wednesday, August 2nd 2023, 6:38:15 am
 tags:
   - btrfs
+  - linux
+  - filesystem
 ---
 
 # btrfs
@@ -43,4 +45,22 @@ sudo btrfs subvolume snapshot /mnt /mnt/my_snapshot # partition mounted at /mnt
 ```shell
 sudo btrfs subvolume delete /my_snapshot
 sudo btrfs subvolume delete /mnt/my_snapshot
+```
+
+## btrfs raid configuration
+
+- [btrfs raid calculator](https://carfax.org.uk/btrfs-usage/)
+
+### convert raid levels, from raid0 to raid1
+
+```shell
+btrfs balance start -dconvert=raid1 -mconvert=raid1 /mnt
+```
+
+### raid1
+
+with kernel version 5.5+ `raid1c3` can be used for the metadata (`-m`)
+
+```shell
+mkfs.btrfs -m raid1 -d raid1 /dev/sdb /dev/sdc
 ```
