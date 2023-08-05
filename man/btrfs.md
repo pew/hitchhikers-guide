@@ -1,6 +1,6 @@
 ---
 date created: Saturday, March 26th 2022, 7:07:01 am
-date modified: Wednesday, August 2nd 2023, 6:38:15 am
+date modified: Saturday, August 5th 2023, 3:40:55 pm
 tags:
   - btrfs
   - linux
@@ -26,6 +26,11 @@ btrfs filesystem resize +10g /
 ## managing btrfs snapshots
 
 you should use them more often, perhaps in combination with a [a backup tool](restic.md)
+
+### snapshot utilities
+
+- [snapper](https://github.com/openSUSE/snapper) - automatically create snapshots based on a configuration
+- [snap-sync](https://github.com/baod-rate/snap-sync) - send snapshots to a target destination, another disk locally, ssh etc.
 
 ### list snapshots
 

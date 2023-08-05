@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Sunday, May 7th 2023, 9:24:33 am
+date modified: Saturday, August 5th 2023, 3:57:24 pm
 tags:
   - systemd
   - systemctl
@@ -135,6 +135,50 @@ systemctl list-timers
 
 ```shell
 systemctl disable name.timer
+```
+
+### create your own timer / cronjob
+
+**create your service unit:**
+
+place it somewhere in `/etc/systemd/system/restic_backup.service` for example
+
+```
+[Unit]
+Description=restic systemd service
+
+[Service]
+ExecStart=/usr/local/bin/backup.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**create your timer:**
+
+place it in the same folder but name it `.timer`, like this: `/etc/systemd/system/restic_backup.timer`
+
+```
+[Unit]
+Description=restic systemd timer
+
+[Timer]
+OnUnitActiveSec=24h
+RandomizedDelaySec=1h
+
+[Install]
+WantedBy=multi-user.target
+```
+
+there are many different ways when the service should run, like with `OnUnitActiveSec` every 24 hours including a randomized delay of 1h.
+
+[here's the documentation](https://www.freedesktop.org/software/systemd/man/systemd.timer.html#) for more ways when system should execute something
+
+**reload and enable the service:**
+
+```
+systemctl daemon-reload
+systemctl enable restic_backup.timer
 ```
 
 ## working with services
