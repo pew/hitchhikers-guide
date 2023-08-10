@@ -71,3 +71,11 @@ or **horizontally:**
 ```shell
 magick input1.png input2.png -append output.png
 ```
+
+**align them** using `gravity`
+
+if you have multiple sizes and you want them aligned in the center:
+
+```shell
+convert 1.png 2.png -gravity center -append great.png
+```
