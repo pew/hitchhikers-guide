@@ -1,6 +1,6 @@
 ---
 date created: Saturday, May 9th 2020, 11:47:02 am
-date modified: Tuesday, January 3rd 2023, 10:40:28 am
+date modified: Saturday, August 12th 2023, 10:58:26 am
 tags:
   - raspberrypi
   - rpi
@@ -26,7 +26,7 @@ the openssl version which ships by default with macOS doesn't support generating
 copy your generated password, and create a new file on the sd card:
 
 ```shell
-vi /Volumes/boot/userconf.txt
+vi /Volumes/bootfs/userconf.txt
 ```
 
 the contents should look like `username:password`, for example:
@@ -42,7 +42,7 @@ jonas:$6$WI1IQhq59s3IayNg$h/CZGHz/hlH4ksVgW8mI5kWyZ1vURk3KCFcLajACuIfsUiITYW1zap
 headless login, you know: create a file named `ssh` on the `boot` volume, ex:
 
 ```
-touch /Volumes/boot/ssh
+touch /Volumes/bootfs/ssh
 ```
 
 ## configure wifi
@@ -52,7 +52,7 @@ touch /Volumes/boot/ssh
 same as with ssh, create a file called `wpa_supplicant.conf` in the `boot` volume, like so:
 
 ```
-/Volumes/boot/wpa_supplicant.conf
+/Volumes/bootfs/wpa_supplicant.conf
 ```
 
 [then go here for the config](/man/wpa_supplicant)

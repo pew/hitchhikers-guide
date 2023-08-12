@@ -39,7 +39,9 @@ the output will look like this: `conservative ondemand userspace powersave perfo
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 
-change to `performance`, this won't reset during a reboot of the system. if you want this permanently set to `performance` or something else, you might want to edit `/etc/rc.local`
+**change cpu governor:**
+
+note, this will **reset** after a reboot. use something like [cpufrequtils](cpufrequtils.md) to apply a persistent configuration.
 
 ```shell
 echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
