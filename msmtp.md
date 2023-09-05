@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:46:06 am
-date modified: Tuesday, September 5th 2023, 10:54:30 am
+date modified: Tuesday, September 5th 2023, 10:56:59 am
 tags:
   - linux
   - smtp
@@ -48,4 +48,10 @@ save the following as `/usr/sbin/sendmail` (and replace the e-mail with the one 
 ```shell
 #!/bin/sh
 sed '0,/^\r\?$/ { s/^To:.*/To: user@example.com/ }' | /usr/bin/msmtp "$@"
+```
+
+## send e-mails using msmtp
+
+```shell
+echo -e "Subject: test mail\r\n\r\nSup, is a test mail." | msmtp hello@example.com
 ```
