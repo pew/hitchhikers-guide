@@ -1,10 +1,12 @@
 ---
+date created: Friday, June 23rd 2023, 5:47:44 am
+date modified: Wednesday, September 6th 2023, 12:03:09 pm
 tags:
   - cloudflare
   - zero_trust
 ---
 
-# cloudflare - list zero trust ipv4 & ipv6 assignments
+# list zero trust ipv4 & ipv6 assignments
 
 ```python
 # add your account id below

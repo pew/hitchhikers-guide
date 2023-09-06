@@ -1,7 +1,9 @@
 ---
 date created: Saturday, February 19th 2022, 4:19:05 pm
 date modified: Wednesday, September 21st 2022, 6:52:31 am
-tags: 
+tags:
+  - cloudflare
+  - workers
 ---
 
 # send custom header to origin

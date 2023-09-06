@@ -2,10 +2,9 @@
 date created: Friday, January 28th 2022, 6:03:12 am
 date modified: Wednesday, September 21st 2022, 6:52:14 am
 tags:
-  - cloudflare
-  - cloudflare workers
+  - workers
   - kv
-  - file handling
+  - cloudflare
 title: file upload
 ---
 
