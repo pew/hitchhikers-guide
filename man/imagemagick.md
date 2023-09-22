@@ -6,6 +6,22 @@ install imagemagick, for example with brew:
 brew install imagemagick
 ```
 
+## resize and keep aspect ratio
+
+`mogrify` can also overwrite existing files and do edits inline
+
+resize on *width*:
+
+```shell
+magick mogrify -geometry 256x *.png
+```
+
+resize on *height*:
+
+```shell
+magick mogrify -geometry x256 *.png
+```
+
 ## svg to png
 
 use `convert` to create a png out of a svg file
