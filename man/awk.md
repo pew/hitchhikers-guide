@@ -1,6 +1,6 @@
 ---
 date created: Saturday, March 23rd 2019, 2:02:05 pm
-date modified: Monday, September 26th 2022, 6:40:35 am
+date modified: Tuesday, October 17th 2023, 12:27:05 pm
 tags:
   - awk
 ---
@@ -45,4 +45,11 @@ odd:
 
 ```shell
 echo $text | NR%2==1
+```
+
+## cut / skip line
+
+```shell
+awk 'NR>1' # start after 1st line, use 2, 3 etc.
+awk 'NR>1 {print $1}'
 ```
