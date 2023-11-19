@@ -1,11 +1,11 @@
-# sqlite
-
 ---
-title:
+date created: Thursday, November 17th 2022, 4:57:39 am
+date modified: Sunday, November 19th 2023, 6:26:22 pm
 tags:
-  - sqlite3
-date created: 2022-11-16
+  - sqlite
 ---
+
+# sqlite
 
 ## show headers
 
@@ -25,4 +25,10 @@ date created: 2022-11-16
 sqlite3 db.sqlite
 .mode csv
 .import filename.csv table
+```
+
+## export sqlite as json
+
+```
+sqlite3 sqlite.db '.mode json' '.once data.json' "select * from images where user_id=1"
 ```
