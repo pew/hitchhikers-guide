@@ -9,7 +9,33 @@ tags:
 
 # btrfs
 
-## resize btrfs filesystem
+## check and scrub btrfs filesystem
+
+### scrub
+
+this just checks checksums of the data, it does not repair a filesystem
+
+**start the process:**
+
+```shell
+sudo btrfs scrub start /
+```
+
+**check the status:**
+
+```shell
+sudo btrfs scrub status /
+```
+
+### check
+
+should be done on a readonly or not mounted filesystem, however it can be run on a mounted filesystem as well, with the `--readonly` and `--force` flag you can make sure that nothing will be modified:
+
+```shell
+btrfs check --readonly --force /dev/md0
+```
+
+## resizing btrfs filesystems
 
 to max:
 
