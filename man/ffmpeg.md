@@ -85,3 +85,11 @@ to 1.5mbps
 ```
 ffmpeg -i IMG_4329.mov -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k meshtastic.mp4
 ```
+
+## generate gif from video
+
+endless loop:
+
+```shell
+ffmpeg -i in.mp4 -loop 0 out.gif
+```
