@@ -14,6 +14,14 @@ install all packages:
 brew bundle
 ```
 
+## remove casks including associated files
+
+warning from the man page: *May remove files which are shared between applications.*
+
+```shell
+brew uninstall --zap microsoft-edge
+```
+
 ## update brew (packages/apps)
 
 ```
