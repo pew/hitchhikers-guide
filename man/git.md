@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Friday, June 9th 2023, 11:35:30 am
+date modified: Sunday, December 17th 2023, 5:40:26 am
 tags:
   - git
 ---
@@ -8,6 +8,24 @@ tags:
 # git
 
 some commands I always forget
+
+## clone and pull without full history (shallow clone)
+
+**clone:**
+
+```shell
+git clone --depth 1 <repository-url>
+```
+
+**fetch/pull:**
+
+```shell
+git fetch --depth 1
+```
+
+```shell
+git pull --depth 1
+```
 
 ## find deleted file
 
