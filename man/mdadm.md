@@ -1,8 +1,8 @@
 ---
+date created: Sunday, December 29th 2019, 7:56:13 am
+date modified: Wednesday, December 20th 2023, 5:21:05 am
 tags: 
 title: mdadm / software raid
-date created: Sunday, December 29th 2019, 7:56:13 am
-date modified: Saturday, July 30th 2022, 3:00:46 pm
 ---
 
 # mdadm / software raid
@@ -48,6 +48,15 @@ mdadm --detail --scan --verbose | sudo tee -a /etc/mdadm/mdadm.conf
 Run `update-initramfs -u` after updating this file.
 
 **also, back up the `mdadm.conf` file to restore it onto a new system**
+
+## add and remove devices to/from raid
+
+if they're in a *faulty* state for example
+
+```shell
+mdadm --remove /dev/md0 /dev/nvme0n1
+mdadm --add /dev/md0 /dev/nvme0n1
+```
 
 ## replace disk
 
