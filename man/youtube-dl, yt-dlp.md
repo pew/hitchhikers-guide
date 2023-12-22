@@ -1,10 +1,10 @@
 ---
+date created: Tuesday, April 9th 2019, 4:37:46 pm
+date modified: Friday, December 22nd 2023, 11:19:38 am
 tags:
   - yt-dlp
   - ytdlp
   - youtube-dl
-date created: Tuesday, April 9th 2019, 4:37:46 pm
-date modified: Wednesday, May 18th 2022, 5:52:08 am
 title: 'youtube-dl, yt-dlp'
 ---
 
@@ -46,4 +46,12 @@ youtube-dl "https://player.vimeo.com/video/1234" --referer "https://example.com/
 
 ```shell
 yt-dlp --sponsorblock-remove all -x --audio-format mp3 https://example.com/
+```
+
+## download podcasts
+
+yt-dlp can also be used as a podcatcher for regular RSS feeds. I'm using this to archive a few podcasts, using the `-o` formatting options they'll be saved into a folder with the podcast name and title + file extension as the filename
+
+```shell
+yt-dlp -o "/backup/podcasts/%(playlist)s/%(title)s.%(ext)s" --restrict-filenames https://example.com/feed/podcast/
 ```
