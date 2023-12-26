@@ -1,12 +1,20 @@
 ---
 date created: Sunday, January 17th 2021, 3:51:17 pm
-date modified: Sunday, January 15th 2023, 4:39:51 am
+date modified: Tuesday, December 26th 2023, 7:21:44 pm
 tags:
   - ansible
   - automation
 ---
 
 # ansible
+
+## ad-hoc commands
+
+execute a module ad-hoc on some/all hosts:
+
+```shell
+ansible -i inventory all -m ansible.builtin.shell -a "dpkg --list"
+```
 
 ## create lists
 
