@@ -152,7 +152,7 @@ kubectl get cronjobs | grep True | cut -d' ' -f 1 | xargs kubectl patch cronjobs
 
 ## force-update images
 
-if you're using images with the `:latest` tag or another tag which changes remotely but not by tag name/version, you can configure the *imagePullPolicy* to always pull the image when the pod is being deleted, or the [deployment restarted](#re-deploy%20kubernetes%20pods%20/%20deployment).
+if you're using images with the `:latest` tag or another tag which changes remotely but not by tag name/version, you can configure the *imagePullPolicy* to always pull the image when the pod is being deleted, or the [deployment restarted](#re-deploy-kubernetes-pods-deployment).
 
 Here's an example deployment:
 
