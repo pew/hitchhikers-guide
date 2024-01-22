@@ -60,6 +60,14 @@ brew install potrace
 
 and you should be good to go
 
+## animated webp to gif
+
+```shell
+magick mogrify -format gif filename.webp
+```
+
+[source](https://superuser.com/a/1795252)
+
 ## image to c array
 
 useful if you're going crazy with some cool e-paper/e-ink displays and an esp32.
