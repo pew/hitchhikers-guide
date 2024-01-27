@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, April 9th 2019, 4:37:46 pm
-date modified: Friday, December 22nd 2023, 11:19:38 am
+date modified: Saturday, January 27th 2024, 11:45:45 am
 tags:
   - yt-dlp
   - ytdlp
@@ -53,5 +53,5 @@ yt-dlp --sponsorblock-remove all -x --audio-format mp3 https://example.com/
 yt-dlp can also be used as a podcatcher for regular RSS feeds. I'm using this to archive a few podcasts, using the `-o` formatting options they'll be saved into a folder with the podcast name and title + file extension as the filename
 
 ```shell
-yt-dlp -o "/backup/podcasts/%(playlist)s/%(title)s.%(ext)s" --restrict-filenames https://example.com/feed/podcast/
+yt-dlp -o "/backup/podcasts/%(playlist)s/%(title)s.%(ext)s" --restrict-filenames --download-archive archive.txt --no-post-overwrites https://example.com/feed/podcast/
 ```
