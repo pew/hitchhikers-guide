@@ -80,9 +80,15 @@ ffprobe -v error -select_streams v:0 -show_entries stream=bit_rate -of default=n
 
 ## compress video
 
+using a quick preset:
+
+```shell
+ffmpeg -i input.mov -vcodec libx264 -crf 22 -preset ultrafast -c:a copy output.mp4
+```
+
 to 1.5mbps
 
-```
+```shell
 ffmpeg -i IMG_4329.mov -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k meshtastic.mp4
 ```
 
