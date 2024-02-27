@@ -72,8 +72,8 @@ all things DNS
 
 get current status and dns server:
 
-```
-sudo systemd-resolve --status
+```shell
+resolvectl status
 ```
 
 change to another DNS server:
