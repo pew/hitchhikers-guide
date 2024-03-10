@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, January 23rd 2019, 7:59:04 pm
-date modified: Tuesday, January 2nd 2024, 9:53:05 am
+date modified: Sunday, March 10th 2024, 9:55:14 am
 tags:
   - k8s
   - kubernetes
@@ -164,4 +164,12 @@ spec:
       containers:
         - image: example:latest
           imagePullPolicy: Always
+```
+
+## run interactive container
+
+useful for stupid annoying things when you just want a shell:
+
+```shell
+kubectl run alpine --image=alpine --rm -i --tty -- sh
 ```
