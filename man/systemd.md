@@ -103,14 +103,14 @@ verify again (see above)
 
 ### clear dns cache
 
-```
-sudo systemd-resolve --flush-caches
+```shell
+resolvectl flush-caches
 ```
 
 verify:
 
-```
-sudo systemd-resolve --statistics
+```shell
+resolvectl statistics
 ```
 
 ## change hostname
