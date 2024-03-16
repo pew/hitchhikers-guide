@@ -1,6 +1,6 @@
 ---
 date created: Monday, August 2nd 2021, 5:48:23 am
-date modified: Saturday, March 16th 2024, 11:32:16 am
+date modified: Saturday, March 16th 2024, 12:16:48 pm
 tags: 
 ---
 
@@ -16,12 +16,32 @@ I don't know why they make it so hard, but here you go:
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm/kubectl"
 ```
 
+## execute command in pod
+
+one-off command:
+
+```shell
+kubectl exec rabbitmq-0 -- rabbitmqctl list_queues
+```
+
+run with tty interactively:
+
+```shell
+kubectl exec -it --tty rabbitmq-0 -- /bin/sh
+```
+
 ## get kubernetes event log
 
 ...sorted by timestamp
 
 ```
 kubectl get events --sort-by=.metadata.creationTimestamp
+```
+
+## pod / deployment memory usage
+
+```shell
+kubectl top pods -l app=<appname> --no-headers | awk '{SUM += $3} END { print "Total Memory Usage: " SUM " MiB"}'
 ```
 
 ## port forwarding
@@ -81,10 +101,4 @@ this will read the last 100 log entries and also keep following the log for new 
 
 ```shell
 kubectl logs -f --tail=100 <pod-name>
-```
-
-## pod / deployment memory usage
-
-```shell
-kubectl top pods -l app=<appname> --no-headers | awk '{SUM += $3} END { print "Total Memory Usage: " SUM " MiB"}'
 ```
