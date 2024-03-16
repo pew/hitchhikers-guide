@@ -1,6 +1,20 @@
+---
+date created: Monday, August 2nd 2021, 5:48:23 am
+date modified: Saturday, March 16th 2024, 11:32:16 am
+tags: 
+---
+
 # kubectl
 
 see also [kubernetes](/man/kubernetes/)
+
+## download kubectl for arm architecture, like an raspberry pi
+
+I don't know why they make it so hard, but here you go:
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm/kubectl"
+```
 
 ## get kubernetes event log
 
@@ -10,20 +24,18 @@ see also [kubernetes](/man/kubernetes/)
 kubectl get events --sort-by=.metadata.creationTimestamp
 ```
 
-## tail logs
+## port forwarding
 
-this will read the last 100 log entries and also keep following the log for new entries
-
-```
-kubectl logs -f --tail=100 <pod-name>
-```
-
-## download kubectl for arm architecture, like an raspberry pi
-
-I don't know why they make it so hard, but here you go:
+you may want to omit `--address=0.0.0.0`
 
 ```
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm/kubectl"
+kubectl port-forward pod-name-here --address=0.0.0.0 8384:8384
+```
+
+**get a random local port:**
+
+```
+kubectl port-forward pod-name-here --address=0.0.0.0 :8384
 ```
 
 ## run cronjob manually
@@ -63,16 +75,16 @@ update / replace `registry-secret-name` and specify your image after `--image`
 kubectl run -i --tty my-container --image=ghcr.io/example/private-image:latest --command /bin/sh --overrides='{ "spec": { "imagePullSecrets": [{"name": "registry-secret-name"}] } }'
 ```
 
-## port forwarding
+## tail logs
 
-you may want to omit `--address=0.0.0.0`
+this will read the last 100 log entries and also keep following the log for new entries
 
+```shell
+kubectl logs -f --tail=100 <pod-name>
 ```
-kubectl port-forward pod-name-here --address=0.0.0.0 8384:8384
-```
 
-**get a random local port:**
+## pod / deployment memory usage
 
-```
-kubectl port-forward pod-name-here --address=0.0.0.0 :8384
+```shell
+kubectl top pods -l app=<appname> --no-headers | awk '{SUM += $3} END { print "Total Memory Usage: " SUM " MiB"}'
 ```
