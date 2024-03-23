@@ -1,6 +1,6 @@
 ---
 date created: Friday, July 3rd 2020, 7:52:48 pm
-date modified: Saturday, March 23rd 2024, 5:03:51 pm
+date modified: Saturday, March 23rd 2024, 5:11:03 pm
 tags:
   - ffmpeg
   - ffprobe
@@ -27,6 +27,13 @@ ffmpeg -i IMG_4329.mov -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k meshtastic.mp4
 ```shell
 ffmpeg -i input.flv -c copy output.mp4
 for i in *.flv; do ffmpeg -i "$i" -c copy "${i%.flv}.mp4"; done
+```
+
+it might be required to encode the audio separately:
+
+```shell
+ffmpeg -i input.flv -c:v copy -c:a aac output.mp4
+for i in *.flv; do ffmpeg -i "$i" -c:v copy -c:a aac "${i%.flv}.mp4"; done
 ```
 
 ## cut video
