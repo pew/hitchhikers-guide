@@ -1,9 +1,10 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Saturday, August 5th 2023, 3:57:24 pm
+date modified: Sunday, April 7th 2024, 12:13:29 pm
 tags:
   - systemd
   - systemctl
+  - linux
 title: systemd
 ---
 
@@ -23,45 +24,6 @@ output example:
 
 ```
 2min 158ms systemd-networkd-wait-online.service
-```
-
-## logs / systemd journals
-
-### log disk usage
-
-check current disk usage of systemd journals:
-
-```shell
-journalctl --disk-usage
-```
-
-clean up some old logs:
-
-```shell
-journalctl --vacuum-size=100M
-```
-
-### configure journal / log usage
-
-it might be a good idea to limit the disk usage of your systemd journals. To do this, edit the file: `/etc/systemd/journald.conf`
-
-**control how much disk space the journal may use up at most**:
-
-```
-SystemMaxUse=1G
-```
-
-**control how large individual journal files may grow at most**:
-
-```
-SystemMaxFileSize=100M
-```
-
-and restart things
-
-```shell
-systemctl daemon-reload # for good measure
-systemctl restart systemd-journald.service
 ```
 
 ## DNS
@@ -101,6 +63,14 @@ sudo systemctl restart systemd-resolved.service
 
 verify again (see above)
 
+### change hostname
+
+```shell
+sudo hostnamectl set-hostname my-awesome-host
+```
+
+depending on your setup you might still need to update your `/etc/hosts` file as well
+
 ### clear dns cache
 
 ```shell
@@ -113,29 +83,48 @@ verify:
 resolvectl statistics
 ```
 
-## change hostname
+## logs: journalctl / systemd journals
 
-```shell
-sudo hostnamectl set-hostname my-awesome-host
+### configure journal / log usage
+
+it might be a good idea to limit the disk usage of your systemd journals. To do this, edit the file: `/etc/systemd/journald.conf`
+
+**control how much disk space the journal may use up at most**:
+
+```
+SystemMaxUse=1G
 ```
 
-depending on your setup you might still need to update your `/etc/hosts` file as well
+**control how large individual journal files may grow at most**:
+
+```
+SystemMaxFileSize=100M
+```
+
+and restart things
+
+```shell
+systemctl daemon-reload # for good measure
+systemctl restart systemd-journald.service
+```
+
+### log disk usage
+
+check current disk usage of systemd journals:
+
+```shell
+journalctl --disk-usage
+```
+
+clean up some old logs:
+
+```shell
+journalctl --vacuum-size=100M
+```
 
 ## timers (better cronjobs!)
 
 todo.. write something somewhere about the use of systemd-timers instead of cronjobs.
-
-### list timers
-
-```
-systemctl list-timers
-```
-
-### disable timer
-
-```shell
-systemctl disable name.timer
-```
 
 ### create your own timer / cronjob
 
@@ -181,7 +170,33 @@ systemctl daemon-reload
 systemctl enable restic_backup.timer
 ```
 
+### disable timer
+
+```shell
+systemctl disable name.timer
+```
+
+### list timers
+
+```
+systemctl list-timers
+```
+
 ## working with services
+
+### debugging: read and follow service logs output
+
+**read logs**:
+
+```shell
+journalctl -u your-name.service
+```
+
+**tail log**:
+
+```shell
+journalctl -f -u your-name.service
+```
 
 ### list active services
 
@@ -195,18 +210,4 @@ systemctl list-units --type=service --state=active
 
 ```shell
 systemctl list-units --type=service --state=running
-```
-
-## logs / debugging
-
-**read logs**:
-
-```shell
-journalctl -u your-name.service
-```
-
-**tail log**:
-
-```
-journalctl -f -u your-name.service
 ```
