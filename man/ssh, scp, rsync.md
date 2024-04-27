@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, August 17th 2022, 4:42:16 am
-date modified: Monday, May 1st 2023, 5:05:59 pm
+date modified: Saturday, April 27th 2024, 10:11:25 am
 tags:
   - ssh
   - git
@@ -14,6 +14,8 @@ tags:
 # ssh / scp / rsync
 
 there's a lot of stuff you can do!
+
+- see also [rsync](rsync.md)
 
 ## ssh
 
