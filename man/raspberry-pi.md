@@ -1,6 +1,6 @@
 ---
 date created: Monday, December 23rd 2019, 10:56:44 am
-date modified: Tuesday, January 3rd 2023, 10:41:12 am
+date modified: Thursday, May 9th 2024, 10:49:23 am
 tags:
   - raspberrypi
   - rpi
@@ -14,7 +14,7 @@ tags:
 
 ## disable wifi / bluetooth
 
-add the following to `/boot/config.txt`
+add the following to `/boot/firmware/config.txt`
 
 ```
 dtoverlay=disable-wifi
