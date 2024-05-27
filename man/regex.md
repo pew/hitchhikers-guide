@@ -29,6 +29,12 @@ this will match everything after `repos/`, the `K` is important here. the `.*` s
 
 to use it in editors like bbedit, use `^[\s]*$\n`
 
+## remove blank space end of line
+
+```
+\s+$
+```
+
 ## google re2 / golang(?)
 
 match `foo.example.com` and `foo-bar.example.com`:
