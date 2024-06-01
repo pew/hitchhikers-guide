@@ -1,3 +1,12 @@
+---
+date created: Friday, June 9th 2023, 11:30:38 am
+date modified: Monday, May 20th 2024, 10:28:01 am
+tags:
+  - aws
+---
+
+# aws
+
 ## aws cli v2
 
 some aws cli commands I'll probably forget about since I'm only using them once in a while
@@ -34,4 +43,3 @@ put something in there (also, overwrite existing):
 ```
 aws ssm put-parameter --overwrite --name DOCKER_ENV --type String --value "$(cat test.env)"
 ```
-
