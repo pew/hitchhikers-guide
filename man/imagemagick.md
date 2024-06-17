@@ -60,6 +60,12 @@ brew install potrace
 
 and you should be good to go
 
+## webp to png
+
+```shell
+magick mogrify -format png filename.webp
+```
+
 ## animated webp to gif
 
 ```shell
