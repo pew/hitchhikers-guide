@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Sunday, April 7th 2024, 12:13:29 pm
+date modified: Saturday, June 29th 2024, 9:34:55 am
 tags:
   - systemd
   - systemctl
@@ -180,6 +180,14 @@ systemctl disable name.timer
 
 ```
 systemctl list-timers
+```
+
+### remove / clear dead or dangling timers
+
+I removed a service and timer through ansible and reloaded systemd, but the timer was still showing up when running `systemd list-timers`. This worked to clean it up:
+
+```shell
+systemctl reset-failed
 ```
 
 ## working with services
