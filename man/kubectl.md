@@ -1,12 +1,28 @@
 ---
 date created: Monday, August 2nd 2021, 5:48:23 am
-date modified: Saturday, March 16th 2024, 12:16:48 pm
-tags: 
+date modified: Saturday, July 20th 2024, 10:21:21 am
+tags:
+  - k8s
+  - kubernetes
 ---
 
 # kubectl
 
-see also [kubernetes](/man/kubernetes/)
+see also [kubernetes](/man/kubernetes/). `kubectl` is the utility to control and manage kubernetes.
+
+## copy files from and to pod
+
+copy a file from a pod to the local filesystem:
+
+```shell
+kubectl cp my-pod-name:/report.xlsx report.xlsx
+```
+
+copy a file from the local filesystem to a pod:
+
+```shell
+kubectl cp hello.txt my-pod-name:/world.txt
+```
 
 ## download kubectl for arm architecture, like an raspberry pi
 
