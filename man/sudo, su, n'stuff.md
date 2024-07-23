@@ -45,7 +45,8 @@ jonas	ALL=(ALL:ALL) NOPASSWD: ALL
 
 ## `sudoers` file ordering
 
-if your `NOPASSWD` option from above doesn't work, the ordering matters:
+**tl;dr:** put your own entry to the bottom of the file
+
+if your `NOPASSWD` option doesn't work, the ordering matters:
 
 > When multiple entries match for a user, they are applied in order. Where there are multiple matches, the last match is used (which is not necessarily the most specific match).
-> 
