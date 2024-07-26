@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Saturday, June 29th 2024, 9:34:55 am
+date modified: Friday, July 26th 2024, 9:57:56 am
 tags:
   - systemd
   - systemctl
@@ -204,6 +204,30 @@ journalctl -u your-name.service
 
 ```shell
 journalctl -f -u your-name.service
+```
+
+### disable / mask service, prevent from starting
+
+using *disable* stops the service from starting automatically, but it can be started manually. *mask* prevents the service from being started at all by creating a symlink to `/dev/null`
+
+**disable a service from starting automatically:**
+
+it can be started manually, for example by NetworkManager
+
+```shell
+systemctl disable wpa_supplicant.service
+```
+
+**prevent service from being started at all:**
+
+```shell
+systemctl mask wpa_supplicant.service
+```
+
+the output will also tell you that the service has been linked to `/dev/null`:
+
+```shell
+Created symlink /etc/systemd/system/wpa_supplicant.service → /dev/null.
 ```
 
 ### list active services
