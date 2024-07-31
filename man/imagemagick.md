@@ -1,3 +1,12 @@
+---
+date created: Saturday, June 22nd 2024, 7:03:25 am
+date modified: Wednesday, July 31st 2024, 9:44:42 am
+tags:
+  - imagemagick
+  - convert
+  - magick
+---
+
 # imagemagick
 
 install imagemagick, for example with brew:
@@ -27,17 +36,16 @@ magick mogrify -geometry x256 *.png
 use `convert` to create a png out of a svg file
 
 ```shell
-convert -background none -size 400x380 input.svg output.png
+magick -background none -size 400x380 input.svg output.png
 ```
 
-you can omit the `-size` as well
+you can omit `-size`
 
 the background color can be specified like so:
 
 ```shell
--color blue
--color "#ddddff"
--color "rgb(255,255,255)"
+magick -background blue
+magick -background "#ddddff"
 ```
 
 ## png to svg
