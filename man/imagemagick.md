@@ -1,6 +1,6 @@
 ---
 date created: Saturday, June 22nd 2024, 7:03:25 am
-date modified: Wednesday, July 31st 2024, 9:44:42 am
+date modified: Wednesday, July 31st 2024, 9:55:09 am
 tags:
   - imagemagick
   - convert
@@ -33,13 +33,17 @@ magick mogrify -geometry x256 *.png
 
 ## svg to png
 
-use `convert` to create a png out of a svg file
+use `convert` to create a png out of a svg file:
 
 ```shell
-magick -background none -size 400x380 input.svg output.png
+magick input.svg output.png
 ```
 
-you can omit `-size`
+change the background color:
+
+```shell
+magick -background none input.svg -geometry 2400 output.png
+```
 
 the background color can be specified like so:
 
