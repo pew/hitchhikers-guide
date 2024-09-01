@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Friday, July 26th 2024, 9:57:56 am
+date modified: Sunday, September 1st 2024, 10:52:37 am
 tags:
   - systemd
   - systemctl
@@ -206,9 +206,15 @@ journalctl -u your-name.service
 journalctl -f -u your-name.service
 ```
 
-### disable / mask service, prevent from starting
+### disable / mask service, prevent from starting & unmask
 
 using *disable* stops the service from starting automatically, but it can be started manually. *mask* prevents the service from being started at all by creating a symlink to `/dev/null`
+
+**list masked services:**
+
+```shell
+systemctl list-unit-files | grep masked
+```
 
 **disable a service from starting automatically:**
 
