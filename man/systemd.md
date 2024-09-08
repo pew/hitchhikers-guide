@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Sunday, September 1st 2024, 10:52:37 am
+date modified: Sunday, September 8th 2024, 10:21:31 am
 tags:
   - systemd
   - systemctl
@@ -84,6 +84,28 @@ resolvectl statistics
 ```
 
 ## logs: journalctl / systemd journals
+
+### read journalctl logs / syslog
+
+the following flags can usually be combined, so `-f -u <service>` works as well.
+
+**follow all new logs (tail -f):**
+
+```shell
+journalctl -f
+```
+
+**display last 100 lines and follow new logs:**
+
+```shell
+journalctl -n 100 -f
+```
+
+**read logs from a specific service/unit:**
+
+```shell
+journalctl -u your-name.service
+```
 
 ### configure journal / log usage
 
