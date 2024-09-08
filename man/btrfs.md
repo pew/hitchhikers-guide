@@ -1,6 +1,6 @@
 ---
 date created: Saturday, March 26th 2022, 7:07:01 am
-date modified: Saturday, August 5th 2023, 3:40:55 pm
+date modified: Sunday, September 8th 2024, 9:04:35 am
 tags:
   - btrfs
   - linux
@@ -62,6 +62,12 @@ you should use them more often, perhaps in combination with a [a backup tool](re
 
 ```shell
 sudo btrfs subvolume list /
+```
+
+### get more information about a snapshot
+
+```shell
+btrfs subvol show /.snapshots/1236/snapshot/
 ```
 
 ### create a read only snapshot
