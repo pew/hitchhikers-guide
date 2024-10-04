@@ -10,7 +10,7 @@ tags:
 > An extremely fast Python package and project manager, written in Rust.
 
 - [github project page](https://github.com/astral-sh/uv)
-- see also [pip](pip)
+- see also [pip](/man/pip)
 
 ## run executable
 
