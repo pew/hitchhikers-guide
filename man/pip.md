@@ -9,7 +9,7 @@ tags:
 
 standard python package manager
 
-- [see also uv](man/uv/)
+- [see also uv](/man/uv/)
 
 ## updates and upgrades
 
