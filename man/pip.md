@@ -1,4 +1,15 @@
+---
+date created: Saturday, October 28th 2023, 9:43:48 am
+date modified: Friday, October 4th 2024, 11:41:09 am
+tags:
+  - python
+---
+
 # pip
+
+standard python package manager
+
+- [see also uv](man/uv/)
 
 ## updates and upgrades
 
