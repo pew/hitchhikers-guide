@@ -45,7 +45,17 @@ echo "What's up?"
 
 [source](https://serverfault.com/a/653405) and [source](https://serverfault.com/a/311463).
 
-### jumphost
+### ssh error commandline disabled
+
+when trying to open an interactive shell with `~C`. add this to your `~/.ssh/config` for the host
+
+```shell
+EnableEscapeCommandline yes
+```
+
+or use `-o EnableEscapeCommandline=yes` with the `ssh` command.
+
+### ssh jumphost
 
 this is quite new in openssh, use `-J` to connect to your target host through (multiple) jump host(s):
 
