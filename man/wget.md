@@ -1,6 +1,6 @@
 ---
 date created: Saturday, April 6th 2024, 6:14:59 am
-date modified: Monday, November 4th 2024, 5:54:01 am
+date modified: Monday, November 4th 2024, 6:03:37 am
 tags: 
 ---
 
@@ -18,4 +18,16 @@ wget --content-disposition https://example.com
 
 ```shell
 wget -r -A pdf https://example.com/
+```
+
+## skip if file exist already
+
+```shell
+wget -nc
+```
+
+## bind to source ip address (network interface)
+
+```shell
+wget --bind-address 10.0.0.5
 ```
