@@ -1,6 +1,6 @@
 ---
 date created: Saturday, April 27th 2024, 9:53:49 am
-date modified: Saturday, September 7th 2024, 10:01:42 am
+date modified: Tuesday, November 5th 2024, 6:00:58 am
 tags:
   - rsync
 ---
@@ -53,4 +53,12 @@ this is a basic example, it's worth checking out the [filter rules of rsync's ma
 
 ```shell
 rsync -avPm ~/source ~/dest
+```
+
+## delete files on the source
+
+you might want to run this first with `-n`  for a dry run
+
+```shell
+rsync --remove-source-files -av ~/source ~/dest
 ```
