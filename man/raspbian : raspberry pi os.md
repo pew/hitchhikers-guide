@@ -1,6 +1,6 @@
 ---
 date created: Saturday, May 9th 2020, 11:47:02 am
-date modified: Saturday, August 12th 2023, 10:58:26 am
+date modified: Wednesday, November 6th 2024, 9:27:40 am
 tags:
   - raspberrypi
   - rpi
@@ -56,3 +56,19 @@ same as with ssh, create a file called `wpa_supplicant.conf` in the `boot` volum
 ```
 
 [then go here for the config](/man/wpa_supplicant)
+
+### configure wifi on raspberry pi os 12 / bookworm
+
+for some reason things are becoming more complicated with raspberry pi os.
+
+this is how you can do it with a **TUI**:
+
+```shell
+sudo nmtui
+```
+
+or CLI:
+
+```shell
+sudo nmcli connection add type wifi ifname wlan0 con-name "MyNetwork" ssid "MyNetwork"
+```
