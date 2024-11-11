@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, June 8th 2021, 5:28:23 am
-date modified: Sunday, November 20th 2022, 1:17:08 pm
+date modified: Monday, November 11th 2024, 4:46:16 pm
 tags:
   - dd
 title: dd
@@ -15,7 +15,7 @@ I'm using `gdd` here, this requires the homebrew package `coreutils` on a mac. `
 copy a raspberry pi os image to an sd card:
 
 ```
-sudo gdd if=2021-05-07-raspios-buster-armhf.img of=/dev/rdisk4 bs=32M conv=fsync status=progress
+dd if=2021-05-07-raspios-buster-armhf.img of=/dev/rdisk4 bs=32M conv=fsync status=progress
 ```
 
 ## backup and restore image
@@ -23,13 +23,13 @@ sudo gdd if=2021-05-07-raspios-buster-armhf.img of=/dev/rdisk4 bs=32M conv=fsync
 **get blocksize**:
 
 ```shell
-tune2fs -l /dev/sdb2|grep -i 'block size'
+stat -f /dev/sdc
 ```
 
-**backup disk/sd-card to an image**:
+**backup disk / sd-card to an image**:
 
 ```shell
-dd if=/dev/sdb of=rpi_backup.img bs=4096 conv=noerror,sync status=progress
+dd if=/dev/sdc of=rpi_backup.img bs=4096 conv=noerror,sync status=progress
 ```
 
 **restore image to disk/sd-card**:
