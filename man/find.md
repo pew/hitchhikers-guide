@@ -1,6 +1,6 @@
 ---
 date created: Sunday, January 20th 2019, 2:55:43 pm
-date modified: Thursday, October 17th 2024, 5:14:10 am
+date modified: Saturday, November 16th 2024, 10:49:00 am
 tags: 
 ---
 
@@ -32,6 +32,14 @@ delete them:
 
 ```
 find /mnt/media/ -type f -iname ".*.*.??????" -delete
+```
+
+## delete files that don't match pattern
+
+assuming you have a folder full of files and you only want to **keep** all files starting with `us-` and `ca-` and delete all others:
+
+```shell
+find . -type f ! -name 'us-*' ! -name 'ca-*' -print0 | xargs -0 rm
 ```
 
 ## find 0 byte files
