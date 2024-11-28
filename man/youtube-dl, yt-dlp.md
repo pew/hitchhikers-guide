@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, April 9th 2019, 4:37:46 pm
-date modified: Saturday, January 27th 2024, 12:19:29 pm
+date modified: Thursday, November 28th 2024, 6:30:06 am
 tags:
   - yt-dlp
   - ytdlp
@@ -46,6 +46,14 @@ youtube-dl "https://player.vimeo.com/video/1234" --referer "https://example.com/
 
 ```shell
 yt-dlp --sponsorblock-remove all -x --audio-format mp3 https://example.com/
+```
+
+### extract mp3 from soundcloud
+
+requires the `-x` flag
+
+```shell
+yt-dlp -x --audio-format mp3 https://example.com/
 ```
 
 ## download podcasts
