@@ -1,6 +1,26 @@
+---
+date created: Monday, September 27th 2021, 6:27:00 am
+date modified: Saturday, December 7th 2024, 12:23:06 pm
+tags: 
+---
+
 # sed
 
 I can't believe it's not butter
+
+## in-place editing
+
+this will replace the files and create a `.bak` backup file
+
+```shell
+sed -i.bak -e 's/foo/bar/g' filename
+```
+
+without backup:
+
+```shell
+sed -i '' -e 's/foo/bar/g' filename
+```
 
 ## remove all lines except matching one
 
@@ -15,7 +35,6 @@ ae08e0b56fea59a8bfdadacd92eddc9bdfdc1473199178cb4e31bacfd991864a  yt-dlp.tar.gz
 ```
 
 I just want the line containing the `yt-dlp` hash, not the `.zip`, `.tar.gz` etc.
-
 
 ```shell
 sed -i '/yt-dlp$/!d' filename.txt
@@ -48,3 +67,10 @@ sed 's/$/,/'
 ```shell
 sed 's/ //'
 ```
+
+## replace multiple patterns in one go
+
+```shell
+sed -e 's/foo/bar/g' -e 's/bat/baz/g' filename
+```
+

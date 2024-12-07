@@ -1,6 +1,6 @@
 ---
 date created: Saturday, April 17th 2021, 7:09:59 am
-date modified: Wednesday, September 21st 2022, 6:52:38 am
+date modified: Saturday, December 7th 2024, 12:20:41 pm
 tags:
   - curl
   - file handling
@@ -25,6 +25,14 @@ curl https://httpbin.org/get --next -X POST --data "abc=xyz" https://httpbin.org
 ```
 
 [blog post about this](https://daniel.haxx.se/blog/2014/03/12/whats-next-for-curl/), [source](https://changelog.com/news/a3Ep/visit)
+
+## use socks proxy
+
+the example below uses the proxy the Tor Browser is exposing when open
+
+```shell
+curl -x socks5h://localhost:9150 https://icanhazip.com/
+```
 
 ## uploading files
 
