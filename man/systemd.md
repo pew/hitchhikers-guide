@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Sunday, September 8th 2024, 10:21:31 am
+date modified: Thursday, December 26th 2024, 11:48:10 am
 tags:
   - systemd
   - systemctl
@@ -230,7 +230,9 @@ journalctl -f -u your-name.service
 
 ### disable / mask service, prevent from starting & unmask
 
-using *disable* stops the service from starting automatically, but it can be started manually. *mask* prevents the service from being started at all by creating a symlink to `/dev/null`
+***disabling*** a service prevents it from being started automatically on boot but it can still be interacted with, or started by other services. ***masking*** a service means it can't even be started using systemd, it'll essentially create a symlink to `/dev/null`
+
+#### mask / unmask services
 
 **list masked services:**
 
@@ -238,15 +240,7 @@ using *disable* stops the service from starting automatically, but it can be sta
 systemctl list-unit-files | grep masked
 ```
 
-**disable a service from starting automatically:**
-
-it can be started manually, for example by NetworkManager
-
-```shell
-systemctl disable wpa_supplicant.service
-```
-
-**prevent service from being started at all:**
+**mask a service / prevent service from being started at all:**
 
 ```shell
 systemctl mask wpa_supplicant.service
@@ -256,6 +250,22 @@ the output will also tell you that the service has been linked to `/dev/null`:
 
 ```shell
 Created symlink /etc/systemd/system/wpa_supplicant.service → /dev/null.
+```
+
+**unmask a service:**
+
+```shell
+systemctl unmask bluetooth.service
+```
+
+#### disable a service
+
+**disable a service from starting automatically:**
+
+it can be started manually, for example by NetworkManager
+
+```shell
+systemctl disable wpa_supplicant.service
 ```
 
 ### list active services
