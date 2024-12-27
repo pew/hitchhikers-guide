@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, April 16th 2019, 5:51:06 pm
-date modified: Saturday, May 4th 2024, 4:09:41 pm
+date modified: Friday, December 27th 2024, 11:56:24 am
 tags: 
 ---
 
@@ -38,6 +38,16 @@ you can also use **dpkg**:
 ```shell
 dpkg -S /usr/bin/bsd-mailx
 ```
+
+## find dependencies
+
+for example, if you want to install `bsd-mailx` it'll try and install postfix as well, you can check the dependencies like this:
+
+```shell
+apt-cache depends bsd-mailx
+```
+
+and it'll show that `msmtp-mta` is listed, too
 
 ## pin version
 
