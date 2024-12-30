@@ -1,6 +1,6 @@
 ---
 date created: Friday, December 27th 2024, 4:34:01 pm
-date modified: Friday, December 27th 2024, 4:36:27 pm
+date modified: Monday, December 30th 2024, 10:25:14 am
 tags: 
 ---
 
@@ -28,6 +28,12 @@ find /etc -name "*.dpkg-*"
 
 ```shell
 find /etc -name "*.ucf-dist"
+```
+
+- **for `.distUpgrade` files:**
+
+```shell
+find /etc -name "*.distUpgrade*"
 ```
 
 ### compare and merge changes
