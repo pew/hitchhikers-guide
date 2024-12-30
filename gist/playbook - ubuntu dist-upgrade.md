@@ -11,7 +11,7 @@ upgrading ubuntu and managing configuration file changes, you might also want to
 ## upgrade using `do-release-upgrade`
 
 ```shell
-DEBIAN_FRONTEND=noninteractive do-release-upgrade
+DEBIAN_FRONTEND=noninteractive do-release-upgrade --frontend=DistUpgradeViewNonInteractive
 ```
 
 ## post-upgrade: manage configuration file changes
