@@ -4,7 +4,7 @@ date modified: Monday, December 30th 2024, 10:25:14 am
 tags: 
 ---
 
-# playbook - ubuntu dist-upgrade
+# runbook - ubuntu dist-upgrade
 
 upgrading ubuntu and managing configuration file changes, you might also want to use tools such as [etckeeper](https://etckeeper.branchable.com/)
 
