@@ -1,6 +1,6 @@
 ---
 date created: Friday, December 27th 2024, 4:34:01 pm
-date modified: Thursday, January 2nd 2025, 10:38:19 am
+date modified: Thursday, January 2nd 2025, 10:43:31 am
 tags: 
 ---
 
@@ -27,11 +27,9 @@ EOF'
 
 explanation from the [dpkg man page](https://manpages.debian.org/buster/dpkg/dpkg.1#OPTIONS):
 
-```
-confold: If a conffile has been modified and the version in the package did change, always keep the old version without prompting, unless the --force-confdef is also specified, in which case the default action is preferred.
+> confold: If a conffile has been modified and the version in the package did change, always keep the old version without prompting, unless the --force-confdef is also specified, in which case the default action is preferred.
 
-confdef: If a conffile has been modified and the version in the package did change, always choose the default action without prompting. If there is no default action it will stop to ask the user unless --force-confnew or --force-confold is also been given, in which case it will use that to decide the final action.
-```
+> confdef: If a conffile has been modified and the version in the package did change, always choose the default action without prompting. If there is no default action it will stop to ask the user unless --force-confnew or --force-confold is also been given, in which case it will use that to decide the final action.
 
 ## post-upgrade: manage configuration file changes
 
