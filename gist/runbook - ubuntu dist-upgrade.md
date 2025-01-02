@@ -1,6 +1,6 @@
 ---
 date created: Friday, December 27th 2024, 4:34:01 pm
-date modified: Monday, December 30th 2024, 10:25:14 am
+date modified: Thursday, January 2nd 2025, 10:38:19 am
 tags: 
 ---
 
@@ -12,6 +12,25 @@ upgrading ubuntu and managing configuration file changes, you might also want to
 
 ```shell
 DEBIAN_FRONTEND=noninteractive do-release-upgrade --frontend=DistUpgradeViewNonInteractive
+```
+
+for a truly silent or unattended upgrade, you need to configure `dpkg` to handle changes in configuration files between versions:
+
+```shell
+sh -c 'cat > /etc/apt/apt.conf.d/90force-conf <<EOF
+Dpkg::Options {
+    "--force-confdef";
+    "--force-confold";
+}
+EOF'
+```
+
+explanation from the [dpkg man page](https://manpages.debian.org/buster/dpkg/dpkg.1#OPTIONS):
+
+```
+confold: If a conffile has been modified and the version in the package did change, always keep the old version without prompting, unless the --force-confdef is also specified, in which case the default action is preferred.
+
+confdef: If a conffile has been modified and the version in the package did change, always choose the default action without prompting. If there is no default action it will stop to ask the user unless --force-confnew or --force-confold is also been given, in which case it will use that to decide the final action.
 ```
 
 ## post-upgrade: manage configuration file changes
