@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Sunday, December 17th 2023, 5:40:26 am
+date modified: Sunday, January 5th 2025, 2:03:44 pm
 tags:
   - git
 ---
@@ -8,6 +8,15 @@ tags:
 # git
 
 some commands I always forget
+
+## git lfs / git large file storage
+
+put large files in a git repository (the `install` part is only required once on the system):
+
+```shell
+git lfs install
+git lfs track '.assets/**'
+```
 
 ## clone and pull without full history (shallow clone)
 
