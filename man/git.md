@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Sunday, January 5th 2025, 2:03:44 pm
+date modified: Sunday, January 5th 2025, 2:11:57 pm
 tags:
   - git
 ---
@@ -11,11 +11,17 @@ some commands I always forget
 
 ## git lfs / git large file storage
 
-put large files in a git repository (the `install` part is only required once on the system):
+put large files in a git repository:
 
 ```shell
 git lfs install
 git lfs track '.assets/**'
+```
+
+uninstall it with:
+
+```shell
+git lfs uninstall
 ```
 
 ## clone and pull without full history (shallow clone)
