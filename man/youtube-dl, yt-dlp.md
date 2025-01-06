@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, April 9th 2019, 4:37:46 pm
-date modified: Thursday, November 28th 2024, 6:30:06 am
+date modified: Monday, January 6th 2025, 10:17:18 am
 tags:
   - yt-dlp
   - ytdlp
@@ -62,4 +62,34 @@ yt-dlp can also be used as a podcatcher for regular RSS feeds. I'm using this to
 
 ```shell
 yt-dlp -o "/backup/podcasts/%(playlist)s/%(title)s.%(ext)s" --restrict-filenames --download-archive archive.txt --no-post-overwrites -i https://example.com/feed/podcast/
+```
+
+## use cookies from browser
+
+should also work with `chrome` and `safari` instead of `firefox`. [there's more in the docs](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
+
+```shell
+yt-dlp --cookies-from-browser firefox
+```
+
+## use a config file for yt-dlp
+
+you can put the command line arguments in a file and let yt-dlp always use the config file so you don't need to pass the arguments to it. it can then still be combined with other flags such as the `--cookies-from-browser` thing
+
+or use `--ignore-config` to not use the config file, otherwise:
+
+create the folder and file `~/.config/yt-dlp/config` and put your arguments in there, here's my example:
+
+```
+# set the output template for filenames
+--output "~/Downloads/%(title)s.%(ext)s"
+
+# restrict filenames to ASCII characters
+--restrict-filenames
+
+# download the best mp4 video
+--format best[ext=mp4]
+
+# continue downloading partially downloaded files
+--continue
 ```
