@@ -1,12 +1,20 @@
 ---
 date created: Saturday, April 17th 2021, 7:09:59 am
-date modified: Saturday, December 7th 2024, 12:20:41 pm
+date modified: Thursday, January 9th 2025, 5:08:05 pm
 tags:
   - curl
   - file handling
 ---
 
 # curl
+
+## specify tls version wit curl
+
+you need to specify the version and max version curl will use
+
+```shell
+curl --tlsv1.2 --tls-max 1.2 https://example.com/
+```
 
 ## force GET request and get headers
 
