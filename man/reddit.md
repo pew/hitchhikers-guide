@@ -1,12 +1,22 @@
 ---
 date created: Wednesday, July 17th 2019, 3:38:37 pm
-date modified: Friday, March 29th 2024, 11:36:52 am
+date modified: Tuesday, February 11th 2025, 5:52:09 am
 tags: 
 ---
 
 # reddit
 
 ehm... okay?
+
+## get json for reddit post
+
+append `.json` to the end of a reddit url
+
+## get text for each reddit comment
+
+```shell
+jq -r '.[].data.children[].data | select(.body != null) | "---\n\(.body)"' < reddit.json
+```
 
 ## get markdown version of reddit post
 
