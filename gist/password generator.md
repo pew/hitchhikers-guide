@@ -1,6 +1,6 @@
 ---
 date created: Saturday, September 17th 2022, 6:56:10 am
-date modified: Saturday, March 15th 2025, 9:41:04 am
+date modified: Saturday, March 15th 2025, 9:41:58 am
 tags:
   - password
   - secrets
@@ -8,6 +8,12 @@ tags:
 ---
 
 # password generator
+
+## openssl
+
+```shell
+openssl rand -hex 32
+```
 
 ## python
 
