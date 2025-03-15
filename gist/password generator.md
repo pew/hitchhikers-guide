@@ -1,6 +1,6 @@
 ---
 date created: Saturday, September 17th 2022, 6:56:10 am
-date modified: Saturday, January 7th 2023, 11:40:46 am
+date modified: Saturday, March 15th 2025, 9:41:04 am
 tags:
   - password
   - secrets
@@ -30,6 +30,18 @@ echo -n $(python -c 'import secrets;import string;f=open("/usr/share/dict/words"
 ```
 
 [you might want to check the official python docs](https://docs.python.org/3/library/secrets.html#recipes-and-best-practices).
+
+## gpg
+
+```shell
+gpg --gen-random --armor 2 30
+```
+
+## /dev/urandom
+
+```shell
+LC_ALL=C tr -cd '[:graph:]' < /dev/urandom | head -c23
+```
 
 ## others
 
