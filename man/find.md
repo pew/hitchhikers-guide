@@ -1,6 +1,6 @@
 ---
 date created: Sunday, January 20th 2019, 2:55:43 pm
-date modified: Saturday, November 16th 2024, 10:49:00 am
+date modified: Tuesday, March 18th 2025, 5:43:07 am
 tags: 
 ---
 
@@ -48,4 +48,28 @@ find . -type f ! -name 'us-*' ! -name 'ca-*' -print0 | xargs -0 rm
 
 ```
 find /data -size 0
+```
+
+## find files older than `n`
+
+files changed in the last day:
+
+```shell
+find . -mtime -1
+```
+
+files older than 365 days:
+
+```shell
+find ~/Library/Preferences -mtime +365
+```
+
+you can also add time units `+365h`:
+
+```
+s       second
+m       minute (60 seconds)
+h       hour (60 minutes)
+d       day (24 hours)
+w       week (7 days)
 ```
