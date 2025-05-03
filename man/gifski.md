@@ -15,6 +15,8 @@ tags:
 
 see also [ffmpeg](/man/ffmpeg/) and [imagemagick](/man/imagemagick/)
 
+
+
 ## create small-ish .gif from video
 
 ```shell
