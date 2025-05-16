@@ -20,6 +20,7 @@ warning from the man page: *May remove files which are shared between applicatio
 
 ```shell
 brew uninstall --zap microsoft-edge
+brew uninstall --zap --force microsoft-edge # if it has been manually deleted from /Applications/ already
 ```
 
 ## update brew (packages/apps)
