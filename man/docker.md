@@ -1,6 +1,18 @@
+---
+date created: Monday, December 24th 2018, 3:03:24 pm
+date modified: Saturday, May 31st 2025, 10:30:32 am
+tags:
+  - docker
+  - networking
+  - ipv6
+---
+
 # docker
 
+see also:
+
 - [podman](/man/podman)
+- [k3s](/man/k3s)
 
 ## exec as other user (e.G. root)
 
@@ -56,34 +68,42 @@ get rid of unused images:
 docker rmi $(docker images -a|grep none|awk {'print $3'})
 ```
 
-## ipv6
+## docker and ipv6
 
-this will never end
+### enable ipv6 with docker compose
 
-### enable ipv6 in docker container
-
-I just want my nginx or traefik container to be available from the outside, man. Since I couldn't find anything meaningful out there on the interwebs I assume something is dangerously wrong with my config, but it *works*.
-
-`docker-compose.yaml` example (from mailcow):
+create a new `network` to your `compose.yaml` and add this network to your container(s), example:
 
 ```yaml
+services:
+  pihole:
+    image: pihole/pihole:latest
+    networks:
+      - leela-network
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+    environment:
+      TZ: Europe/Paris
+    volumes:
+      - pihole-etc:/etc/pihole
+      - pihole-dnsmasq:/etc/dnsmasq.d
+    restart: unless-stopped
+
 networks:
-  proxynet:
-    name: awesomenet
-    driver: bridge
+  leela-network:
     enable_ipv6: true
-    ipam:
-      driver: default
-      config:
-        - subnet: fd4d:6169:6c63:6f77::/64
 ```
+
+the above enables ipv6 and ipv4 for your container
 
 ### more docker ipv6 stuff
 
 this is for your `/etc/docker/daemon.json` file. it might not exist.
 
-```
+```json
 {
+  "log-driver": "journald",
   "ipv6": true,
   "fixed-cidr-v6": "fd00:dead:beef:c0::/80",
   "experimental": true,
