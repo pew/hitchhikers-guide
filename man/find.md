@@ -1,6 +1,6 @@
 ---
 date created: Sunday, January 20th 2019, 2:55:43 pm
-date modified: Tuesday, March 18th 2025, 5:43:07 am
+date modified: Sunday, June 22nd 2025, 3:24:08 pm
 tags: 
 ---
 
@@ -18,6 +18,18 @@ to stay in the current folder when searching, use `-d` for the depth, or change 
 
 ```shell
 find . -type f -d 1
+```
+
+## find and delete broken symlinks
+
+```shell
+find . -type l ! -exec test -e {} \; -print
+```
+
+use `-delete` to remove them right away:
+
+```shell
+find . -type l ! -exec test -e {} \; -delete
 ```
 
 ## find incomplete / dead rsync transfers
