@@ -1,6 +1,6 @@
 ---
 date created: Friday, October 4th 2024, 10:27:43 am
-date modified: Sunday, June 22nd 2025, 3:31:24 pm
+date modified: Sunday, June 22nd 2025, 3:35:30 pm
 tags:
   - python
 ---
@@ -14,7 +14,7 @@ tags:
 
 ## run executable
 
-this will run `cowsay` in its own virtual environment and execute it directly, similar to pipx
+this will run `cowsay` in its own virtual environment and execute it directly, similar to `pipx`
 
 ```shell
 uvx cowsay -t sup
@@ -34,6 +34,12 @@ uv python install 3.13
 
 ```shell
 uv venv --python 3.13
+```
+
+## clean cache
+
+```shell
+uv cache clean
 ```
 
 ## uv tool - install python binaries
