@@ -1,6 +1,6 @@
 ---
 date created: Friday, October 4th 2024, 10:27:43 am
-date modified: Friday, October 4th 2024, 10:35:30 am
+date modified: Sunday, June 22nd 2025, 3:31:24 pm
 tags:
   - python
 ---
@@ -36,6 +36,20 @@ uv python install 3.13
 uv venv --python 3.13
 ```
 
+## uv tool - install python binaries
+
+install a python binary using `uv tool` right into your `PATH`, not scoped to a project:
+
+```shell
+uv tool install yamllint
+```
+
+sometimes you need additional binaries with a package, for example ansible. you can use the `--with` flag:
+
+```shell
+uv tool install --with ansible ansible-core
+```
+
 ## managing packages
 
 ### install with pip interface
@@ -46,7 +60,7 @@ with the `pip` interface
 uv pip install <python package>
 ```
 
-### add to project
+### add package to project
 
 ```shell
 uv init
