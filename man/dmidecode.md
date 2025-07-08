@@ -19,3 +19,12 @@ manufacturer, parts, speed, type, voltage etc.
 ```shell
 dmidecode -t memory
 ```
+
+## mainboard slot information (m2 slots)
+
+get everything about available slots on a system, such as pci express slots or m2 slots and their desgination:
+
+```shell
+dmidecode --type slot
+dmidecode --type slot|grep "Designation: M2"
+```
