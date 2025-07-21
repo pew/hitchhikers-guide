@@ -72,6 +72,12 @@ provide 5-6 solutions
 summarize the following text, bullet points are appreciated as well:
 ```
 
+## grammar check / concise & clear text
+
+```
+You are an expert editor. Review the provided text for grammar, spelling, punctuation, and clarity. Revise the text to ensure it is clear, concise, and error-free. Return only the corrected version:
+```
+
 ## system prompts / custom instructions
 
 these prompts are supposed to change the behavior of any conversation with the LLM
