@@ -1,6 +1,6 @@
 ---
 date created: Monday, December 24th 2018, 3:03:24 pm
-date modified: Saturday, July 26th 2025, 10:26:54 am
+date modified: Saturday, July 26th 2025, 10:40:43 am
 tags:
   - docker
   - networking
@@ -80,6 +80,20 @@ get the total usage of the whole project combined:
 
 ```shell
 docker stats --no-stream --format "table {{.CPUPerc}}\t{{.MemUsage}}" $(docker compose ps -q) | awk 'NR>1 {cpu+=$1; mem+=$2} END {print "Total CPU: " cpu "%, Total Memory: " mem}'
+```
+
+## backup / export docker volumes
+
+create a backup or export of all docker volumes:
+
+```shell
+docker volume ls -q | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup alpine tar czf /backup/{}_$(date +%F).tar.gz" -C /data .
+```
+
+of all volumes starting with the name `foo`, useful for docker compose projects:
+
+```shell
+docker volume ls -q -f name=^foo | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup alpine tar czf /backup/{}_$(date +%F).tar.gz" -C /data .
 ```
 
 ## docker and ipv6
