@@ -1,6 +1,6 @@
 ---
 date created: Monday, December 24th 2018, 3:03:24 pm
-date modified: Saturday, May 31st 2025, 10:30:32 am
+date modified: Saturday, July 26th 2025, 10:26:54 am
 tags:
   - docker
   - networking
@@ -66,6 +66,20 @@ get rid of unused images:
 
 ```
 docker rmi $(docker images -a|grep none|awk {'print $3'})
+```
+
+## docker (compose) resource monitoring
+
+quickly get resource usage, such as cpu and memory, for each container in a docker compose project:
+
+```shell
+docker stats --no-stream $(docker compose ps -q)
+```
+
+get the total usage of the whole project combined:
+
+```shell
+docker stats --no-stream --format "table {{.CPUPerc}}\t{{.MemUsage}}" $(docker compose ps -q) | awk 'NR>1 {cpu+=$1; mem+=$2} END {print "Total CPU: " cpu "%, Total Memory: " mem}'
 ```
 
 ## docker and ipv6
