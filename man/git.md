@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Sunday, January 5th 2025, 2:11:57 pm
+date modified: Friday, August 1st 2025, 5:43:44 am
 tags:
   - git
 ---
@@ -279,6 +279,12 @@ if you know even more about the missing file, you can also search a sub folder f
 
 ```shell
 git grep -i <regexp> $(git rev-list --all -- lib/util) -- lib/util
+```
+
+## list changed files from past N commits
+
+```
+git diff --name-only HEAD~10 HEAD
 ```
 
 ## git credentials
