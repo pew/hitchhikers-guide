@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, April 9th 2019, 4:37:46 pm
-date modified: Monday, January 6th 2025, 10:17:18 am
+date modified: Monday, August 4th 2025, 5:12:18 am
 tags:
   - yt-dlp
   - ytdlp
@@ -74,7 +74,7 @@ yt-dlp --cookies-from-browser firefox
 
 ## use a config file for yt-dlp
 
-you can put the command line arguments in a file and let yt-dlp always use the config file so you don't need to pass the arguments to it. it can then still be combined with other flags such as the `--cookies-from-browser` thing
+you can put the command line arguments in a file and let yt-dlp always use the config file so you don't need to pass the arguments to it. it can then still be combined with other flags such as `--cookies-from-browser`
 
 or use `--ignore-config` to not use the config file, otherwise:
 
@@ -88,7 +88,7 @@ create the folder and file `~/.config/yt-dlp/config` and put your arguments in t
 --restrict-filenames
 
 # download the best mp4 video
---format best[ext=mp4]
+--format "bv*[vcodec^=avc]+ba[ext=m4a]/b[ext=mp4]/b"
 
 # continue downloading partially downloaded files
 --continue
