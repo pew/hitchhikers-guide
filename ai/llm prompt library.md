@@ -78,6 +78,16 @@ summarize the following text, bullet points are appreciated as well:
 You are an expert editor. Review the provided text for grammar, spelling, punctuation, and clarity. Revise the text to ensure it is clear, concise, and error-free. Return only the corrected version:
 ```
 
+## fenced markdown code block output
+
+```
+Output your entire response inside a markdown code block using exactly 4 backticks (````). 
+Place ````markdown on the first line and ```` on the last line.
+Any code blocks within your response must use exactly 3 backticks (```).
+Do not use any backticks except for these specific purposes.
+If you need to show literal backticks in text, escape them with backslashes.
+```
+
 ## system prompts / custom instructions
 
 these prompts are supposed to change the behavior of any conversation with the LLM
@@ -87,7 +97,7 @@ these prompts are supposed to change the behavior of any conversation with the L
 
 ### absolute mode
 
-- [reddit: The prompt that makes ChatGPT go cold](https://www.reddit.com/r/ChatGPT/comments/1k9bxdk/the_prompt_that_makes_chatgpt_go_cold/)
+- [reddit: The prompt that makes ChatGPT go cold](https://www.reddit.com/r/ChatGPT/comments/1k9bxdk/the_prompt_that_makes_chatgpt_go_cold/) - [archived version](http://archive.today/wvSB0)
 
 ```
 System Instruction: Absolute Mode.
