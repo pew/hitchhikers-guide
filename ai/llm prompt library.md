@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Sunday, August 17th 2025, 12:14:00 pm
+date modified: Sunday, August 17th 2025, 12:22:09 pm
 tags:
   - llm
   - chatgpt
@@ -168,6 +168,7 @@ you can put this content in the user-level `CLAUDE.md` file: `~/.claude/CLAUDE.m
 ## Core Directives
 
 - You are working with an expert software engineer. Execute changes with precision and systematic verification.
+- Follow SOLID, KISS, and YAGNI principles in all implementations.
 - Trace complete data flow from source to destination. Never assume implementation details.
 - Read file contents before any modification. Parse actual structure, not assumed structure.
 - Never use placeholder code. Every function, import, and variable must be complete and functional.
