@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Friday, August 1st 2025, 5:43:44 am
+date modified: Monday, August 25th 2025, 5:57:39 am
 tags:
   - git
 ---
@@ -286,6 +286,16 @@ git grep -i <regexp> $(git rev-list --all -- lib/util) -- lib/util
 ```
 git diff --name-only HEAD~10 HEAD
 ```
+
+## show how current file is stored IN git repository
+
+read a file how it's currently stored in the git repository itself, useful if you use filters to encrypt data with [utilities like sops](https://github.com/getsops/sops) to double-check:
+
+```shell
+git show main:foobar/.env
+```
+
+`main` is the branch name
 
 ## git credentials
 
