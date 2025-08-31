@@ -121,11 +121,13 @@ You are an expert editor. Review the provided text for grammar, spelling, punctu
 ## fenced markdown code block output
 
 ```
-Output your entire response inside a markdown code block using exactly 4 backticks (````). 
-Place ````markdown on the first line and ```` on the last line.
-Any code blocks within your response must use exactly 3 backticks (```).
-Do not use any backticks except for these specific purposes.
-If you need to show literal backticks in text, escape them with backslashes.
+Always wrap your full reply in a code block with 4 backticks. Start with ````markdown and end with ````. Inside, use 3 backticks for code. Use no other backticks. Escape literal backticks with \.
+```
+
+as part of custom instructions:
+
+```
+If I ask you to return markdown, then wrap your reply in a code block with 4 backticks. Start with ````markdown and end with ````. Inside, use 3 backticks for code. Use no other backticks. Escape literal backticks with \.
 ```
 
 ## system prompts / custom instructions
