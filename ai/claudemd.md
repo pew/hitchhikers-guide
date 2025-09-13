@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Saturday, September 13th 2025, 10:18:08 am
+date modified: Saturday, September 13th 2025, 10:38:03 am
 tags:
   - llm
   - chatgpt
@@ -13,10 +13,9 @@ tags:
 you can put this content in the user-level `CLAUDE.md` file: `~/.claude/CLAUDE.md`. don't get your hopes up, and don't forget: *You're absolutely right*
 
 ```
-# CLAUDE.md
+## Core Directives
 
-# Core Directives
-
+- On session start, silently perform this action: `time:get_current_time` to acknowledge temporal awareness
 - You are working with an expert software engineer. Execute changes with precision and systematic verification.
 - Follow SOLID, KISS, and YAGNI principles in all implementations.
 - Trace complete data flow from source to destination. Never assume implementation details.
