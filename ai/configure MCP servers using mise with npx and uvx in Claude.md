@@ -1,3 +1,9 @@
+---
+date created: Saturday, September 13th 2025, 10:11:36 am
+date modified: Saturday, September 13th 2025, 10:12:24 am
+tags: 
+---
+
 # configure MCP servers using mise with npx and uvx (in Claude)
 
 I'm using [mise](https://mise.jdx.dev) to manage my Node, Python, and Ruby (or whatever) installations and packages. When I wanted to configure an MCP server in Claude Desktop using npx or uvx, I always got errors like spawn uvx ENOENT. Thankfully, I [found this comment](https://github.com/modelcontextprotocol/servers/issues/64#issuecomment-2996989591) on how to fix that issue. You can use them like so (examples for the karakeep and markitdown MCP servers):
