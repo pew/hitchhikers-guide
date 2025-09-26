@@ -1,6 +1,6 @@
 ---
 date created: Sunday, September 12th 2021, 11:38:26 am
-date modified: Monday, December 26th 2022, 9:01:14 am
+date modified: Friday, September 26th 2025, 10:53:30 am
 tags:
   - k3s
   - k8s
@@ -44,7 +44,7 @@ sudo k3s crictl rmi docker.pkg.dev/package/packagename:latest
 docker save localhost/shaarli | sudo k3s ctr images import -
 ```
 
-you can also run `docker save -o filename localhost/your-local-image` to save the image as a file, move it around and import it then via `k3s ctr images import filename`
+make sure to set the deployment `imagePullPolicy` to `Never`:
 
 **how to use it in a kubernetes yaml file:**
 
