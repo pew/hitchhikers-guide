@@ -1,6 +1,4 @@
 ---
-date created: Saturday, May 9th 2020, 11:47:02 am
-date modified: Wednesday, November 6th 2024, 9:27:40 am
 tags:
   - raspberrypi
   - rpi
@@ -71,4 +69,13 @@ or CLI:
 
 ```shell
 sudo nmcli connection add type wifi ifname wlan0 con-name "MyNetwork" ssid "MyNetwork"
+```
+
+## install stable kernel / firmware
+
+in case you played around with `rpi-update` and things went wrong:
+
+```shell
+apt-get update
+sudo apt install --reinstall raspberrypi-bootloader raspberrypi-kernel raspi-firmware
 ```
