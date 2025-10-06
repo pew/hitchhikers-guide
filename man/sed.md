@@ -68,6 +68,12 @@ sed 's/$/,/'
 sed 's/ //'
 ```
 
+## remove trailing spaces
+
+```shell
+sed 's/ \+$//'
+```
+
 ## replace multiple patterns in one go
 
 ```shell
