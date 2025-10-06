@@ -42,6 +42,14 @@ git fetch --depth 1
 git pull --depth 1
 ```
 
+## pull from remote and clean/remove untracked changes
+
+```shell
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+```
+
 ## find deleted file
 
 in order to restore something, you might want to know when it was deleted…:
