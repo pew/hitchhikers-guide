@@ -1,6 +1,6 @@
 ---
 date created: Monday, December 24th 2018, 3:03:24 pm
-date modified: Saturday, July 26th 2025, 10:40:43 am
+date modified: Saturday, October 25th 2025, 11:13:20 am
 tags:
   - docker
   - networking
@@ -84,16 +84,32 @@ docker stats --no-stream --format "table {{.CPUPerc}}\t{{.MemUsage}}" $(docker c
 
 ## backup / export docker volumes
 
-create a backup or export of all docker volumes:
+### backup a single docker volume
+
+backup the volume named `foobar`:
 
 ```shell
-docker volume ls -q | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup alpine tar czf /backup/{}_$(date +%F).tar.gz" -C /data .
+docker run --rm -v "foobar:/data" -v "$(pwd):/backup" alpine tar czf /backup/foobar_$(date +%F).tar.gz -C /data .
 ```
+
+restore:
+
+```shell
+docker run --rm -v "foobar:/data" -v "$(pwd):/backup" alpine tar xzf /backup/foobar_2025-10-25.tar.gz -C /data
+```
+
+### backup all docker volumes
+
+```shell
+docker volume ls -q | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup" alpine tar czf /backup/{}_$(date +%F).tar.gz -C /data .
+```
+
+### backup docker volumes using a filter
 
 of all volumes starting with the name `foo`, useful for docker compose projects:
 
 ```shell
-docker volume ls -q -f name=^foo | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup alpine tar czf /backup/{}_$(date +%F).tar.gz" -C /data .
+docker volume ls -q -f name=^foo | xargs -I {} docker run --rm -v "{}:/data" -v "$(pwd):/backup" alpine tar czf /backup/{}_$(date +%F).tar.gz -C /data .
 ```
 
 ## docker and ipv6
