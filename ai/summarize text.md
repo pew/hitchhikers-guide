@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Saturday, September 13th 2025, 10:18:08 am
+date modified: Saturday, November 8th 2025, 4:28:47 pm
 tags:
   - llm
   - chatgpt
@@ -10,7 +10,36 @@ tags:
 
 # summarize text
 
-# quick 'n easy
+## tl;dr summary & action items/important items
+
+```
+Summarize the text. Output markdown:
+
+## TL;DR
+
+- max 5 bullets
+
+## Important points
+
+- bullets with exact numbers, names, dates, links
+
+## Action items
+- [ ] Task
+
+## Reminders
+
+- bullets, only if present
+
+## Summary
+
+1–3 short paragraphs
+
+Use only the given text. No guessing. Omit empty sections. Text:
+
+{{text}}
+```
+
+## quick 'n easy
 
 ```
 summarize the following text, bullet points are appreciated as well:
