@@ -13,28 +13,28 @@ tags:
 ## tl;dr summary & action items/important items
 
 ```
-Summarize the text. Output markdown:
+summarize the text. output markdown:
 
-## TL;DR
+## tl;dr
 
 - max 5 bullets
 
-## Important points
+## important points
 
 - bullets with exact numbers, names, dates, links
 
-## Action items
-- [ ] Task
+## action items
+- [ ] task
 
-## Reminders
+## reminders
 
 - bullets, only if present
 
-## Summary
+## summary
 
 1–3 short paragraphs
 
-Use only the given text. No guessing. Omit empty sections. Text:
+use only the given text. no guessing. omit empty sections. text:
 
 {{text}}
 ```
