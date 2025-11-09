@@ -1,10 +1,9 @@
 ---
 date created: Monday, December 24th 2018, 3:03:24 pm
-date modified: Saturday, October 25th 2025, 11:13:20 am
+date modified: Sunday, November 9th 2025, 12:33:01 pm
 tags:
   - docker
-  - networking
-  - ipv6
+  - container
 ---
 
 # docker
@@ -14,6 +13,20 @@ see also:
 - [podman](/man/podman)
 - [k3s](/man/k3s)
 
+## docker (compose) formatting
+
+just display the name, service, state, and status of containers in a docker compose project:
+
+```shell
+docker compose ps --format 'table {{.Name}}\t{{.Service}}\t{{.State}}\t{{.Status}}'
+```
+
+and for `docker ps`:
+
+```shell
+docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'
+```
+
 ## exec as other user (e.G. root)
 
 with `docker exec` (where `ac0` is the container id):
@@ -22,10 +35,10 @@ with `docker exec` (where `ac0` is the container id):
 docker exec -it -u root ac0 sh
 ```
 
-or with `docker-compose` (znc is the container name):
+or with `docker compose` (znc is the container name):
 
 ```
-docker-compose exec -u root znc sh
+docker compose exec -u root znc sh
 ```
 
 ## docker logs
