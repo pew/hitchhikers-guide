@@ -1,11 +1,13 @@
+---
+date created: Friday, March 29th 2019, 7:12:46 pm
+date modified: Sunday, November 16th 2025, 12:01:45 pm
+tags: 
+---
+
 # hitchhiker's guide
 
-Hi there! 👋
+hi there! 👋
 
-This page is just a collection of things I always manage to forget. Over time, this repository should serve as a knowledge base of little hints how to do certain things. I mostly add and update new pages here as I figure out how to do things. It's not supposed to be always up-to-date, hence I usually link to the original source or documentation and just include the important bits and pieces.
+This page is just a collection of things I always manage to forget: TL;DR man pages, tips, and commands. I add or update pages as I figure things out, only keeping the bits that matter. My *today I learned* space.
 
-Since it's nothing secret or special, and usually available anyway from the original source, I decided to just put this publicly on GitHub in case someone stumbles across this and thinks it's helpful.
-
-## about
-
-let's talk about that later
+You can also [chat with this page](https://chat.man.ilayk.com/), duh.
