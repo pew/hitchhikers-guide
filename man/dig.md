@@ -2,6 +2,28 @@
 
 - [see also DNS](/man/dns)
 
+## dig with dns over tls (DoT) / dns over https (DoH)
+
+you need a more recent version of `dig`, with homebrew you need to run:
+
+```shell
+brew install bind
+```
+
+which will install `dig`.
+
+### dns over tls (dot)
+
+```shell
+dig @1.1.1.1 +tls google.com
+```
+
+### dns over https (doh)
+
+```shell
+dig @cloudflare-dns.com +https google.com
+```
+
 ## digrc
 
 customize your `dig` output with a config file. Create the file `~/.digrc` for this, and add the following:
