@@ -1,6 +1,6 @@
 ---
 date created: Saturday, March 26th 2022, 7:07:01 am
-date modified: Sunday, September 8th 2024, 9:04:35 am
+date modified: Saturday, December 6th 2025, 11:50:56 am
 tags:
   - btrfs
   - linux
@@ -33,6 +33,16 @@ should be done on a readonly or not mounted filesystem, however it can be run on
 
 ```shell
 btrfs check --readonly --force /dev/md0
+```
+
+## create btrfs filesystem and partition
+
+```shell
+parted -s /dev/nvme1n1 mklabel gpt
+parted -s /dev/nvme1n1 mkpart primary 1MiB 100%
+partprobe /dev/nvme1n1
+sgdisk --typecode=1:8300 /dev/nvme1n1
+mkfs.btrfs -L data /dev/nvme1n1p1
 ```
 
 ## resizing btrfs filesystems
