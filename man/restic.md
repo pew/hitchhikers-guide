@@ -1,4 +1,14 @@
+---
+date created: Wednesday, April 24th 2019, 7:07:34 pm
+date modified: Sunday, December 7th 2025, 11:44:10 am
+tags:
+  - restic
+  - backup
+---
+
 # restic
+
+- see also [resticprofile](/man/resticprofile/)
 
 my favorite backup tool on linux, you can back up your stuff encrypted to various endpoints like amazon s3, backblaze b2, sftp and others. using rclone even to tons more. I'm not listing any more of them here since it's under active development, [check the docs out](https://restic.readthedocs.io/en/latest/)
 
