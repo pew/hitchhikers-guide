@@ -19,3 +19,10 @@ as part of custom instructions:
 ```
 If I ask you to return markdown, then wrap your reply in a code block with 4 backticks. Start with ````markdown and end with ````. Inside, use 3 backticks for code. Use no other backticks. Escape literal backticks with \.
 ```
+
+## last reply as fenced markdown code block
+
+
+```
+wrap your last full reply in a code block with 4 backticks. Start with ````markdown and end with ````. Inside, use 3 backticks for code. Use no other backticks. Escape literal backticks with \.
+```
