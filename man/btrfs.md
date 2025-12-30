@@ -1,6 +1,6 @@
 ---
 date created: Saturday, March 26th 2022, 7:07:01 am
-date modified: Saturday, December 6th 2025, 11:50:56 am
+date modified: Tuesday, December 30th 2025, 8:59:14 am
 tags:
   - btrfs
   - linux
@@ -8,6 +8,8 @@ tags:
 ---
 
 # btrfs
+
+- see also: [parted](/man/parted/)
 
 ## check and scrub btrfs filesystem
 
@@ -39,7 +41,7 @@ btrfs check --readonly --force /dev/md0
 
 ```shell
 parted -s /dev/nvme1n1 mklabel gpt
-parted -s /dev/nvme1n1 mkpart primary 1MiB 100%
+parted -s /dev/nvme1n1 mkpart primary 4MiB 100%
 partprobe /dev/nvme1n1
 sgdisk --typecode=1:8300 /dev/nvme1n1
 mkfs.btrfs -L data /dev/nvme1n1p1
