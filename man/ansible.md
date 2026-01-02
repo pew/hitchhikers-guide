@@ -1,6 +1,6 @@
 ---
 date created: Sunday, January 17th 2021, 3:51:17 pm
-date modified: Tuesday, December 26th 2023, 7:21:44 pm
+date modified: Friday, January 2nd 2026, 9:22:56 am
 tags:
   - ansible
   - automation
@@ -48,9 +48,18 @@ echo -n 'hello world' | ansible-vault encrypt_string --stdin-name "MY_SECRET_VAR
 
 ### decrypt ansible vault string
 
-just use:
+#### decrypt string
 
+just copy & paste your encrypted string with including newlines (**remove starting spaces**):
+
+```shell
+echo '$ANSIBLE_VAULT;1.1;AES256
+30643961666330643038313536353439356366336361666165316535333861643032396664306634' | tr -d ' ' | ansible-vault decrypt && echo
 ```
+
+#### decrypt from stdin with copy & paste
+
+```shell
 ansible-vault decrypt
 ```
 
