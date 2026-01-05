@@ -1,6 +1,6 @@
 ---
 date created: Monday, August 2nd 2021, 5:48:23 am
-date modified: Saturday, July 20th 2024, 10:21:21 am
+date modified: Monday, January 5th 2026, 8:36:55 am
 tags:
   - k8s
   - kubernetes
@@ -111,7 +111,17 @@ update / replace `registry-secret-name` and specify your image after `--image`
 kubectl run -i --tty my-container --image=ghcr.io/example/private-image:latest --command /bin/sh --overrides='{ "spec": { "imagePullSecrets": [{"name": "registry-secret-name"}] } }'
 ```
 
-## tail logs
+## logs
+
+### get all logs of a deployment
+
+given you have a deployment with the label `app=your-app-name` and multiple pods in there:
+
+```shell
+kubectl logs -l app=your-app-name --all-containers
+```
+
+### tail logs
 
 this will read the last 100 log entries and also keep following the log for new entries
 
