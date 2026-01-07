@@ -1,16 +1,19 @@
 ---
-title: exiftool
+date created: Saturday, June 17th 2023, 6:43:26 am
+date modified: Wednesday, January 7th 2026, 9:28:21 am
 tags:
   - exiftool
   - metadata
   - security
   - privacy
-date created: 2022-11-22
+title: exiftool
 ---
 
 # exiftool
 
 exiftool - Read and write meta information in files
+
+- see also [qpdf](/man/qpdf/) for manipulating pdf files
 
 ## remove metadata from images / videos / media files
 
