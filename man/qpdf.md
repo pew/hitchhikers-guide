@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, January 7th 2026, 9:25:04 am
-date modified: Wednesday, January 7th 2026, 9:28:33 am
+date modified: Wednesday, January 7th 2026, 10:44:44 am
 tags:
   - metadata
   - security
@@ -25,7 +25,7 @@ brew install qpdf
 if in doubt, consider using [dangerzone](https://dangerzone.rocks)
 
 ```shell
-qpdf --qdf --object-streams=disable input.pdf output.pdf
+qpdf --linearize --replace-input foobar.pdf
 ```
 
 as part of an (zsh) alias:
@@ -35,7 +35,7 @@ function qpdfclean() {
   emulate -L zsh
   local f
   for f in "$@"; do
-    qpdf --qdf --object-streams=disable -- "$f" "${f:r}_c.pdf"
+    qpdf --linearize --replace-input -- "$f"
   done
 }
 ```
