@@ -1,3 +1,9 @@
+---
+date created: Tuesday, December 2nd 2025, 5:52:06 am
+date modified: Friday, January 9th 2026, 11:20:45 am
+tags: 
+---
+
 # dig
 
 - [see also DNS](/man/dns)
@@ -22,6 +28,12 @@ dig @1.1.1.1 +tls google.com
 
 ```shell
 dig @cloudflare-dns.com +https google.com
+```
+
+## check if dnssec is enabled
+
+```shell
+dig +dnssec +multi example.com
 ```
 
 ## digrc
