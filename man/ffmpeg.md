@@ -1,6 +1,6 @@
 ---
 date created: Friday, July 3rd 2020, 7:52:48 pm
-date modified: Saturday, March 23rd 2024, 5:11:03 pm
+date modified: Sunday, January 18th 2026, 11:31:16 am
 tags:
   - ffmpeg
   - ffprobe
@@ -13,7 +13,7 @@ tags:
 using a quick preset:
 
 ```shell
-ffmpeg -i input.mov -vcodec libx264 -crf 22 -preset ultrafast -c:a copy output.mp4
+ffmpeg -i input.mov -c:v libx264 -crf 22 -preset ultrafast -c:a copy output.mp4
 ```
 
 to 1.5mbps
@@ -41,7 +41,19 @@ for i in *.flv; do ffmpeg -i "$i" -c:v copy -c:a aac "${i%.flv}.mp4"; done
 just take the first 28 seconds, beginning at 0:
 
 ```
-ffmpeg -ss 00:00:00.0 -to 00:00:28.0 -i input.mp4 outpu4.mp4
+ffmpeg -ss 00:00:00.0 -to 00:00:28.0 -i input.mp4 output.mp4
+```
+
+fast seek (less accurate):
+
+```
+ffmpeg -ss 00:00:00.0 -i input.mp4 -t 28 -c copy output.mp4
+```
+
+accurate cut (re-encode):
+
+```
+ffmpeg -ss 00:00:00.0 -i input.mp4 -t 28 -c:v libx264 -c:a aac output.mp4
 ```
 
 ## downsample mp3
@@ -49,7 +61,7 @@ ffmpeg -ss 00:00:00.0 -to 00:00:28.0 -i input.mp4 outpu4.mp4
 hopefully make it somewhat smaller
 
 ```
-ffmpeg -i filename.mp3 -a:b 64k out.mp3
+ffmpeg -i filename.mp3 -b:a 64k out.mp3
 ```
 
 **using variable bitrate (vbr):**
@@ -63,7 +75,7 @@ ffmpeg -i filename.mp3 -q:a 9 out.mp3
 ## extract audio from video
 
 ```
-ffmpeg -i input-video.mov -q:a 0 -map a output-audio.mp3
+ffmpeg -i input-video.mov -vn -q:a 0 -map a output-audio.mp3
 ```
 
 ## generate gif from video
@@ -72,6 +84,13 @@ endless loop:
 
 ```shell
 ffmpeg -i in.mp4 -loop 0 out.gif
+```
+
+higher quality (palette):
+
+```shell
+ffmpeg -i in.mp4 -vf "fps=12,scale=640:-1:flags=lanczos,palettegen" -y palette.png
+ffmpeg -i in.mp4 -i palette.png -loop 0 -vf "fps=12,scale=640:-1:flags=lanczos,paletteuse" out.gif
 ```
 
 ## get file metadata
@@ -101,6 +120,13 @@ echo -n "ffmpeg -i \"concat:"; for i in *.mp3;do printf "%s${i}|";done;echo -n "
 ```
 
 this will just spit out the ffmpeg command, for double checking, you know.
+
+robust concat with the concat demuxer:
+
+```shell
+printf "file '%s'\n" *.mp3 > list.txt
+ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp3
+```
 
 ## video information
 
