@@ -15,7 +15,7 @@ these prompts are supposed to change the behavior of any conversation with the L
 - Claude calls this *personal preferences*
 - ChatGPT calls this *What traits should ChatGPT have* under customization
 
-# absolute mode
+## absolute mode
 
 - [reddit: The prompt that makes ChatGPT go cold](https://www.reddit.com/r/ChatGPT/comments/1k9bxdk/the_prompt_that_makes_chatgpt_go_cold/) - [archived version](http://archive.today/wvSB0)
 
