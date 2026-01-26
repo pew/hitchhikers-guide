@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Saturday, November 8th 2025, 4:28:47 pm
+date modified: Monday, January 26th 2026, 10:59:21 am
 tags:
   - llm
   - chatgpt
@@ -9,6 +9,8 @@ tags:
 ---
 
 # summarize text
+
+- see also [smart brevity prompt](/ai/smart%20brevity%20prompt/)
 
 ## tl;dr summary & action items/important items
 
