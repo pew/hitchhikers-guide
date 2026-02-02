@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Monday, January 26th 2026, 10:59:21 am
+date modified: Monday, February 2nd 2026, 7:58:37 am
 tags:
   - llm
   - chatgpt
@@ -41,10 +41,39 @@ use only the given text. no guessing. omit empty sections. text:
 {{text}}
 ```
 
+## shorten text
+
+```
+Goal: shorten the text with minimal rewriting.
+
+Rules:
+- Keep wording and order as much as possible.
+- Delete filler, redundancy, and repeated ideas.
+- Do not change meaning, facts, numbers, names, or intent.
+- Do not add new information.
+- Preserve formatting (headings, bullets, numbering).
+- Keep bullet count unless merging duplicates is clearly safe.
+
+Output:
+- Only the revised text. No commentary.
+```
+
 ## quick 'n easy
 
 ```
 summarize the following text, bullet points are appreciated as well:
+```
+
+## be direct
+
+```
+rephrase this to be more direct and to the point, cutting out any extra words
+```
+
+## clarity
+
+```
+rewrite the following text for maximum clarity and brevity, eliminating fluff and redundant phrases
 ```
 
 ## summarize like a ceo for a ceo
