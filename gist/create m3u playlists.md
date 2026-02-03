@@ -1,27 +1,49 @@
----
-date created: Wednesday, December 25th 2024, 12:37:20 pm
-date modified: Wednesday, December 25th 2024, 12:40:11 pm
-tags: 
----
-
-# create m3u playlists
-
-tl;dr: m3u playlist files are just a text file with the list of file names
-
-## files in the same directory
-
-```shell
-ls -1 *.mp3 > playlist.m3u
-```
-
-## current directory and subdirectories
-
-```shell
-find . -type f -iname "*.mp3" | sort > playlist.m3u
-```
-
-## absolute paths
-
-```shell
-find "$(pwd)" -type f -iname "*.mp3" | sort > playlist.m3u
-```
+#EXTM3U
+#EXTINF:-1,0001       (190.60.39.221:8000)
+http://190.60.39.221:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0002       (190.60.37.186:8000)
+http://190.60.37.186:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0003       (190.60.33.147:8000)
+http://190.60.33.147:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0004       (190.60.36.103:8000)
+http://190.60.36.103:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0005       (190.60.36.101:8000)
+http://190.60.36.101:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0006       (190.60.46.165:8000)
+http://190.60.46.165:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0007       (190.60.40.70:8000)
+http://190.60.40.70:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0008       (190.60.39.195:8000)
+http://190.60.39.195:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0009       (190.60.47.182:8000)
+http://190.60.47.182:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0010       (190.60.35.53:8000)
+http://190.60.35.53:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0011       (190.60.48.115:8000)
+http://190.60.48.115:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0012       (190.60.48.166:8000)
+http://190.60.48.166:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0013       (190.60.48.151:8000)
+http://190.60.48.151:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0014       (190.60.48.149:8000)
+http://190.60.48.149:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0015       (190.60.48.150:8000)
+http://190.60.48.150:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0016       (190.60.46.12:8000)
+http://190.60.46.12:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0017       (190.60.48.148:8000)
+http://190.60.48.148:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0018       (190.60.48.153:8000)
+http://190.60.48.153:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0019       (190.60.34.180:8000)
+http://190.60.34.180:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0020       (190.60.59.67:8000)
+http://190.60.59.67:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0021       (190.60.53.205:8000)
+http://190.60.53.205:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0022       (190.60.59.163:8000)
+http://190.60.59.163:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0023       (190.60.53.12:8000)
+http://190.60.53.12:8000/play/a0wp/index.m3u8
+#EXTINF:-1,0024       (190.60.59.82:8000)
+http://190.60.59.82:8000/play/a0wp/index.m3u8
