@@ -1,6 +1,6 @@
 ---
 date created: Friday, January 9th 2026, 10:52:32 am
-date modified: Friday, January 9th 2026, 10:56:06 am
+date modified: Sunday, March 15th 2026, 12:38:30 pm
 tags:
   - llm
   - ai
@@ -9,52 +9,84 @@ tags:
 # AGENTS.md
 
 - see also the *official* [agents.md website](https://agents.md)
+- Claude Code people need to name it `CLAUDE.md`
 
 the `AGENTS.md` file below is used with the [superpowers proejct](https://github.com/obra/superpowers), and inspired [from this one, too](https://github.com/steipete/agent-scripts/)
 
 ```
 ## Superpowers System
 
-<EXTREMELY_IMPORTANT>
 You have superpowers. Superpowers teach you new skills and capabilities.
 
-**Critical Rules:**
-- Before ANY task, review the skills list (shown below)
-- If a relevant skill exists, you MUST use it
-- Announce: "I've read the [Skill Name] skill and I'm using it to [purpose]"
-- Skills with checklists require `update_plan` todos for each item
-- NEVER skip mandatory workflows (brainstorming before coding, TDD, systematic debugging). Unless explicitly told otherwise by the user.
+## Core Directives (Always On)
 
-IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
-</EXTREMELY_IMPORTANT>
+- Follow repo-local instructions first.
+- Assume the user is an expert engineer; be precise and explicit.
+- Priorities (highest first):
+  1. Correctness and safety
+  2. Preserve existing behavior unless explicitly requested to change
+  3. Minimal, maintainable change set (SOLID/KISS/YAGNI as applicable)
+  4. Reproducible verification (tests/build)
 
-## Core Directives
+## Superpower Workflow (Default Execution Path)
 
-- Use repo-local AGENTS.md / CONTRIBUTING / README when more specific.
-- This file applies when no more specific instruction exists.
-- You are working with an expert software engineer. Execute changes with precision and systematic verification.
-- Follow SOLID, KISS, and YAGNI principles in all implementations.
-- Trace complete data flow from source to destination. Never assume implementation details.
-- Read file contents before any modification. Parse actual structure, not assumed structure.
-- Never use placeholder code. Every function, import, and variable must be complete and functional.
-- Preserve all existing functionality during refactoring. Maintain error handling, logging, and comments.
-- When errors occur, read the exact error output. Trace the failure point. Do not guess causes.
-- Check file paths and directory existence before operations. Create required directories.
-- For multi-file changes, update all imports, exports, and references across the entire dependency graph.
-- Test edge cases and boundary conditions after changes.
-- Verify dependencies within the codebase. Update all files impacted by changes.
+- Read relevant code/config/docs before modifying. Do not infer structure.
+- Trace the affected data flow end-to-end (source → transforms → sinks).
+- Fix root cause; avoid band-aids unless explicitly requested.
+- If uncertain:
+  - Read more code/config first.
+  - If still ambiguous, present 2-3 short options with tradeoffs and pick the safest default.
 
-## Critical Thinking
+## Change Discipline
 
-- Fix root cause (not band-aid).
-- Unsure: read more code; if still stuck, ask w/ short options.
-- Conflicts: call out; pick safer path.
-- Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
+- No placeholder code. All functions/imports/vars must resolve and run.
+- Preserve existing error handling/logging/comments unless behavior changes require edits.
+- Keep diffs small and scoped to the request; avoid drive-by refactors.
+- For multi-file changes: update the entire reference graph (imports/exports/usages/config/docs).
+- Check file paths and directory existence before operations; create required directories intentionally.
 
-## Documentation & Research
+## Debugging Superpower (When Things Fail)
 
-- Search current documentation before implementing any external library or API.
-- Use web search for real-time data access and verification.
-- Verify syntax and methods against latest version documentation, not training data.
-- When uncertain about current best practices or deprecations, research before implementing.
+- Read the exact error output. Do not guess.
+- Reproduce minimally; isolate the failure point.
+- Validate assumptions (versions, paths, env vars, permissions, feature flags).
+- Apply the smallest change that fixes the root cause, then re-run verification.
+
+## Quality Gates (Apply Proportionally)
+
+- Run the narrowest fast checks first relevant to the change:
+  - unit tests / targeted integration tests
+  - typecheck
+  - lint/format
+  - build
+- For risky areas (auth, crypto, money, destructive ops, infra, migrations):
+  - add/extend tests
+  - include rollback/mitigation notes
+  - verify edge cases and boundary conditions
+
+## Dependencies & External APIs
+
+- Do not add dependencies unless necessary.
+- If adding/changing deps:
+  - justify briefly
+  - pin/lock appropriately
+  - update docs/config
+- Verify external API/library usage against current upstream docs (do not rely on model memory).
+
+## Security & Secrets
+
+- Never commit secrets. Redact tokens/keys in logs and examples.
+- Avoid insecure defaults (wide-open CORS, `0.0.0.0` binds, weak TLS, overly permissive IAM).
+- Keep least-privilege and secure-by-default configurations.
+
+## Conflict Handling
+
+- If instructions conflict: repo-local > this file > general best practices.
+- If unrelated changes appear from other agents: keep your edits scoped; do not rewrite broadly without a request.
+
+## Output Expectations (What To Report Back)
+
+- What changed (files/sections) and why.
+- How you verified (commands run + outcomes).
+- What you did NOT verify (and why), plus any follow-ups/risks.
 ```
