@@ -1,16 +1,17 @@
 ---
 date created: Tuesday, September 5th 2023, 10:58:14 am
-date modified: Monday, February 2nd 2026, 7:58:37 am
+date modified: Sunday, March 15th 2026, 12:42:14 pm
 tags:
   - llm
   - chatgpt
   - ai
   - prompt
+  - writing
 ---
 
 # summarize text
 
-- see also [smart brevity prompt](/ai/smart%20brevity%20prompt/)
+- see also [smart brevity prompt](/ai/smart%20brevity%20prompt/) and [better writing](/ai/better%20writing)
 
 ## tl;dr summary & action items/important items
 
@@ -37,8 +38,6 @@ summarize the text. output markdown:
 1–3 short paragraphs
 
 use only the given text. no guessing. omit empty sections. text:
-
-{{text}}
 ```
 
 ## shorten text
