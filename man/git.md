@@ -244,6 +244,14 @@ now add the following to this file:
 
 ideally, all repositories within `~/private/` now use the personal gitconfig and everything else the global config.
 
+## check author and commiter identity
+
+check which user name and email would be used in a given folder/repo. Useful if you're using multiple profiles.
+
+```
+printf 'author: %s\ncommitter: %s\n' "$(git var GIT_AUTHOR_IDENT)" "$(git var GIT_COMMITTER_IDENT)"
+```
+
 ## rename branch name (master to main)
 
 … reminder for myself:
