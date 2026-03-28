@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Saturday, July 20th 2024, 11:12:42 am
+date modified: Saturday, March 28th 2026, 4:17:02 pm
 tags:
   - jq
   - json
@@ -85,12 +85,13 @@ jq -c --slurp 'flatten' steps-*.json > ../steps.json
 
 ```
 your-json | jq
+jq < file.json
 ```
 
-or:
+## reformat json file (formatting, prettier)
 
-```
-jq . file.json
+```shell
+jq < ~/downloads/data.json | sponge ~/downloads/data.json
 ```
 
 ## you might not need `jq`
