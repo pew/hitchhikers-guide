@@ -1,8 +1,9 @@
 ---
 date created: Saturday, March 23rd 2019, 2:02:05 pm
-date modified: Tuesday, October 17th 2023, 12:27:05 pm
+date modified: Sunday, March 29th 2026, 11:22:39 am
 tags:
   - awk
+  - text-manipulation
 ---
 
 # awk

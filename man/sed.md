@@ -1,8 +1,9 @@
 ---
 date created: Monday, September 27th 2021, 6:27:00 am
-date modified: Sunday, March 29th 2026, 11:09:04 am
+date modified: Sunday, March 29th 2026, 11:22:44 am
 tags:
   - sed
+  - text-manipulation
 ---
 
 # sed
