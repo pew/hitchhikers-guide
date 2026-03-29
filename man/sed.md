@@ -1,7 +1,8 @@
 ---
 date created: Monday, September 27th 2021, 6:27:00 am
-date modified: Saturday, December 7th 2024, 12:23:06 pm
-tags: 
+date modified: Sunday, March 29th 2026, 11:09:04 am
+tags:
+  - sed
 ---
 
 # sed
@@ -80,3 +81,8 @@ sed 's/ \+$//'
 sed -e 's/foo/bar/g' -e 's/bat/baz/g' filename
 ```
 
+## remove duplicates
+
+```shell
+sed '$!N; /^\(.*\)\n\1$/!P; D'
+```
