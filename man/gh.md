@@ -1,6 +1,6 @@
 ---
 date created: Friday, February 25th 2022, 5:36:33 am
-date modified: Saturday, January 10th 2026, 8:37:38 am
+date modified: Saturday, April 4th 2026, 10:18:19 am
 tags:
   - git
   - github
@@ -70,4 +70,14 @@ replace `42` with your pr id
 
 ```shell
 gh pr close 42 -d
+```
+
+## list repositories without a description
+
+list all your own repos which are not archived and are missing a description
+
+```shell
+gh repo list --source --no-archived -L 1000 \
+  --json nameWithOwner,description \
+  --jq '.[] | select((.description == null) or (.description == "")) | .nameWithOwner'
 ```
