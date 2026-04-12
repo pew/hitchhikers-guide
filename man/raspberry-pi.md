@@ -1,16 +1,14 @@
 ---
 date created: Monday, December 23rd 2019, 10:56:44 am
-date modified: Thursday, May 9th 2024, 10:49:23 am
+date modified: Sunday, April 12th 2026, 11:45:40 am
 tags:
   - raspberrypi
   - rpi
-  - 'raspberry pi'
-  - 'raspberry pi os'
 ---
 
 # raspberry pi
 
-[see also raspbian](/man/raspbian : raspberry pi os)
+[see also raspberry pi os / raspbian](raspbian%20%3A%20raspberry%20pi%20os.md)
 
 ## disable wifi / bluetooth
 

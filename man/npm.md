@@ -1,10 +1,18 @@
+---
+date created: Monday, February 2nd 2026, 7:58:13 am
+date modified: Sunday, April 12th 2026, 11:46:28 am
+tags:
+  - node
+  - npm
+---
+
 # npm
 
 oh noez.
 
 ## find outdated packages
 
-* [docs](npm.github.io/using-pkgs-docs/working-with-packages/)
+* [docs](https://npm.github.io/using-pkgs-docs/working-with-packages/)
 
 **global packages**:
 

@@ -1,9 +1,9 @@
 ---
+date created: Monday, February 2nd 2026, 7:58:13 am
+date modified: Sunday, April 12th 2026, 11:36:26 am
 tags:
   - raspberrypi
   - rpi
-  - 'raspberry pi'
-  - 'raspberry pi os'
 title: raspbian / raspberry pi os
 ---
 
