@@ -1,3 +1,0 @@
-# tags
-
-<!-- material/tags -->
