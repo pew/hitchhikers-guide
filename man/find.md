@@ -1,7 +1,8 @@
 ---
 date created: Sunday, January 20th 2019, 2:55:43 pm
-date modified: Sunday, June 22nd 2025, 3:24:08 pm
-tags: 
+date modified: Saturday, May 30th 2026, 10:57:47 am
+tags:
+  - find
 ---
 
 # find
@@ -11,6 +12,14 @@ tags:
 ```shell
 find . -type f -print0 | xargs -0 -I {} mv {} dest/path
 ```
+
+or like so:
+
+```shell
+find . -mindepth 2 -type f -name '*.m4b' -exec mv -n {} . \;
+```
+
+- `-mindepth 2` - skip files already in the current directory
 
 ## search depth
 
