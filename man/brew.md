@@ -1,3 +1,9 @@
+---
+date created: Monday, February 2nd 2026, 7:58:13 am
+date modified: Friday, June 19th 2026, 7:32:36 am
+tags: 
+---
+
 # brew / homebrew
 
 ## restore all brew packages on a new system
@@ -30,6 +36,14 @@ brew update
 brew upgrade
 brew cask upgrade
 ```
+
+## skip homebrew cask (version 6.0) upgrade
+
+```
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=true
+```
+
+[see also this github issue/pr](https://github.com/Homebrew/brew/pull/21985)
 
 ## clear cache
 
