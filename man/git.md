@@ -136,11 +136,16 @@ too confusing.
 git submodule add https://github.com/vimwiki/vimwiki.git
 ```
 
-### init git submodules
+### init and update git submodules
 
-```
+```shell
 git submodule init
 git submodule update
+```
+
+```shell
+git submodule update --init --recursive
+git submodule update --recursive --remote
 ```
 
 ### remove git submodules
