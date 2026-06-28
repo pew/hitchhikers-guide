@@ -1,6 +1,6 @@
 ---
 date created: Friday, July 3rd 2020, 7:52:48 pm
-date modified: Sunday, January 18th 2026, 11:31:16 am
+date modified: Sunday, June 28th 2026, 9:24:03 am
 tags:
   - ffmpeg
   - ffprobe
@@ -21,6 +21,23 @@ to 1.5mbps
 ```shell
 ffmpeg -i IMG_4329.mov -c:v libx264 -b:v 1.5M -c:a aac -b:a 128k meshtastic.mp4
 ```
+
+or another one:
+
+```
+ffmpeg -i input.mp4 \
+  -map 0:v:0 -map 0:a? \
+  -c:v libx265 \
+  -preset slow \
+  -crf 26 \
+  -tag:v hvc1 \
+  -pix_fmt yuv420p \
+  -movflags +faststart \
+  -c:a aac -b:a 160k \
+  output.mp4
+```
+
+or try something like [ab-av1](https://github.com/alexheretic/ab-av1) *video encoding tool with fast VMAF sampling & automatic encoder crf calculation*
 
 ## convert video from to, e.G.: .flv to .mp4
 
