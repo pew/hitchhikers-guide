@@ -1,6 +1,6 @@
 ---
 date created: Friday, May 29th 2026, 8:55:43 am
-date modified: Saturday, June 27th 2026, 2:53:40 pm
+date modified: Wednesday, July 1st 2026, 11:51:02 am
 tags:
   - mise
   - npm
@@ -16,6 +16,7 @@ tags:
 
 ```
 mise use -g uv@latest
+mise use -g node@lts # latest lts version
 ```
 
 **project scope:**
