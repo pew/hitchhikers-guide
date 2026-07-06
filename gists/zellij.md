@@ -1,6 +1,6 @@
 ---
 date created: Sunday, July 5th 2026, 3:40:18 pm
-date modified: Sunday, July 5th 2026, 3:41:32 pm
+date modified: Monday, July 6th 2026, 7:55:23 am
 tags:
   - zellij
   - tmux
@@ -35,7 +35,8 @@ Zellij calls terminal "windows" **panes**.
 
 ### session
 
-| Action | Keys |
-|---|---|
-| Detach | `Ctrl-o` then `d` |
-| Quit Zellij | `Ctrl-q` |
+| Action          | Keys                     |
+| --------------- | ------------------------ |
+| attach / create | `zellij attach --create` |
+| detach          | `Ctrl-o` then `d`        |
+| quit zellij     | `Ctrl-q`                 |
