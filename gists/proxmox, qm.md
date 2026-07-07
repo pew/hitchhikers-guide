@@ -1,15 +1,16 @@
 ---
 date created: Monday, March 20th 2023, 6:06:26 am
-date modified: Monday, March 20th 2023, 6:11:35 am
+date modified: Tuesday, July 7th 2026, 11:42:44 am
 tags:
   - qemu
   - qm
   - proxmox
+  - linux
 ---
 
 # proxmox / qm
 
-## manage vm's
+## manage virtual machines (vms)
 
 **list vm's:**
 
@@ -20,17 +21,19 @@ qm list
 **start / stop qm:**
 
 ```shell
-qm start 100
-qm stop 100
+qm start <VMID>
+qm shutdown <VMID>
+qm reboot <VMID>
+qm stop <VMID>
 ```
 
-## display config
+### display / get config
 
 ```shell
 qm config <id>
 ```
 
-## modify memory, cpu
+### modify memory, cpu
 
 set memory in megabytes
 
@@ -38,7 +41,7 @@ set memory in megabytes
 qm set <vmid> -cores <num_cores> -memory <memory_size>
 ```
 
-## resize disk
+### resize disk
 
 you might want to run `qm config <id>` to find the name of the disk controller (`scsi0` in this example)
 
@@ -46,7 +49,7 @@ you might want to run `qm config <id>` to find the name of the disk controller (
 qm resize <vmid> scsi0 +500G
 ```
 
-## create a clone
+### create a clone
 
 - `9000` = source template
 - `1337` = new id
@@ -54,4 +57,53 @@ qm resize <vmid> scsi0 +500G
 
 ```shell
 qm clone 9000 1337 --full true --storage storage-name --name vm-name
+```
+
+## open vm console / display
+
+### serial console
+
+```shell
+qm terminal <VMID>
+```
+
+This only works if the guest has a serial console configured. Try:
+
+```shell
+qm set <VMID> --serial0 socket --vga serial0
+```
+
+**exit serial console**
+
+```shell
+Ctrl+O
+```
+
+then
+
+```shell
+q
+```
+
+## log in to a VM
+
+Find the IP via guest agent:
+
+```shell
+qm guest cmd <VMID> network-get-interfaces
+```
+
+Requires QEMU guest agent installed and enabled.
+
+Enable guest agent in Proxmox:
+
+```shell
+qm set <VMID> --agent enabled=1
+```
+
+inside Debian/Ubuntu VM:
+
+```shell
+sudo apt install qemu-guest-agent
+sudo systemctl enable --now qemu-guest-agent
 ```
