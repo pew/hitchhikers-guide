@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Saturday, December 28th 2024, 11:28:13 am
+date modified: Saturday, August 1st 2026, 9:07:15 am
 tags:
   - systemd
   - systemctl
@@ -207,6 +207,17 @@ journalctl -u your-name.service
 ```shell
 journalctl -f -u your-name.service
 ```
+
+### filter / search for services or units
+
+no need for `grep` or `rg`, just do it like so:
+
+```shell
+systemctl list-units '*resticprofile*'
+systemctl list-units '*resolv*
+```
+
+work with `*` to make it easier if the exact name is unknown
 
 ### disable / mask service, prevent from starting & unmask
 
