@@ -214,7 +214,7 @@ no need for `grep` or `rg`, just do it like so:
 
 ```shell
 systemctl list-units '*resticprofile*'
-systemctl list-units '*resolv*
+systemctl list-units '*resolv*'
 ```
 
 work with `*` to make it easier if the exact name is unknown
