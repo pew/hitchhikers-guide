@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Saturday, March 28th 2026, 4:17:02 pm
+date modified: Saturday, August 8th 2026, 8:26:19 am
 tags:
   - jq
   - json
@@ -47,6 +47,28 @@ just comma separate what you want
 
 ```
 bw list items --search zoho|jq '.[].login.username, .[].login.password'
+```
+
+## format jq output
+
+### print multiple selections in one line
+
+separated with `-`
+
+```shell
+jq -r '.[] | "\(.Name) - \(.Description)"' file.json
+```
+
+### print columns
+
+```shell
+jq -r '.[] | [.Name, .Description] | @tsv' file.json
+```
+
+with headers and aligned columns:
+
+```shell
+jq -r '["Name", "Description"], (.[] | [.Name, .Description]) | @tsv' file.json | column -t -s $'\t'
 ```
 
 ## get raw output
