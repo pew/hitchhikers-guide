@@ -1,6 +1,6 @@
 ---
 date created: Monday, April 22nd 2019, 6:51:17 pm
-date modified: Saturday, August 1st 2026, 9:07:15 am
+date modified: Sunday, August 9th 2026, 5:27:34 pm
 tags:
   - systemd
   - systemctl
@@ -175,7 +175,7 @@ systemctl enable restic_backup.timer
 ### disable timer
 
 ```shell
-systemctl disable name.timer
+systemctl disable --now name.timer
 ```
 
 ### list timers
