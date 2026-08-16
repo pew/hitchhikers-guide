@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Saturday, August 8th 2026, 8:26:19 am
+date modified: Sunday, August 16th 2026, 1:52:08 pm
 tags:
   - jq
   - json
@@ -70,6 +70,18 @@ with headers and aligned columns:
 ```shell
 jq -r '["Name", "Description"], (.[] | [.Name, .Description]) | @tsv' file.json | column -t -s $'\t'
 ```
+
+## filter (grep) json using jq
+
+example: filter traefik json logs for a specific hostname (`RequestAddr`):
+
+```shell
+docker logs -f --tail=10 traefik |
+  jq --unbuffered -c --arg domain "example.com" \
+    'select((.RequestAddr? // "") | contains($domain))'
+```
+
+`--unbuffered` is useful for live logs, otherwise omit that. remove `-c` to see the output pretty-printed
 
 ## get raw output
 
