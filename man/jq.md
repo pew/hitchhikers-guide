@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Sunday, August 16th 2026, 1:52:08 pm
+date modified: Sunday, August 16th 2026, 1:56:47 pm
 tags:
   - jq
   - json
@@ -82,6 +82,24 @@ docker logs -f --tail=10 traefik |
 ```
 
 `--unbuffered` is useful for live logs, otherwise omit that. remove `-c` to see the output pretty-printed
+
+### search for multiple matches
+
+```shell
+tail -F access.log |
+  jq --unbuffered -c \
+    --arg d1 "example.com" \
+    --arg d2 "example.org" \
+    'select((.RequestAddr? // "") | (contains($d1) or contains($d2)))'
+```
+
+### equal search
+
+```shell
+jq -c --arg d1 "example.com" --arg d2 "example.org" \
+  'select(.RequestAddr? == $d1 or .RequestAddr? == $d2)' \
+  access.log
+```
 
 ## get raw output
 
