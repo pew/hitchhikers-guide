@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Sunday, August 16th 2026, 1:56:47 pm
+date modified: Tuesday, September 1st 2026, 2:55:21 pm
 tags:
   - jq
   - json
@@ -99,6 +99,23 @@ tail -F access.log |
 jq -c --arg d1 "example.com" --arg d2 "example.org" \
   'select(.RequestAddr? == $d1 or .RequestAddr? == $d2)' \
   access.log
+```
+
+### filter uptime kuma cli tags
+
+```shell
+jq -r '
+  .[]
+  | select(any(.tags[]?; .name == "backups"))
+  | [.id, .name]
+  | @tsv
+' input.json
+```
+
+get only the id (or any other field):
+
+```shell
+jq -r '.[] | select(any(.tags[]?; .name == "backups")) | .id' input.json
 ```
 
 ## get raw output
