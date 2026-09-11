@@ -1,6 +1,6 @@
 ---
 date created: Tuesday, May 7th 2019, 6:33:01 pm
-date modified: Monday, August 25th 2025, 5:57:39 am
+date modified: Friday, September 11th 2026, 10:24:08 am
 tags:
   - git
 ---
@@ -330,6 +330,14 @@ if you're on macOS, you can use the keychain helper as well to store them more s
 
 ```
 git config --global credential.helper osxkeychain
+```
+
+### osxkeychain error `fatal: failed to store: -25308`
+
+if you see the git osxkeychain credential helper error `fatal: failed to store: -25308` you need to unlock your keychain (might happen when you're on a *headless* macos machine and didn't login via VNC)
+
+```shell
+security unlock-keychain ~/Library/Keychains/login.keychain-db
 ```
 
 ## disable pager
