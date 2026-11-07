@@ -1,3 +1,9 @@
+---
+date created: Monday, February 2nd 2026, 7:58:13 am
+date modified: Saturday, November 7th 2026, 4:11:46 pm
+tags: 
+---
+
 # vim
 
 I'll never get used to it. Let's get started and learn..
@@ -65,13 +71,22 @@ Ctrl + Shift + V
 
 [thank you](https://www.256kilobytes.com/content/show/10503/5-tasks-you-didnt-know-you-could-do-with-vim).
 
-## vertical highlighting
+## highlighting
 
 ```
 ctrl + v
 ```
 
 [thank you](https://www.256kilobytes.com/content/show/10503/5-tasks-you-didnt-know-you-could-do-with-vim).
+
+## formatting
+
+### json formatting
+
+```
+:%!python -m json.tool
+:%!jq .
+```
 
 ## search
 
@@ -150,7 +165,7 @@ I need to learn and remember them! `<Leader>` is `\`
 * `<Backspace>` -- Go back to parent(previous) wiki link
 * `<Tab>` -- Find next wiki link
 * `<Shift-Tab>` -- Find previous wiki link
- 
+
 **diary key bindings**:
 
 * `<Leader>w<Leader>w` - create new diary file with current date
