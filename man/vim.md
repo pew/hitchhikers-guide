@@ -1,6 +1,6 @@
 ---
 date created: Monday, February 2nd 2026, 7:58:13 am
-date modified: Saturday, November 7th 2026, 4:11:46 pm
+date modified: Sunday, November 8th 2026, 9:50:40 am
 tags: 
 ---
 
@@ -84,7 +84,8 @@ ctrl + v
 ### json formatting
 
 ```
-:%!python -m json.tool
+:%!python -m json.tool --indent 2
+:%!python -m json.tool # 4 spaces
 :%!jq .
 ```
 
