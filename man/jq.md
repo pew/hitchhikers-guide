@@ -1,6 +1,6 @@
 ---
 date created: Wednesday, May 8th 2019, 7:14:43 pm
-date modified: Tuesday, September 1st 2026, 2:55:21 pm
+date modified: Sunday, November 15th 2026, 8:54:02 am
 tags:
   - jq
   - json
@@ -128,6 +128,14 @@ jq -r '.[] | select(any(.tags[]?; .name == "backups")) | .id' input.json
 
 ```
 jq -r '.[].login.username, .[].login.password'
+```
+
+## convert raw string into JSON
+
+converts text into JSON, including newlines. Useful if you need to embed a multiline private pem key file into a JSON line:
+
+```shell
+jq -Rs < private-key.pem
 ```
 
 ## get the first element
