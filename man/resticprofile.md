@@ -1,6 +1,6 @@
 ---
 date created: Sunday, December 7th 2025, 11:43:39 am
-date modified: Sunday, November 22nd 2026, 8:33:18 am
+date modified: Sunday, November 22nd 2026, 8:40:26 am
 tags:
   - restic
   - backup
@@ -42,4 +42,34 @@ resticprofile mount /restic_restore
 
 ```shell
 ls /restic_restore/snapshots/latest/
+```
+
+## prune and forget snapshots
+
+use **`forget` to delete old snapshots** and **`prune` to reclaim storage from unreferenced data**.
+
+**preview a retention policy**, for example keeping the latest 10 snapshots:
+
+```bash
+resticprofile --name default forget --keep-last 10 --prune --dry-run
+```
+
+**apply the reviewed policy:**
+
+```bash
+resticprofile --name default forget --keep-last 10 --prune
+```
+
+**clean up unreferenced data**, without deleting additional snapshots:
+
+```bash
+resticprofile --name default prune --dry-run
+resticprofile --name default prune
+```
+
+delete a **specific snapshot**, use its ID:
+
+```bash
+resticprofile --name default forget SNAPSHOT_ID --prune --dry-run
+# Remove --dry-run after reviewing the result.
 ```
