@@ -1,6 +1,6 @@
 ---
 date created: Sunday, December 7th 2025, 11:43:39 am
-date modified: Sunday, December 7th 2025, 11:48:39 am
+date modified: Sunday, November 22nd 2026, 8:33:18 am
 tags:
   - restic
   - backup
@@ -20,6 +20,7 @@ resticprofile profiles
 ## list snapshots
 
 ```shell
+resticprofile # uses the default profile
 resticprofile --name default snapshots
 ```
 
